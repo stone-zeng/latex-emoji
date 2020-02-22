@@ -1,6 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[2020/02/02]
-\RequirePackage{expl3}
-\ProvidesExplPackage{emoji}{2020/01/16}{0.1}{Emoji support in (Lua)LaTeX}
+\ProvidesExplPackage{emoji}{2020/02/23}{0.1}{Emoji support in (Lua)LaTeX}
 
 \msg_new:nnn { emoji } { require-luatex }
   { The~'emoji'~package~requires~LuaTeX. }
@@ -38,7 +37,7 @@
 \msg_new:nnn { emoji } { no-emoji-font }
   {
     It~seems~that~you~have~not~declare~an~emoji~font. \\
-    You~should~use~`\setemojifont'~to~set~a~font.
+    You~should~use~"\setemojifont"~to~set~a~font.
   }
 
 \AtBeginDocument
@@ -47,10 +46,38 @@
       { \__emoji_detect_font: }
   }
 
-\NewDocumentCommand \emoji { o m }
+\NewDocumentCommand \emoji { m }
   {
-    % TODO: #1 for options
-    \emoji_print:n {#2}
+    % TODO: options
+    \emoji_if_name_exist:nTF {#1}
+      { \emoji_print:n {#1} }
+      { \msg_error:nnn { emoji } { emoji-not-exist } {#1} }
+  }
+
+\AtBeginDocument
+  {
+    \@ifpackageloaded { hyperref }
+      {
+        \pdfstringdefDisableCommands
+          {
+            \cs_set_nopar:Npn \emoji #1
+              { \tl_use:c { c__emoji_ #1 _tl } }
+          }
+      }
+      {}
+  }
+
+\msg_new:nnn { emoji } { emoji-not-exist }
+  {
+    The~emoji~name~"#1"~can't~be~found. \\
+    Please~check~your~spelling~or~try~another~one.
+  }
+
+\prg_new_protected_conditional:Npnn \emoji_if_name_exist:n #1 { T, F, TF }
+  {
+    \tl_if_exist:cTF { c__emoji_ #1 _tl }
+      { \prg_return_true:  }
+      { \prg_return_false: }
   }
 
 \cs_new_protected:Npn \emoji_print:n #1
@@ -1542,5 +1569,7 @@
 \__emoji_def:nn {zimbabwe                            } {^^^^^^01f1ff^^^^^^01f1fc}
 \__emoji_def:nn {zipper-mouth-face                   } {^^^^^^01f910}
 \__emoji_def:nn {zzz                                 } {^^^^^^01f4a4}
+
+% \__emoji_def:nn {united-nations                      } {^^^^^^01f1fa^^^^^^01f1f3}
 
 \endinput
