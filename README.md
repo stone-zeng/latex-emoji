@@ -2,13 +2,29 @@
 
 Emoji support in (Lua)LaTeX.
 
-## TODO
+## Introduction
 
-- [ ] Direct input of emoji
-- [ ] More names/aliases
-- [ ] Options including default skin tones, genders, etc.
-- [ ] More fonts
-- [ ] Fallback
+The `emoji` package allows user to typeset emoji in a LaTeX document. It requires LuaHBTeX, or `lualatex-dev` at present.
+
+## Usage
+
+```tex
+\documentclass{article}
+\usepackage{emoji}
+\setemojifont{Apple Color Emoji}  % Optional
+
+\begin{document}
+\emoji{joy}
+\emoji{+1}
+\emoji{family-man-woman-girl-boy}
+\end{document}
+```
+
+Result:
+
+> :joy:
+> :+1:
+> :family_man_woman_girl_boy:
 
 ## License
 
