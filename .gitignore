@@ -13,5 +13,6 @@
 
 data/
 fonts/
+release/
 
 .DS_Store
