@@ -1,0 +1,16 @@
+# Noto Emoji
+
+Noto Color Emoji supports all emoji defined in the latest Unicode version.
+
+- Version: v2019-11-19-unicode12
+- Homepage: <https://github.com/googlefonts/noto-emoji>
+
+This package contains the following files:
+
+    texmf-dist/fonts/truetype/google/noto-emoji/NotoColorEmoji.ttf
+    texmf-dist/fonts/truetype/google/noto-emoji/NotoEmoji-Regular.ttf
+    texmf-dist/doc/fonts/noto-emoji/README.md
+
+## License
+
+Emoji fonts are under the SIL Open Font License, version 1.1.
