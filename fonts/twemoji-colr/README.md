@@ -3,7 +3,8 @@
 This is a COLR/CPAL-based color OpenType font from the [Twemoji](https://twemoji.twitter.com/) collection of emoji images.
 
 - Version: v0.5.0 (2019-10-31)
-- Homepage: <https://github.com/mozilla/twemoji-colr>
+- Homepage: https://github.com/mozilla/twemoji-colr
+- CTAN maintainer: Xiangdong Zeng <xdzeng96@gmail.com>
 
 This package contains the following files:
 

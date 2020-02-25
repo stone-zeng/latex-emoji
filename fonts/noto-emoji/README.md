@@ -3,7 +3,8 @@
 Noto Color Emoji supports all emoji defined in the latest Unicode version.
 
 - Version: v2019-11-19-unicode12
-- Homepage: <https://github.com/googlefonts/noto-emoji>
+- Homepage: https://github.com/googlefonts/noto-emoji
+- CTAN maintainer: Xiangdong Zeng <xdzeng96@gmail.com>
 
 This package contains the following files:
 
