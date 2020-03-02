@@ -25,9 +25,7 @@ The `emoji` package allows user to typeset emoji in a LaTeX document. It require
 
 Result:
 
-> &#x1F602;
-> &#x1F44D;
-> &#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;
+> &#x1F602; &#x1F44D; &#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;
 
 ## License
 

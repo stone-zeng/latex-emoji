@@ -108,10 +108,12 @@ typically presented in a colorful cartoon form and used inline in text. They rep
 such as faces, weather, vehicles and buildings, food and drink, animals and plants, or icons
 that represent emotions, feelings, or activities.\textsuperscript{\cite{utr51}}
 
-In 2019, \href{https://github.com/khaledhosny}{Khaled Hosny} has integrated the
-\href{https://github.com/harfbuzz/harfbuzz}{HarfBuzz} library into \LuaTeX. While the original
-purpose is to optimize the rendering of indic and arabic scripts, emoji is also supported by
-this new version of \TeX{} at the same time.
+In 2019, \href{https://github.com/luigiScarso}{Luigi Scarso} has integrated the
+\href{https://github.com/harfbuzz/harfbuzz}{HarfBuzz} library into \LuaTeX.%
+\footnote{\href{https://github.com/khaledhosny}{Khaled Hosny} has also created a similar project
+\href{https://github.com/khaledhosny/harftex}{HarfTeX}.}
+While the original purpose is to optimize the rendering of indic and arabic scripts, emoji is
+also supported by this new extended version of \TeX{} at the same time.
 
 The \pkg{emoji} package allows user to typeset emoji in a \LaTeX{} document. It requires
 \LuaHBTeX{}: at present, only \texttt{lualatex-dev} can be used to compile. In \TeX{} Live 2020,
@@ -141,7 +143,7 @@ you can use the following command to set emoji font manually.
   emoji. The optional \meta{font features} should be a key-value list, which is described in the
   document of \pkg{fontspec} package in detail.
 
-  You can use this command in the preamble of in the document body. Only emoji afterwards will
+  You can use this command in the preamble or in the document body. Only emoji afterwards will
   be affected.
 \end{function}
 
