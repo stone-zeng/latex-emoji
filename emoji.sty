@@ -30,12 +30,22 @@
 % #2: name
 \NewDocumentCommand \setemojifont { m o }
   {
-    \AtBeginDocument
-      {
-        \IfValueTF {#2}
-          { \emoji_set_font:nn {#1} {#2} }
-          { \emoji_set_font:n  {#1} }
-      }
+    \__emoji_if_preamble:TF
+      { \AtBeginDocument }
+      { \use:n }
+    {
+      \IfValueTF {#2}
+        { \emoji_set_font:nn {#1} {#2} }
+        { \emoji_set_font:n  {#1} }
+    }
+  }
+
+% Test if in the preamble
+\prg_set_conditional:Npnn \__emoji_if_preamble: { TF }
+  {
+    \cs_if_eq:NNTF \@onlypreamble \@notprerr
+      { \prg_return_false: }
+      { \prg_return_true:  }
   }
 
 % Define `\emoji_font:` when used.
