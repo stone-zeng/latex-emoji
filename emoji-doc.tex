@@ -16,8 +16,9 @@
 %%  The Current Maintainer of this work is Xiangdong Zeng.
 %%
 \documentclass{l3doc}
-\usepackage{booktabs,emoji,fontspec,graphicx,longtable,xcolor}
+\usepackage{array,booktabs,emoji,fontspec,geometry,graphicx,longtable,xcolor}
 
+\geometry{left=3.2cm, right=1.8cm, vmargin=3.2cm}
 \setmainfont{NotoSerif}[
   Extension      = .ttf,
   UprightFont    = *-Light,
@@ -78,6 +79,132 @@
       \or \text{\emoji{email}}
     \fi}}
 
+\bool_new:N \g__emoji_doc_after_group_bool
+\bool_new:N \g__emoji_doc_first_group_bool
+\int_new:N  \g__emoji_doc_group_count_int
+\int_new:N  \g__emoji_doc_subgroup_count_int
+\int_new:N  \g__emoji_doc_total_count_int
+\str_new:N  \g__emoji_doc_group_str
+\str_new:N  \g__emoji_doc_subgroup_str
+
+\cs_new_protected:Npn \clist_use:nn #1
+  {
+    \clist_set:Nn \l__clist_internal_clist {#1}
+    \clist_use:Nn \l__clist_internal_clist
+  }
+
+\cs_set:Npn \__emoji_def:nnnn
+  {
+    \int_gincr:N \g__emoji_doc_group_count_int
+    \int_gincr:N \g__emoji_doc_subgroup_count_int
+    \int_gincr:N \g__emoji_doc_total_count_int
+    \char_set_catcode_other:N \^
+    \__emoji_def_aux:nnnn
+  }
+\cs_set:Npn \__emoji_def_aux:nnnn #1#2#3#4
+  {
+      \emoji {#2}
+    & \ttfamily \scriptsize #2
+    & \ttfamily \scriptsize
+      \clist_use:nn {#3} { , ~ }
+    & \scriptsize #4
+    & \ttfamily \scriptsize
+      \str_set:Nn \l_tmpa_str {#1}
+      \str_replace_all:Nnn \l_tmpa_str { ^ ^ ^ ^ ^ ^ 0 } { , }
+      \str_replace_all:Nnn \l_tmpa_str { ^ ^ ^ ^ }       { , }
+      \exp_args:Nx \clist_use:nn
+        { \str_uppercase:f { \str_tail:N \l_tmpa_str } }
+        { ~ }
+    \char_set_catcode_math_superscript:N \^
+    \\
+  }
+
+\newcolumntype {C} [1] { > { \centering   \arraybackslash } m {#1} }
+\newcolumntype {P} [1] { > { \raggedright \arraybackslash } m {#1} }
+
+\cs_set:Npn \__emoji_group:n #1
+  {
+    \bool_if:NTF \g__emoji_doc_first_group_bool
+      { \bool_set_false:N \g__emoji_doc_first_group_bool }
+      { \__emoji_doc_end_group: }
+    \str_gset:Nn \g__emoji_doc_group_str {#1}
+    \str_gremove_all:Nn \g__emoji_doc_group_str { ~\&~ }
+    \exp_args:Nx \subsubsection
+      { #1 ~ ( \exp_not:N \ref* { count: emoji@ \g__emoji_doc_group_str } ) }
+    \newcounter { emoji@ \g__emoji_doc_group_str }
+    \int_gzero:N \g__emoji_doc_group_count_int
+    \bool_set_true:N \g__emoji_doc_after_group_bool
+  }
+
+\cs_set:Npn \__emoji_subgroup:n #1
+  {
+    \bool_if:NF \g__emoji_doc_after_group_bool
+      { \__emoji_doc_end_longtable: }
+    \bool_set_false:N \g__emoji_doc_after_group_bool
+    \str_gset:Nn \g__emoji_doc_subgroup_str {#1}
+    \str_gremove_all:Nn \g__emoji_doc_subgroup_str { ~\&~ }
+    \newcounter { emoji@ \g__emoji_doc_subgroup_str }
+    \int_gzero:N \g__emoji_doc_subgroup_count_int
+    \__emoji_doc_begin_longtable:x
+      { #1 ~ ( \exp_not:N \ref* { count: emoji@ \g__emoji_doc_subgroup_str } ) }
+  }
+
+\cs_set:Npn \__emoji_doc_begin_longtable:n #1
+  {
+    \begin{longtable} { C{1.2cm} P{4cm} P{2.8cm} P{4cm} C{1.8cm} }
+        \caption{#1} \\
+        \__emoji_doc_longtable_head:
+      \endfirsthead
+        \__emoji_doc_longtable_head:
+      \endhead
+        \bottomrule
+      \endfoot
+  }
+\cs_generate_variant:Nn \__emoji_doc_begin_longtable:n { x }
+
+\cs_set:Npn \__emoji_doc_longtable_head:
+  {
+    \toprule
+      \strong{\small Emoji}
+    & \strong{\small Fullname}
+    & \strong{\small Aliases}
+    & \strong{\small Description}
+    & \strong{\small Codepoints}  \\
+    \midrule
+  }
+
+\cs_set:Npn \__emoji_doc_end_longtable:
+  {
+    \end{longtable}
+    \int_set:cn
+      { c@emoji@ \g__emoji_doc_subgroup_str }
+      { \g__emoji_doc_subgroup_count_int - 1 }
+    \refstepcounter { emoji@ \g__emoji_doc_subgroup_str }
+    \label { count: emoji@ \g__emoji_doc_subgroup_str }
+  }
+
+\cs_set:Npn \__emoji_doc_end_group:
+  {
+    \__emoji_doc_end_longtable:
+    \int_set:cn
+      { c@emoji@ \g__emoji_doc_group_str }
+      { \g__emoji_doc_group_count_int - 1 }
+    \refstepcounter { emoji@ \g__emoji_doc_group_str }
+    \label { count: emoji@ \g__emoji_doc_group_str }
+  }
+
+\cs_new_protected:Npn \EMOJITABLE
+  {
+    \bool_set_true:N \g__emoji_doc_first_group_bool
+    \input { emoji-table.def }
+    \__emoji_doc_end_group:
+    \newcounter { emoji }
+    \int_set:cn { c@emoji } { \g__emoji_doc_total_count_int - 1 }
+    \refstepcounter { emoji }
+    \label { count: emoji }
+    \ExplSyntaxOff
+  }
+
 \ExplSyntaxOff
 \makeatother
 
@@ -131,8 +258,8 @@ The package should be loaded in the usual way:
 
 \subsection{\emoji{beer} Set emoji fonts}
 
-On Windows or macOS system, the \pkg{emoji} package will automatically select available emoji
-fonts. If the package can't find any emoji fonts, or if you want to change the default font,
+On Windows, macOS or Ubuntu system, the \pkg{emoji} package will automatically select available
+emoji fonts. If the package can't find any emoji fonts, or if you want to change the default font,
 you can use the following command to set emoji font manually.
 
 \begin{function}{\setemojifont}
@@ -164,7 +291,7 @@ Examples:
     \cs{emoji}\marg{name}
   \end{syntax}
   This is the main command to use emoji. All valid \meta{name} can be found in
-  \autoref{tab:emoji-list}.
+  \autoref{subsec:emoji-list}.
 \end{function}
 
 Examples:
@@ -173,11 +300,26 @@ Examples:
   \emoji{joy}
   \emoji{+1}
   \emoji{family-man-woman-girl-boy}
+  \emoji{woman-and-man-holding-hands-light-skin-tone-medium-dark-skin-tone}
 \end{verbatim}
 
 \emoji{joy} \emoji{+1} \emoji{family-man-woman-girl-boy}
+\emoji{woman-and-man-holding-hands-light-skin-tone-medium-dark-skin-tone}
 
 \section{\emoji{electric-plug} Technical details}
+
+\subsection{\emoji{orange-book} Emoji list}
+\label{subsec:emoji-list}
+
+The emoji and their description are from Unicode's
+\href{https://www.unicode.org/Public/emoji/latest/emoji-test.txt}{\file{emoji-test.txt}},
+while the aliases are from GitHub's
+\href{https://github.com/github/gemoji/blob/master/db/emoji.json}{\file{emoji.json}}.
+
+There are \ref*{count:emoji} emoji listed here. Note that this number may not correspond to
+Unicode's statistic, since only fully-qualified emoji and components are included.
+
+\EMOJITABLE
 
 \subsection{\emoji{hammer-and-wrench} Fonts}
 
@@ -195,12 +337,12 @@ can be used normally. Some typical fonts are listed in \autoref{tab:emoji-fonts}
     \label{tab:emoji-fonts}
   \endfirsthead
     \toprule
-      \strong{Font name}         &
-      \strong{OpenType table(s)} &
-      \strong{Bitmap?}           &
-      \strong{Vector?}           &
-      \strong{Support?}          &
-      \strong{Reference} \\
+      \strong{Font name}
+    & \strong{OpenType table(s)}
+    & \strong{Bitmap?}
+    & \strong{Vector?}
+    & \strong{Support?}
+    & \strong{Reference} \\
     \midrule
       Apple Color Emoji   & \texttt{sbix}               & \y &    & \y &                     \\
       Segoe UI Emoji      & \texttt{COLR}/\texttt{CPAL} &    & \y & \y &                     \\
@@ -226,1518 +368,13 @@ This document uses the following fonts:
   \item Twemoji Mozilla
 \end{itemize}
 
-\subsection{\emoji{notebook} Emoji list}
-
-Names in the list are from \url{https://api.github.com/emojis}.
-
-\begingroup
-
-\def\EMOJI#1#2{\emoji{#1} & #1 & {\ttcond\scriptsize#2} \\}
-\def\HEAD{%
-  \toprule
-  \strong{Emoji} & \strong{Name} & \strong{Unicode codepoints} \\
-  \midrule}
-\small
-
-\begin{longtable}{ccc}
-    \caption{Emoji list (sorted in alphabetical order)}
-    \label{tab:emoji-list} \\
-    \HEAD
-  \endfirsthead
-    \HEAD
-  \endhead
-    \toprule
-  \endfoot
-    \EMOJI{-1}                                   {1F44E}
-    \EMOJI{+1}                                   {1F44D}
-    \EMOJI{100}                                  {1F4AF}
-    \EMOJI{1234}                                 {1F522}
-    \EMOJI{1st-place-medal}                      {1F947}
-    \EMOJI{2nd-place-medal}                      {1F948}
-    \EMOJI{3rd-place-medal}                      {1F949}
-    \EMOJI{8ball}                                {1F3B1}
-    \EMOJI{a}                                    {1F170}
-    \EMOJI{ab}                                   {1F18E}
-    \EMOJI{abc}                                  {1F524}
-    \EMOJI{abcd}                                 {1F521}
-    \EMOJI{accept}                               {1F251}
-    \EMOJI{aerial-tramway}                       {1F6A1}
-    \EMOJI{afghanistan}                          {1F1E6 1F1EB}
-    \EMOJI{airplane}                             {2708}
-    \EMOJI{aland-islands}                        {1F1E6 1F1FD}
-    \EMOJI{alarm-clock}                          {23F0}
-    \EMOJI{albania}                              {1F1E6 1F1F1}
-    \EMOJI{alembic}                              {2697}
-    \EMOJI{algeria}                              {1F1E9 1F1FF}
-    \EMOJI{alien}                                {1F47D}
-    \EMOJI{ambulance}                            {1F691}
-    \EMOJI{american-samoa}                       {1F1E6 1F1F8}
-    \EMOJI{amphora}                              {1F3FA}
-    \EMOJI{anchor}                               {2693}
-    \EMOJI{andorra}                              {1F1E6 1F1E9}
-    \EMOJI{angel}                                {1F47C}
-    \EMOJI{anger}                                {1F4A2}
-    \EMOJI{angola}                               {1F1E6 1F1F4}
-    \EMOJI{angry}                                {1F620}
-    \EMOJI{anguilla}                             {1F1E6 1F1EE}
-    \EMOJI{anguished}                            {1F627}
-    \EMOJI{ant}                                  {1F41C}
-    \EMOJI{antarctica}                           {1F1E6 1F1F6}
-    \EMOJI{antigua-barbuda}                      {1F1E6 1F1EC}
-    \EMOJI{apple}                                {1F34E}
-    \EMOJI{aquarius}                             {2652}
-    \EMOJI{argentina}                            {1F1E6 1F1F7}
-    \EMOJI{aries}                                {2648}
-    \EMOJI{armenia}                              {1F1E6 1F1F2}
-    \EMOJI{arrow-backward}                       {25C0}
-    \EMOJI{arrow-double-down}                    {23EC}
-    \EMOJI{arrow-double-up}                      {23EB}
-    \EMOJI{arrow-down-small}                     {1F53D}
-    \EMOJI{arrow-down}                           {2B07}
-    \EMOJI{arrow-forward}                        {25B6}
-    \EMOJI{arrow-heading-down}                   {2935}
-    \EMOJI{arrow-heading-up}                     {2934}
-    \EMOJI{arrow-left}                           {2B05}
-    \EMOJI{arrow-lower-left}                     {2199}
-    \EMOJI{arrow-lower-right}                    {2198}
-    \EMOJI{arrow-right-hook}                     {21AA}
-    \EMOJI{arrow-right}                          {27A1}
-    \EMOJI{arrow-up-down}                        {2195}
-    \EMOJI{arrow-up-small}                       {1F53C}
-    \EMOJI{arrow-up}                             {2B06}
-    \EMOJI{arrow-upper-left}                     {2196}
-    \EMOJI{arrow-upper-right}                    {2197}
-    \EMOJI{arrows-clockwise}                     {1F503}
-    \EMOJI{arrows-counterclockwise}              {1F504}
-    \EMOJI{art}                                  {1F3A8}
-    \EMOJI{articulated-lorry}                    {1F69B}
-    \EMOJI{artificial-satellite}                 {1F6F0}
-    \EMOJI{aruba}                                {1F1E6 1F1FC}
-    \EMOJI{astonished}                           {1F632}
-    \EMOJI{athletic-shoe}                        {1F45F}
-    \EMOJI{atm}                                  {1F3E7}
-    \EMOJI{atom-symbol}                          {269B}
-    \EMOJI{australia}                            {1F1E6 1F1FA}
-    \EMOJI{austria}                              {1F1E6 1F1F9}
-    \EMOJI{avocado}                              {1F951}
-    \EMOJI{azerbaijan}                           {1F1E6 1F1FF}
-    \EMOJI{b}                                    {1F171}
-    \EMOJI{baby-bottle}                          {1F37C}
-    \EMOJI{baby-chick}                           {1F424}
-    \EMOJI{baby-symbol}                          {1F6BC}
-    \EMOJI{baby}                                 {1F476}
-    \EMOJI{back}                                 {1F519}
-    \EMOJI{bacon}                                {1F953}
-    \EMOJI{badminton}                            {1F3F8}
-    \EMOJI{baggage-claim}                        {1F6C4}
-    \EMOJI{baguette-bread}                       {1F956}
-    \EMOJI{bahamas}                              {1F1E7 1F1F8}
-    \EMOJI{bahrain}                              {1F1E7 1F1ED}
-    \EMOJI{balance-scale}                        {2696}
-    \EMOJI{balloon}                              {1F388}
-    \EMOJI{ballot-box-with-check}                {2611}
-    \EMOJI{ballot-box}                           {1F5F3}
-    \EMOJI{bamboo}                               {1F38D}
-    \EMOJI{banana}                               {1F34C}
-    \EMOJI{bangbang}                             {203C}
-    \EMOJI{bangladesh}                           {1F1E7 1F1E9}
-    \EMOJI{bank}                                 {1F3E6}
-    \EMOJI{bar-chart}                            {1F4CA}
-    \EMOJI{barbados}                             {1F1E7 1F1E7}
-    \EMOJI{barber}                               {1F488}
-    \EMOJI{baseball}                             {26BE}
-    \EMOJI{basketball-man}                       {26F9}
-    \EMOJI{basketball-woman}                     {26F9 200D 2640}
-    \EMOJI{basketball}                           {1F3C0}
-    \EMOJI{bat}                                  {1F987}
-    \EMOJI{bath}                                 {1F6C0}
-    \EMOJI{bathtub}                              {1F6C1}
-    \EMOJI{battery}                              {1F50B}
-    \EMOJI{beach-umbrella}                       {1F3D6}
-    \EMOJI{bear}                                 {1F43B}
-    \EMOJI{bed}                                  {1F6CF}
-    \EMOJI{bee}                                  {1F41D}
-    \EMOJI{beer}                                 {1F37A}
-    \EMOJI{beers}                                {1F37B}
-    \EMOJI{beetle}                               {1F41E}
-    \EMOJI{beginner}                             {1F530}
-    \EMOJI{belarus}                              {1F1E7 1F1FE}
-    \EMOJI{belgium}                              {1F1E7 1F1EA}
-    \EMOJI{belize}                               {1F1E7 1F1FF}
-    \EMOJI{bell}                                 {1F514}
-    \EMOJI{bellhop-bell}                         {1F6CE}
-    \EMOJI{benin}                                {1F1E7 1F1EF}
-    \EMOJI{bento}                                {1F371}
-    \EMOJI{bermuda}                              {1F1E7 1F1F2}
-    \EMOJI{bhutan}                               {1F1E7 1F1F9}
-    \EMOJI{bicyclist}                            {1F6B4}
-    \EMOJI{bike}                                 {1F6B2}
-    \EMOJI{biking-man}                           {1F6B4}
-    \EMOJI{biking-woman}                         {1F6B4 200D 2640}
-    \EMOJI{bikini}                               {1F459}
-    \EMOJI{biohazard}                            {2623}
-    \EMOJI{bird}                                 {1F426}
-    \EMOJI{birthday}                             {1F382}
-    \EMOJI{black-circle}                         {26AB}
-    \EMOJI{black-flag}                           {1F3F4}
-    \EMOJI{black-heart}                          {1F5A4}
-    \EMOJI{black-joker}                          {1F0CF}
-    \EMOJI{black-large-square}                   {2B1B}
-    \EMOJI{black-medium-small-square}            {25FE}
-    \EMOJI{black-medium-square}                  {25FC}
-    \EMOJI{black-nib}                            {2712}
-    \EMOJI{black-small-square}                   {25AA}
-    \EMOJI{black-square-button}                  {1F532}
-    \EMOJI{blonde-man}                           {1F471}
-    \EMOJI{blonde-woman}                         {1F471 200D 2640}
-    \EMOJI{blossom}                              {1F33C}
-    \EMOJI{blowfish}                             {1F421}
-    \EMOJI{blue-book}                            {1F4D8}
-    \EMOJI{blue-car}                             {1F699}
-    \EMOJI{blue-heart}                           {1F499}
-    \EMOJI{blush}                                {1F60A}
-    \EMOJI{boar}                                 {1F417}
-    \EMOJI{boat}                                 {26F5}
-    \EMOJI{bolivia}                              {1F1E7 1F1F4}
-    \EMOJI{bomb}                                 {1F4A3}
-    \EMOJI{book}                                 {1F4D6}
-    \EMOJI{bookmark-tabs}                        {1F4D1}
-    \EMOJI{bookmark}                             {1F516}
-    \EMOJI{books}                                {1F4DA}
-    \EMOJI{boom}                                 {1F4A5}
-    \EMOJI{boot}                                 {1F462}
-    \EMOJI{bosnia-herzegovina}                   {1F1E7 1F1E6}
-    \EMOJI{botswana}                             {1F1E7 1F1FC}
-    \EMOJI{bouquet}                              {1F490}
-    \EMOJI{bow-and-arrow}                        {1F3F9}
-    \EMOJI{bow}                                  {1F647}
-    \EMOJI{bowing-man}                           {1F647}
-    \EMOJI{bowing-woman}                         {1F647 200D 2640}
-    \EMOJI{bowling}                              {1F3B3}
-    \EMOJI{boxing-glove}                         {1F94A}
-    \EMOJI{boy}                                  {1F466}
-    \EMOJI{brazil}                               {1F1E7 1F1F7}
-    \EMOJI{bread}                                {1F35E}
-    \EMOJI{bride-with-veil}                      {1F470}
-    \EMOJI{bridge-at-night}                      {1F309}
-    \EMOJI{briefcase}                            {1F4BC}
-    \EMOJI{british-indian-ocean-territory}       {1F1EE 1F1F4}
-    \EMOJI{british-virgin-islands}               {1F1FB 1F1EC}
-    \EMOJI{broken-heart}                         {1F494}
-    \EMOJI{brunei}                               {1F1E7 1F1F3}
-    \EMOJI{bug}                                  {1F41B}
-    \EMOJI{building-construction}                {1F3D7}
-    \EMOJI{bulb}                                 {1F4A1}
-    \EMOJI{bulgaria}                             {1F1E7 1F1EC}
-    \EMOJI{bullettrain-front}                    {1F685}
-    \EMOJI{bullettrain-side}                     {1F684}
-    \EMOJI{burkina-faso}                         {1F1E7 1F1EB}
-    \EMOJI{burrito}                              {1F32F}
-    \EMOJI{burundi}                              {1F1E7 1F1EE}
-    \EMOJI{bus}                                  {1F68C}
-    \EMOJI{business-suit-levitating}             {1F574}
-    \EMOJI{busstop}                              {1F68F}
-    \EMOJI{bust-in-silhouette}                   {1F464}
-    \EMOJI{busts-in-silhouette}                  {1F465}
-    \EMOJI{butterfly}                            {1F98B}
-    \EMOJI{cactus}                               {1F335}
-    \EMOJI{cake}                                 {1F370}
-    \EMOJI{calendar}                             {1F4C6}
-    \EMOJI{call-me-hand}                         {1F919}
-    \EMOJI{calling}                              {1F4F2}
-    \EMOJI{cambodia}                             {1F1F0 1F1ED}
-    \EMOJI{camel}                                {1F42B}
-    \EMOJI{camera-flash}                         {1F4F8}
-    \EMOJI{camera}                               {1F4F7}
-    \EMOJI{cameroon}                             {1F1E8 1F1F2}
-    \EMOJI{camping}                              {1F3D5}
-    \EMOJI{canada}                               {1F1E8 1F1E6}
-    \EMOJI{canary-islands}                       {1F1EE 1F1E8}
-    \EMOJI{cancer}                               {264B}
-    \EMOJI{candle}                               {1F56F}
-    \EMOJI{candy}                                {1F36C}
-    \EMOJI{canoe}                                {1F6F6}
-    \EMOJI{cape-verde}                           {1F1E8 1F1FB}
-    \EMOJI{capital-abcd}                         {1F520}
-    \EMOJI{capricorn}                            {2651}
-    \EMOJI{car}                                  {1F697}
-    \EMOJI{card-file-box}                        {1F5C3}
-    \EMOJI{card-index-dividers}                  {1F5C2}
-    \EMOJI{card-index}                           {1F4C7}
-    \EMOJI{caribbean-netherlands}                {1F1E7 1F1F6}
-    \EMOJI{carousel-horse}                       {1F3A0}
-    \EMOJI{carrot}                               {1F955}
-    \EMOJI{cat}                                  {1F431}
-    \EMOJI{cat2}                                 {1F408}
-    \EMOJI{cayman-islands}                       {1F1F0 1F1FE}
-    \EMOJI{cd}                                   {1F4BF}
-    \EMOJI{central-african-republic}             {1F1E8 1F1EB}
-    \EMOJI{chad}                                 {1F1F9 1F1E9}
-    \EMOJI{chains}                               {26D3}
-    \EMOJI{champagne}                            {1F37E}
-    \EMOJI{chart-with-downwards-trend}           {1F4C9}
-    \EMOJI{chart-with-upwards-trend}             {1F4C8}
-    \EMOJI{chart}                                {1F4B9}
-    \EMOJI{checkered-flag}                       {1F3C1}
-    \EMOJI{cheese}                               {1F9C0}
-    \EMOJI{cherries}                             {1F352}
-    \EMOJI{cherry-blossom}                       {1F338}
-    \EMOJI{chestnut}                             {1F330}
-    \EMOJI{chicken}                              {1F414}
-    \EMOJI{children-crossing}                    {1F6B8}
-    \EMOJI{chile}                                {1F1E8 1F1F1}
-    \EMOJI{chipmunk}                             {1F43F}
-    \EMOJI{chocolate-bar}                        {1F36B}
-    \EMOJI{christmas-island}                     {1F1E8 1F1FD}
-    \EMOJI{christmas-tree}                       {1F384}
-    \EMOJI{church}                               {26EA}
-    \EMOJI{cinema}                               {1F3A6}
-    \EMOJI{circus-tent}                          {1F3AA}
-    \EMOJI{city-sunrise}                         {1F307}
-    \EMOJI{city-sunset}                          {1F306}
-    \EMOJI{cityscape}                            {1F3D9}
-    \EMOJI{cl}                                   {1F191}
-    \EMOJI{clamp}                                {1F5DC}
-    \EMOJI{clap}                                 {1F44F}
-    \EMOJI{clapper}                              {1F3AC}
-    \EMOJI{classical-building}                   {1F3DB}
-    \EMOJI{clinking-glasses}                     {1F942}
-    \EMOJI{clipboard}                            {1F4CB}
-    \EMOJI{clock1}                               {1F550}
-    \EMOJI{clock10}                              {1F559}
-    \EMOJI{clock1030}                            {1F565}
-    \EMOJI{clock11}                              {1F55A}
-    \EMOJI{clock1130}                            {1F566}
-    \EMOJI{clock12}                              {1F55B}
-    \EMOJI{clock1230}                            {1F567}
-    \EMOJI{clock130}                             {1F55C}
-    \EMOJI{clock2}                               {1F551}
-    \EMOJI{clock230}                             {1F55D}
-    \EMOJI{clock3}                               {1F552}
-    \EMOJI{clock330}                             {1F55E}
-    \EMOJI{clock4}                               {1F553}
-    \EMOJI{clock430}                             {1F55F}
-    \EMOJI{clock5}                               {1F554}
-    \EMOJI{clock530}                             {1F560}
-    \EMOJI{clock6}                               {1F555}
-    \EMOJI{clock630}                             {1F561}
-    \EMOJI{clock7}                               {1F556}
-    \EMOJI{clock730}                             {1F562}
-    \EMOJI{clock8}                               {1F557}
-    \EMOJI{clock830}                             {1F563}
-    \EMOJI{clock9}                               {1F558}
-    \EMOJI{clock930}                             {1F564}
-    \EMOJI{closed-book}                          {1F4D5}
-    \EMOJI{closed-lock-with-key}                 {1F510}
-    \EMOJI{closed-umbrella}                      {1F302}
-    \EMOJI{cloud-with-lightning-and-rain}        {26C8}
-    \EMOJI{cloud-with-lightning}                 {1F329}
-    \EMOJI{cloud-with-rain}                      {1F327}
-    \EMOJI{cloud-with-snow}                      {1F328}
-    \EMOJI{cloud}                                {2601}
-    \EMOJI{clown-face}                           {1F921}
-    \EMOJI{clubs}                                {2663}
-    \EMOJI{cn}                                   {1F1E8 1F1F3}
-    \EMOJI{cocktail}                             {1F378}
-    \EMOJI{cocos-islands}                        {1F1E8 1F1E8}
-    \EMOJI{coffee}                               {2615}
-    \EMOJI{coffin}                               {26B0}
-    \EMOJI{cold-sweat}                           {1F630}
-    \EMOJI{collision}                            {1F4A5}
-    \EMOJI{colombia}                             {1F1E8 1F1F4}
-    \EMOJI{comet}                                {2604}
-    \EMOJI{comoros}                              {1F1F0 1F1F2}
-    \EMOJI{computer-mouse}                       {1F5B1}
-    \EMOJI{computer}                             {1F4BB}
-    \EMOJI{confetti-ball}                        {1F38A}
-    \EMOJI{confounded}                           {1F616}
-    \EMOJI{confused}                             {1F615}
-    \EMOJI{congo-brazzaville}                    {1F1E8 1F1EC}
-    \EMOJI{congo-kinshasa}                       {1F1E8 1F1E9}
-    \EMOJI{congratulations}                      {3297}
-    \EMOJI{construction-worker-man}              {1F477}
-    \EMOJI{construction-worker-woman}            {1F477 200D 2640}
-    \EMOJI{construction-worker}                  {1F477}
-    \EMOJI{construction}                         {1F6A7}
-    \EMOJI{control-knobs}                        {1F39B}
-    \EMOJI{convenience-store}                    {1F3EA}
-    \EMOJI{cook-islands}                         {1F1E8 1F1F0}
-    \EMOJI{cookie}                               {1F36A}
-    \EMOJI{cool}                                 {1F192}
-    \EMOJI{cop}                                  {1F46E}
-    \EMOJI{copyright}                            {0A9}
-    \EMOJI{corn}                                 {1F33D}
-    \EMOJI{costa-rica}                           {1F1E8 1F1F7}
-    \EMOJI{cote-divoire}                         {1F1E8 1F1EE}
-    \EMOJI{couch-and-lamp}                       {1F6CB}
-    \EMOJI{couple-with-heart-man-man}            {1F468 200D 2764 200D 1F468}
-    \EMOJI{couple-with-heart-woman-man}          {1F491}
-    \EMOJI{couple-with-heart-woman-woman}        {1F469 200D 2764 200D 1F469}
-    \EMOJI{couple-with-heart}                    {1F491}
-    \EMOJI{couple}                               {1F46B}
-    \EMOJI{couplekiss-man-man}                   {1F468 200D 2764 200D 1F48B 200D 1F468}
-    \EMOJI{couplekiss-man-woman}                 {1F48F}
-    \EMOJI{couplekiss-woman-woman}               {1F469 200D 2764 200D 1F48B 200D 1F469}
-    \EMOJI{cow}                                  {1F42E}
-    \EMOJI{cow2}                                 {1F404}
-    \EMOJI{cowboy-hat-face}                      {1F920}
-    \EMOJI{crab}                                 {1F980}
-    \EMOJI{crayon}                               {1F58D}
-    \EMOJI{credit-card}                          {1F4B3}
-    \EMOJI{crescent-moon}                        {1F319}
-    \EMOJI{cricket}                              {1F3CF}
-    \EMOJI{croatia}                              {1F1ED 1F1F7}
-    \EMOJI{crocodile}                            {1F40A}
-    \EMOJI{croissant}                            {1F950}
-    \EMOJI{crossed-fingers}                      {1F91E}
-    \EMOJI{crossed-flags}                        {1F38C}
-    \EMOJI{crossed-swords}                       {2694}
-    \EMOJI{crown}                                {1F451}
-    \EMOJI{cry}                                  {1F622}
-    \EMOJI{crying-cat-face}                      {1F63F}
-    \EMOJI{crystal-ball}                         {1F52E}
-    \EMOJI{cuba}                                 {1F1E8 1F1FA}
-    \EMOJI{cucumber}                             {1F952}
-    \EMOJI{cupid}                                {1F498}
-    \EMOJI{curacao}                              {1F1E8 1F1FC}
-    \EMOJI{curly-loop}                           {27B0}
-    \EMOJI{currency-exchange}                    {1F4B1}
-    \EMOJI{curry}                                {1F35B}
-    \EMOJI{custard}                              {1F36E}
-    \EMOJI{customs}                              {1F6C3}
-    \EMOJI{cyclone}                              {1F300}
-    \EMOJI{cyprus}                               {1F1E8 1F1FE}
-    \EMOJI{czech-republic}                       {1F1E8 1F1FF}
-    \EMOJI{dagger}                               {1F5E1}
-    \EMOJI{dancer}                               {1F483}
-    \EMOJI{dancers}                              {1F46F}
-    \EMOJI{dancing-men}                          {1F46F 200D 2642}
-    \EMOJI{dancing-women}                        {1F46F}
-    \EMOJI{dango}                                {1F361}
-    \EMOJI{dark-sunglasses}                      {1F576}
-    \EMOJI{dart}                                 {1F3AF}
-    \EMOJI{dash}                                 {1F4A8}
-    \EMOJI{date}                                 {1F4C5}
-    \EMOJI{de}                                   {1F1E9 1F1EA}
-    \EMOJI{deciduous-tree}                       {1F333}
-    \EMOJI{deer}                                 {1F98C}
-    \EMOJI{denmark}                              {1F1E9 1F1F0}
-    \EMOJI{department-store}                     {1F3EC}
-    \EMOJI{derelict-house}                       {1F3DA}
-    \EMOJI{desert-island}                        {1F3DD}
-    \EMOJI{desert}                               {1F3DC}
-    \EMOJI{desktop-computer}                     {1F5A5}
-    \EMOJI{detective}                            {1F575}
-    \EMOJI{diamond-shape-with-a-dot-inside}      {1F4A0}
-    \EMOJI{diamonds}                             {2666}
-    \EMOJI{disappointed-relieved}                {1F625}
-    \EMOJI{disappointed}                         {1F61E}
-    \EMOJI{dizzy-face}                           {1F635}
-    \EMOJI{dizzy}                                {1F4AB}
-    \EMOJI{djibouti}                             {1F1E9 1F1EF}
-    \EMOJI{do-not-litter}                        {1F6AF}
-    \EMOJI{dog}                                  {1F436}
-    \EMOJI{dog2}                                 {1F415}
-    \EMOJI{dollar}                               {1F4B5}
-    \EMOJI{dolls}                                {1F38E}
-    \EMOJI{dolphin}                              {1F42C}
-    \EMOJI{dominica}                             {1F1E9 1F1F2}
-    \EMOJI{dominican-republic}                   {1F1E9 1F1F4}
-    \EMOJI{door}                                 {1F6AA}
-    \EMOJI{doughnut}                             {1F369}
-    \EMOJI{dove}                                 {1F54A}
-    \EMOJI{dragon-face}                          {1F432}
-    \EMOJI{dragon}                               {1F409}
-    \EMOJI{dress}                                {1F457}
-    \EMOJI{dromedary-camel}                      {1F42A}
-    \EMOJI{drooling-face}                        {1F924}
-    \EMOJI{droplet}                              {1F4A7}
-    \EMOJI{drum}                                 {1F941}
-    \EMOJI{duck}                                 {1F986}
-    \EMOJI{dvd}                                  {1F4C0}
-    \EMOJI{e-mail}                               {1F4E7}
-    \EMOJI{eagle}                                {1F985}
-    \EMOJI{ear-of-rice}                          {1F33E}
-    \EMOJI{ear}                                  {1F442}
-    \EMOJI{earth-africa}                         {1F30D}
-    \EMOJI{earth-americas}                       {1F30E}
-    \EMOJI{earth-asia}                           {1F30F}
-    \EMOJI{ecuador}                              {1F1EA 1F1E8}
-    \EMOJI{egg}                                  {1F95A}
-    \EMOJI{eggplant}                             {1F346}
-    \EMOJI{egypt}                                {1F1EA 1F1EC}
-    \EMOJI{eight-pointed-black-star}             {2734}
-    \EMOJI{eight-spoked-asterisk}                {2733}
-    \EMOJI{el-salvador}                          {1F1F8 1F1FB}
-    \EMOJI{electric-plug}                        {1F50C}
-    \EMOJI{elephant}                             {1F418}
-    \EMOJI{email}                                {2709}
-    \EMOJI{end}                                  {1F51A}
-    \EMOJI{envelope-with-arrow}                  {1F4E9}
-    \EMOJI{envelope}                             {2709}
-    \EMOJI{equatorial-guinea}                    {1F1EC 1F1F6}
-    \EMOJI{eritrea}                              {1F1EA 1F1F7}
-    \EMOJI{es}                                   {1F1EA 1F1F8}
-    \EMOJI{estonia}                              {1F1EA 1F1EA}
-    \EMOJI{ethiopia}                             {1F1EA 1F1F9}
-    \EMOJI{eu}                                   {1F1EA 1F1FA}
-    \EMOJI{euro}                                 {1F4B6}
-    \EMOJI{european-castle}                      {1F3F0}
-    \EMOJI{european-post-office}                 {1F3E4}
-    \EMOJI{european-union}                       {1F1EA 1F1FA}
-    \EMOJI{evergreen-tree}                       {1F332}
-    \EMOJI{exclamation}                          {2757}
-    \EMOJI{expressionless}                       {1F611}
-    \EMOJI{eye-speech-bubble}                    {1F441 200D 1F5E8}
-    \EMOJI{eye}                                  {1F441}
-    \EMOJI{eyeglasses}                           {1F453}
-    \EMOJI{eyes}                                 {1F440}
-    \EMOJI{face-with-head-bandage}               {1F915}
-    \EMOJI{face-with-thermometer}                {1F912}
-    \EMOJI{facepunch}                            {1F44A}
-    \EMOJI{factory}                              {1F3ED}
-    \EMOJI{falkland-islands}                     {1F1EB 1F1F0}
-    \EMOJI{fallen-leaf}                          {1F342}
-    \EMOJI{family-man-boy-boy}                   {1F468 200D 1F466 200D 1F466}
-    \EMOJI{family-man-boy}                       {1F468 200D 1F466}
-    \EMOJI{family-man-girl-boy}                  {1F468 200D 1F467 200D 1F466}
-    \EMOJI{family-man-girl-girl}                 {1F468 200D 1F467 200D 1F467}
-    \EMOJI{family-man-girl}                      {1F468 200D 1F467}
-    \EMOJI{family-man-man-boy-boy}               {1F468 200D 1F468 200D 1F466 200D 1F466}
-    \EMOJI{family-man-man-boy}                   {1F468 200D 1F468 200D 1F466}
-    \EMOJI{family-man-man-girl-boy}              {1F468 200D 1F468 200D 1F467 200D 1F466}
-    \EMOJI{family-man-man-girl-girl}             {1F468 200D 1F468 200D 1F467 200D 1F467}
-    \EMOJI{family-man-man-girl}                  {1F468 200D 1F468 200D 1F467}
-    \EMOJI{family-man-woman-boy-boy}             {1F468 200D 1F469 200D 1F466 200D 1F466}
-    \EMOJI{family-man-woman-boy}                 {1F46A}
-    \EMOJI{family-man-woman-girl-boy}            {1F468 200D 1F469 200D 1F467 200D 1F466}
-    \EMOJI{family-man-woman-girl-girl}           {1F468 200D 1F469 200D 1F467 200D 1F467}
-    \EMOJI{family-man-woman-girl}                {1F468 200D 1F469 200D 1F467}
-    \EMOJI{family-woman-boy-boy}                 {1F469 200D 1F466 200D 1F466}
-    \EMOJI{family-woman-boy}                     {1F469 200D 1F466}
-    \EMOJI{family-woman-girl-boy}                {1F469 200D 1F467 200D 1F466}
-    \EMOJI{family-woman-girl-girl}               {1F469 200D 1F467 200D 1F467}
-    \EMOJI{family-woman-girl}                    {1F469 200D 1F467}
-    \EMOJI{family-woman-woman-boy-boy}           {1F469 200D 1F469 200D 1F466 200D 1F466}
-    \EMOJI{family-woman-woman-boy}               {1F469 200D 1F469 200D 1F466}
-    \EMOJI{family-woman-woman-girl-boy}          {1F469 200D 1F469 200D 1F467 200D 1F466}
-    \EMOJI{family-woman-woman-girl-girl}         {1F469 200D 1F469 200D 1F467 200D 1F467}
-    \EMOJI{family-woman-woman-girl}              {1F469 200D 1F469 200D 1F467}
-    \EMOJI{family}                               {1F46A}
-    \EMOJI{faroe-islands}                        {1F1EB 1F1F4}
-    \EMOJI{fast-forward}                         {23E9}
-    \EMOJI{fax}                                  {1F4E0}
-    \EMOJI{fearful}                              {1F628}
-    \EMOJI{feet}                                 {1F43E}
-    \EMOJI{female-detective}                     {1F575 200D 2640}
-    \EMOJI{ferris-wheel}                         {1F3A1}
-    \EMOJI{ferry}                                {26F4}
-    \EMOJI{field-hockey}                         {1F3D1}
-    \EMOJI{fiji}                                 {1F1EB 1F1EF}
-    \EMOJI{file-cabinet}                         {1F5C4}
-    \EMOJI{file-folder}                          {1F4C1}
-    \EMOJI{film-projector}                       {1F4FD}
-    \EMOJI{film-strip}                           {1F39E}
-    \EMOJI{finland}                              {1F1EB 1F1EE}
-    \EMOJI{fire-engine}                          {1F692}
-    \EMOJI{fire}                                 {1F525}
-    \EMOJI{fireworks}                            {1F386}
-    \EMOJI{first-quarter-moon-with-face}         {1F31B}
-    \EMOJI{first-quarter-moon}                   {1F313}
-    \EMOJI{fish-cake}                            {1F365}
-    \EMOJI{fish}                                 {1F41F}
-    \EMOJI{fishing-pole-and-fish}                {1F3A3}
-    \EMOJI{fist-left}                            {1F91B}
-    \EMOJI{fist-oncoming}                        {1F44A}
-    \EMOJI{fist-raised}                          {270A}
-    \EMOJI{fist-right}                           {1F91C}
-    \EMOJI{fist}                                 {270A}
-    \EMOJI{flags}                                {1F38F}
-    \EMOJI{flashlight}                           {1F526}
-    \EMOJI{fleur-de-lis}                         {269C}
-    \EMOJI{flight-arrival}                       {1F6EC}
-    \EMOJI{flight-departure}                     {1F6EB}
-    \EMOJI{flipper}                              {1F42C}
-    \EMOJI{floppy-disk}                          {1F4BE}
-    \EMOJI{flower-playing-cards}                 {1F3B4}
-    \EMOJI{flushed}                              {1F633}
-    \EMOJI{fog}                                  {1F32B}
-    \EMOJI{foggy}                                {1F301}
-    \EMOJI{football}                             {1F3C8}
-    \EMOJI{footprints}                           {1F463}
-    \EMOJI{fork-and-knife}                       {1F374}
-    \EMOJI{fountain-pen}                         {1F58B}
-    \EMOJI{fountain}                             {26F2}
-    \EMOJI{four-leaf-clover}                     {1F340}
-    \EMOJI{fox-face}                             {1F98A}
-    \EMOJI{fr}                                   {1F1EB 1F1F7}
-    \EMOJI{framed-picture}                       {1F5BC}
-    \EMOJI{free}                                 {1F193}
-    \EMOJI{french-guiana}                        {1F1EC 1F1EB}
-    \EMOJI{french-polynesia}                     {1F1F5 1F1EB}
-    \EMOJI{french-southern-territories}          {1F1F9 1F1EB}
-    \EMOJI{fried-egg}                            {1F373}
-    \EMOJI{fried-shrimp}                         {1F364}
-    \EMOJI{fries}                                {1F35F}
-    \EMOJI{frog}                                 {1F438}
-    \EMOJI{frowning-face}                        {2639}
-    \EMOJI{frowning-man}                         {1F64D 200D 2642}
-    \EMOJI{frowning-woman}                       {1F64D}
-    \EMOJI{frowning}                             {1F626}
-    \EMOJI{fu}                                   {1F595}
-    \EMOJI{fuelpump}                             {26FD}
-    \EMOJI{full-moon-with-face}                  {1F31D}
-    \EMOJI{full-moon}                            {1F315}
-    \EMOJI{funeral-urn}                          {26B1}
-    \EMOJI{gabon}                                {1F1EC 1F1E6}
-    \EMOJI{gambia}                               {1F1EC 1F1F2}
-    \EMOJI{game-die}                             {1F3B2}
-    \EMOJI{gb}                                   {1F1EC 1F1E7}
-    \EMOJI{gear}                                 {2699}
-    \EMOJI{gem}                                  {1F48E}
-    \EMOJI{gemini}                               {264A}
-    \EMOJI{georgia}                              {1F1EC 1F1EA}
-    \EMOJI{ghana}                                {1F1EC 1F1ED}
-    \EMOJI{ghost}                                {1F47B}
-    \EMOJI{gibraltar}                            {1F1EC 1F1EE}
-    \EMOJI{gift-heart}                           {1F49D}
-    \EMOJI{gift}                                 {1F381}
-    \EMOJI{girl}                                 {1F467}
-    \EMOJI{globe-with-meridians}                 {1F310}
-    \EMOJI{goal-net}                             {1F945}
-    \EMOJI{goat}                                 {1F410}
-    \EMOJI{golf}                                 {26F3}
-    \EMOJI{golfing-man}                          {1F3CC}
-    \EMOJI{golfing-woman}                        {1F3CC 200D 2640}
-    \EMOJI{gorilla}                              {1F98D}
-    \EMOJI{grapes}                               {1F347}
-    \EMOJI{greece}                               {1F1EC 1F1F7}
-    \EMOJI{green-apple}                          {1F34F}
-    \EMOJI{green-book}                           {1F4D7}
-    \EMOJI{green-heart}                          {1F49A}
-    \EMOJI{green-salad}                          {1F957}
-    \EMOJI{greenland}                            {1F1EC 1F1F1}
-    \EMOJI{grenada}                              {1F1EC 1F1E9}
-    \EMOJI{grey-exclamation}                     {2755}
-    \EMOJI{grey-question}                        {2754}
-    \EMOJI{grimacing}                            {1F62C}
-    \EMOJI{grin}                                 {1F601}
-    \EMOJI{grinning}                             {1F600}
-    \EMOJI{guadeloupe}                           {1F1EC 1F1F5}
-    \EMOJI{guam}                                 {1F1EC 1F1FA}
-    \EMOJI{guardsman}                            {1F482}
-    \EMOJI{guardswoman}                          {1F482 200D 2640}
-    \EMOJI{guatemala}                            {1F1EC 1F1F9}
-    \EMOJI{guernsey}                             {1F1EC 1F1EC}
-    \EMOJI{guinea-bissau}                        {1F1EC 1F1FC}
-    \EMOJI{guinea}                               {1F1EC 1F1F3}
-    \EMOJI{guitar}                               {1F3B8}
-    \EMOJI{gun}                                  {1F52B}
-    \EMOJI{guyana}                               {1F1EC 1F1FE}
-    \EMOJI{haircut-man}                          {1F487 200D 2642}
-    \EMOJI{haircut-woman}                        {1F487}
-    \EMOJI{haircut}                              {1F487}
-    \EMOJI{haiti}                                {1F1ED 1F1F9}
-    \EMOJI{hamburger}                            {1F354}
-    \EMOJI{hammer-and-pick}                      {2692}
-    \EMOJI{hammer-and-wrench}                    {1F6E0}
-    \EMOJI{hammer}                               {1F528}
-    \EMOJI{hamster}                              {1F439}
-    \EMOJI{hand}                                 {270B}
-    \EMOJI{handbag}                              {1F45C}
-    \EMOJI{handshake}                            {1F91D}
-    \EMOJI{hankey}                               {1F4A9}
-    \EMOJI{hatched-chick}                        {1F425}
-    \EMOJI{hatching-chick}                       {1F423}
-    \EMOJI{headphones}                           {1F3A7}
-    \EMOJI{hear-no-evil}                         {1F649}
-    \EMOJI{heart-decoration}                     {1F49F}
-    \EMOJI{heart-eyes-cat}                       {1F63B}
-    \EMOJI{heart-eyes}                           {1F60D}
-    \EMOJI{heart}                                {2764}
-    \EMOJI{heartbeat}                            {1F493}
-    \EMOJI{heartpulse}                           {1F497}
-    \EMOJI{hearts}                               {2665}
-    \EMOJI{heavy-check-mark}                     {2714}
-    \EMOJI{heavy-division-sign}                  {2797}
-    \EMOJI{heavy-dollar-sign}                    {1F4B2}
-    \EMOJI{heavy-exclamation-mark}               {2757}
-    \EMOJI{heavy-heart-exclamation}              {2763}
-    \EMOJI{heavy-minus-sign}                     {2796}
-    \EMOJI{heavy-multiplication-x}               {2716}
-    \EMOJI{heavy-plus-sign}                      {2795}
-    \EMOJI{helicopter}                           {1F681}
-    \EMOJI{herb}                                 {1F33F}
-    \EMOJI{hibiscus}                             {1F33A}
-    \EMOJI{high-brightness}                      {1F506}
-    \EMOJI{high-heel}                            {1F460}
-    \EMOJI{hocho}                                {1F52A}
-    \EMOJI{hole}                                 {1F573}
-    \EMOJI{honduras}                             {1F1ED 1F1F3}
-    \EMOJI{honey-pot}                            {1F36F}
-    \EMOJI{honeybee}                             {1F41D}
-    \EMOJI{hong-kong}                            {1F1ED 1F1F0}
-    \EMOJI{horse-racing}                         {1F3C7}
-    \EMOJI{horse}                                {1F434}
-    \EMOJI{hospital}                             {1F3E5}
-    \EMOJI{hot-pepper}                           {1F336}
-    \EMOJI{hotdog}                               {1F32D}
-    \EMOJI{hotel}                                {1F3E8}
-    \EMOJI{hotsprings}                           {2668}
-    \EMOJI{hourglass-flowing-sand}               {23F3}
-    \EMOJI{hourglass}                            {231B}
-    \EMOJI{house-with-garden}                    {1F3E1}
-    \EMOJI{house}                                {1F3E0}
-    \EMOJI{houses}                               {1F3D8}
-    \EMOJI{hugs}                                 {1F917}
-    \EMOJI{hungary}                              {1F1ED 1F1FA}
-    \EMOJI{hushed}                               {1F62F}
-    \EMOJI{ice-cream}                            {1F368}
-    \EMOJI{ice-hockey}                           {1F3D2}
-    \EMOJI{ice-skate}                            {26F8}
-    \EMOJI{icecream}                             {1F366}
-    \EMOJI{iceland}                              {1F1EE 1F1F8}
-    \EMOJI{id}                                   {1F194}
-    \EMOJI{ideograph-advantage}                  {1F250}
-    \EMOJI{imp}                                  {1F47F}
-    \EMOJI{inbox-tray}                           {1F4E5}
-    \EMOJI{incoming-envelope}                    {1F4E8}
-    \EMOJI{india}                                {1F1EE 1F1F3}
-    \EMOJI{indonesia}                            {1F1EE 1F1E9}
-    \EMOJI{information-desk-person}              {1F481}
-    \EMOJI{information-source}                   {2139}
-    \EMOJI{innocent}                             {1F607}
-    \EMOJI{interrobang}                          {2049}
-    \EMOJI{iphone}                               {1F4F1}
-    \EMOJI{iran}                                 {1F1EE 1F1F7}
-    \EMOJI{iraq}                                 {1F1EE 1F1F6}
-    \EMOJI{ireland}                              {1F1EE 1F1EA}
-    \EMOJI{isle-of-man}                          {1F1EE 1F1F2}
-    \EMOJI{israel}                               {1F1EE 1F1F1}
-    \EMOJI{it}                                   {1F1EE 1F1F9}
-    \EMOJI{izakaya-lantern}                      {1F3EE}
-    \EMOJI{jack-o-lantern}                       {1F383}
-    \EMOJI{jamaica}                              {1F1EF 1F1F2}
-    \EMOJI{japan}                                {1F5FE}
-    \EMOJI{japanese-castle}                      {1F3EF}
-    \EMOJI{japanese-goblin}                      {1F47A}
-    \EMOJI{japanese-ogre}                        {1F479}
-    \EMOJI{jeans}                                {1F456}
-    \EMOJI{jersey}                               {1F1EF 1F1EA}
-    \EMOJI{jordan}                               {1F1EF 1F1F4}
-    \EMOJI{joy-cat}                              {1F639}
-    \EMOJI{joy}                                  {1F602}
-    \EMOJI{joystick}                             {1F579}
-    \EMOJI{jp}                                   {1F1EF 1F1F5}
-    \EMOJI{kaaba}                                {1F54B}
-    \EMOJI{kazakhstan}                           {1F1F0 1F1FF}
-    \EMOJI{kenya}                                {1F1F0 1F1EA}
-    \EMOJI{key}                                  {1F511}
-    \EMOJI{keyboard}                             {2328}
-    \EMOJI{keycap-ten}                           {1F51F}
-    \EMOJI{kick-scooter}                         {1F6F4}
-    \EMOJI{kimono}                               {1F458}
-    \EMOJI{kiribati}                             {1F1F0 1F1EE}
-    \EMOJI{kiss}                                 {1F48B}
-    \EMOJI{kissing-cat}                          {1F63D}
-    \EMOJI{kissing-closed-eyes}                  {1F61A}
-    \EMOJI{kissing-heart}                        {1F618}
-    \EMOJI{kissing-smiling-eyes}                 {1F619}
-    \EMOJI{kissing}                              {1F617}
-    \EMOJI{kiwi-fruit}                           {1F95D}
-    \EMOJI{knife}                                {1F52A}
-    \EMOJI{koala}                                {1F428}
-    \EMOJI{koko}                                 {1F201}
-    \EMOJI{kosovo}                               {1F1FD 1F1F0}
-    \EMOJI{kr}                                   {1F1F0 1F1F7}
-    \EMOJI{kuwait}                               {1F1F0 1F1FC}
-    \EMOJI{kyrgyzstan}                           {1F1F0 1F1EC}
-    \EMOJI{label}                                {1F3F7}
-    \EMOJI{lantern}                              {1F3EE}
-    \EMOJI{laos}                                 {1F1F1 1F1E6}
-    \EMOJI{large-blue-circle}                    {1F535}
-    \EMOJI{large-blue-diamond}                   {1F537}
-    \EMOJI{large-orange-diamond}                 {1F536}
-    \EMOJI{last-quarter-moon-with-face}          {1F31C}
-    \EMOJI{last-quarter-moon}                    {1F317}
-    \EMOJI{latin-cross}                          {271D}
-    \EMOJI{latvia}                               {1F1F1 1F1FB}
-    \EMOJI{laughing}                             {1F606}
-    \EMOJI{leaves}                               {1F343}
-    \EMOJI{lebanon}                              {1F1F1 1F1E7}
-    \EMOJI{ledger}                               {1F4D2}
-    \EMOJI{left-luggage}                         {1F6C5}
-    \EMOJI{left-right-arrow}                     {2194}
-    \EMOJI{leftwards-arrow-with-hook}            {21A9}
-    \EMOJI{lemon}                                {1F34B}
-    \EMOJI{leo}                                  {264C}
-    \EMOJI{leopard}                              {1F406}
-    \EMOJI{lesotho}                              {1F1F1 1F1F8}
-    \EMOJI{level-slider}                         {1F39A}
-    \EMOJI{liberia}                              {1F1F1 1F1F7}
-    \EMOJI{libra}                                {264E}
-    \EMOJI{libya}                                {1F1F1 1F1FE}
-    \EMOJI{liechtenstein}                        {1F1F1 1F1EE}
-    \EMOJI{light-rail}                           {1F688}
-    \EMOJI{link}                                 {1F517}
-    \EMOJI{lion}                                 {1F981}
-    \EMOJI{lips}                                 {1F444}
-    \EMOJI{lipstick}                             {1F484}
-    \EMOJI{lithuania}                            {1F1F1 1F1F9}
-    \EMOJI{lizard}                               {1F98E}
-    \EMOJI{lock-with-ink-pen}                    {1F50F}
-    \EMOJI{lock}                                 {1F512}
-    \EMOJI{lollipop}                             {1F36D}
-    \EMOJI{loop}                                 {27BF}
-    \EMOJI{loud-sound}                           {1F50A}
-    \EMOJI{loudspeaker}                          {1F4E2}
-    \EMOJI{love-hotel}                           {1F3E9}
-    \EMOJI{love-letter}                          {1F48C}
-    \EMOJI{low-brightness}                       {1F505}
-    \EMOJI{luxembourg}                           {1F1F1 1F1FA}
-    \EMOJI{lying-face}                           {1F925}
-    \EMOJI{m}                                    {24C2}
-    \EMOJI{macau}                                {1F1F2 1F1F4}
-    \EMOJI{macedonia}                            {1F1F2 1F1F0}
-    \EMOJI{madagascar}                           {1F1F2 1F1EC}
-    \EMOJI{mag-right}                            {1F50E}
-    \EMOJI{mag}                                  {1F50D}
-    \EMOJI{mahjong}                              {1F004}
-    \EMOJI{mailbox-closed}                       {1F4EA}
-    \EMOJI{mailbox-with-mail}                    {1F4EC}
-    \EMOJI{mailbox-with-no-mail}                 {1F4ED}
-    \EMOJI{mailbox}                              {1F4EB}
-    \EMOJI{malawi}                               {1F1F2 1F1FC}
-    \EMOJI{malaysia}                             {1F1F2 1F1FE}
-    \EMOJI{maldives}                             {1F1F2 1F1FB}
-    \EMOJI{male-detective}                       {1F575}
-    \EMOJI{mali}                                 {1F1F2 1F1F1}
-    \EMOJI{malta}                                {1F1F2 1F1F9}
-    \EMOJI{man-artist}                           {1F468 200D 1F3A8}
-    \EMOJI{man-astronaut}                        {1F468 200D 1F680}
-    \EMOJI{man-cartwheeling}                     {1F938 200D 2642}
-    \EMOJI{man-cook}                             {1F468 200D 1F373}
-    \EMOJI{man-dancing}                          {1F57A}
-    \EMOJI{man-facepalming}                      {1F926 200D 2642}
-    \EMOJI{man-factory-worker}                   {1F468 200D 1F3ED}
-    \EMOJI{man-farmer}                           {1F468 200D 1F33E}
-    \EMOJI{man-firefighter}                      {1F468 200D 1F692}
-    \EMOJI{man-health-worker}                    {1F468 200D 2695}
-    \EMOJI{man-in-tuxedo}                        {1F935}
-    \EMOJI{man-judge}                            {1F468 200D 2696}
-    \EMOJI{man-juggling}                         {1F939 200D 2642}
-    \EMOJI{man-mechanic}                         {1F468 200D 1F527}
-    \EMOJI{man-office-worker}                    {1F468 200D 1F4BC}
-    \EMOJI{man-pilot}                            {1F468 200D 2708}
-    \EMOJI{man-playing-handball}                 {1F93E 200D 2642}
-    \EMOJI{man-playing-water-polo}               {1F93D 200D 2642}
-    \EMOJI{man-scientist}                        {1F468 200D 1F52C}
-    \EMOJI{man-shrugging}                        {1F937 200D 2642}
-    \EMOJI{man-singer}                           {1F468 200D 1F3A4}
-    \EMOJI{man-student}                          {1F468 200D 1F393}
-    \EMOJI{man-teacher}                          {1F468 200D 1F3EB}
-    \EMOJI{man-technologist}                     {1F468 200D 1F4BB}
-    \EMOJI{man-with-gua-pi-mao}                  {1F472}
-    \EMOJI{man-with-turban}                      {1F473}
-    \EMOJI{man}                                  {1F468}
-    \EMOJI{mandarin}                             {1F34A}
-    \EMOJI{mans-shoe}                            {1F45E}
-    \EMOJI{mantelpiece-clock}                    {1F570}
-    \EMOJI{maple-leaf}                           {1F341}
-    \EMOJI{marshall-islands}                     {1F1F2 1F1ED}
-    \EMOJI{martial-arts-uniform}                 {1F94B}
-    \EMOJI{martinique}                           {1F1F2 1F1F6}
-    \EMOJI{mask}                                 {1F637}
-    \EMOJI{massage-man}                          {1F486 200D 2642}
-    \EMOJI{massage-woman}                        {1F486}
-    \EMOJI{massage}                              {1F486}
-    \EMOJI{mauritania}                           {1F1F2 1F1F7}
-    \EMOJI{mauritius}                            {1F1F2 1F1FA}
-    \EMOJI{mayotte}                              {1F1FE 1F1F9}
-    \EMOJI{meat-on-bone}                         {1F356}
-    \EMOJI{medal-military}                       {1F396}
-    \EMOJI{medal-sports}                         {1F3C5}
-    \EMOJI{mega}                                 {1F4E3}
-    \EMOJI{melon}                                {1F348}
-    \EMOJI{memo}                                 {1F4DD}
-    \EMOJI{men-wrestling}                        {1F93C 200D 2642}
-    \EMOJI{menorah}                              {1F54E}
-    \EMOJI{mens}                                 {1F6B9}
-    \EMOJI{metal}                                {1F918}
-    \EMOJI{metro}                                {1F687}
-    \EMOJI{mexico}                               {1F1F2 1F1FD}
-    \EMOJI{micronesia}                           {1F1EB 1F1F2}
-    \EMOJI{microphone}                           {1F3A4}
-    \EMOJI{microscope}                           {1F52C}
-    \EMOJI{middle-finger}                        {1F595}
-    \EMOJI{milk-glass}                           {1F95B}
-    \EMOJI{milky-way}                            {1F30C}
-    \EMOJI{minibus}                              {1F690}
-    \EMOJI{minidisc}                             {1F4BD}
-    \EMOJI{mobile-phone-off}                     {1F4F4}
-    \EMOJI{moldova}                              {1F1F2 1F1E9}
-    \EMOJI{monaco}                               {1F1F2 1F1E8}
-    \EMOJI{money-mouth-face}                     {1F911}
-    \EMOJI{money-with-wings}                     {1F4B8}
-    \EMOJI{moneybag}                             {1F4B0}
-    \EMOJI{mongolia}                             {1F1F2 1F1F3}
-    \EMOJI{monkey-face}                          {1F435}
-    \EMOJI{monkey}                               {1F412}
-    \EMOJI{monorail}                             {1F69D}
-    \EMOJI{montenegro}                           {1F1F2 1F1EA}
-    \EMOJI{montserrat}                           {1F1F2 1F1F8}
-    \EMOJI{moon}                                 {1F314}
-    \EMOJI{morocco}                              {1F1F2 1F1E6}
-    \EMOJI{mortar-board}                         {1F393}
-    \EMOJI{mosque}                               {1F54C}
-    \EMOJI{motor-boat}                           {1F6E5}
-    \EMOJI{motor-scooter}                        {1F6F5}
-    \EMOJI{motorcycle}                           {1F3CD}
-    \EMOJI{motorway}                             {1F6E3}
-    \EMOJI{mount-fuji}                           {1F5FB}
-    \EMOJI{mountain-bicyclist}                   {1F6B5}
-    \EMOJI{mountain-biking-man}                  {1F6B5}
-    \EMOJI{mountain-biking-woman}                {1F6B5 200D 2640}
-    \EMOJI{mountain-cableway}                    {1F6A0}
-    \EMOJI{mountain-railway}                     {1F69E}
-    \EMOJI{mountain-snow}                        {1F3D4}
-    \EMOJI{mountain}                             {26F0}
-    \EMOJI{mouse}                                {1F42D}
-    \EMOJI{mouse2}                               {1F401}
-    \EMOJI{movie-camera}                         {1F3A5}
-    \EMOJI{moyai}                                {1F5FF}
-    \EMOJI{mozambique}                           {1F1F2 1F1FF}
-    \EMOJI{mrs-claus}                            {1F936}
-    \EMOJI{muscle}                               {1F4AA}
-    \EMOJI{mushroom}                             {1F344}
-    \EMOJI{musical-keyboard}                     {1F3B9}
-    \EMOJI{musical-note}                         {1F3B5}
-    \EMOJI{musical-score}                        {1F3BC}
-    \EMOJI{mute}                                 {1F507}
-    \EMOJI{myanmar}                              {1F1F2 1F1F2}
-    \EMOJI{nail-care}                            {1F485}
-    \EMOJI{name-badge}                           {1F4DB}
-    \EMOJI{namibia}                              {1F1F3 1F1E6}
-    \EMOJI{national-park}                        {1F3DE}
-    \EMOJI{nauru}                                {1F1F3 1F1F7}
-    \EMOJI{nauseated-face}                       {1F922}
-    \EMOJI{necktie}                              {1F454}
-    \EMOJI{negative-squared-cross-mark}          {274E}
-    \EMOJI{nepal}                                {1F1F3 1F1F5}
-    \EMOJI{nerd-face}                            {1F913}
-    \EMOJI{netherlands}                          {1F1F3 1F1F1}
-    \EMOJI{neutral-face}                         {1F610}
-    \EMOJI{new-caledonia}                        {1F1F3 1F1E8}
-    \EMOJI{new-moon-with-face}                   {1F31A}
-    \EMOJI{new-moon}                             {1F311}
-    \EMOJI{new-zealand}                          {1F1F3 1F1FF}
-    \EMOJI{new}                                  {1F195}
-    \EMOJI{newspaper-roll}                       {1F5DE}
-    \EMOJI{newspaper}                            {1F4F0}
-    \EMOJI{next-track-button}                    {23ED}
-    \EMOJI{ng-man}                               {1F645 200D 2642}
-    \EMOJI{ng-woman}                             {1F645}
-    \EMOJI{ng}                                   {1F196}
-    \EMOJI{nicaragua}                            {1F1F3 1F1EE}
-    \EMOJI{niger}                                {1F1F3 1F1EA}
-    \EMOJI{nigeria}                              {1F1F3 1F1EC}
-    \EMOJI{night-with-stars}                     {1F303}
-    \EMOJI{niue}                                 {1F1F3 1F1FA}
-    \EMOJI{no-bell}                              {1F515}
-    \EMOJI{no-bicycles}                          {1F6B3}
-    \EMOJI{no-entry-sign}                        {1F6AB}
-    \EMOJI{no-entry}                             {26D4}
-    \EMOJI{no-good-man}                          {1F645 200D 2642}
-    \EMOJI{no-good-woman}                        {1F645}
-    \EMOJI{no-good}                              {1F645}
-    \EMOJI{no-mobile-phones}                     {1F4F5}
-    \EMOJI{no-mouth}                             {1F636}
-    \EMOJI{no-pedestrians}                       {1F6B7}
-    \EMOJI{no-smoking}                           {1F6AD}
-    \EMOJI{non-potable-water}                    {1F6B1}
-    \EMOJI{norfolk-island}                       {1F1F3 1F1EB}
-    \EMOJI{north-korea}                          {1F1F0 1F1F5}
-    \EMOJI{northern-mariana-islands}             {1F1F2 1F1F5}
-    \EMOJI{norway}                               {1F1F3 1F1F4}
-    \EMOJI{nose}                                 {1F443}
-    \EMOJI{notebook-with-decorative-cover}       {1F4D4}
-    \EMOJI{notebook}                             {1F4D3}
-    \EMOJI{notes}                                {1F3B6}
-    \EMOJI{nut-and-bolt}                         {1F529}
-    \EMOJI{o}                                    {2B55}
-    \EMOJI{o2}                                   {1F17E}
-    \EMOJI{ocean}                                {1F30A}
-    \EMOJI{octopus}                              {1F419}
-    \EMOJI{oden}                                 {1F362}
-    \EMOJI{office}                               {1F3E2}
-    \EMOJI{oil-drum}                             {1F6E2}
-    \EMOJI{ok-hand}                              {1F44C}
-    \EMOJI{ok-man}                               {1F646 200D 2642}
-    \EMOJI{ok-woman}                             {1F646}
-    \EMOJI{ok}                                   {1F197}
-    \EMOJI{old-key}                              {1F5DD}
-    \EMOJI{older-man}                            {1F474}
-    \EMOJI{older-woman}                          {1F475}
-    \EMOJI{om}                                   {1F549}
-    \EMOJI{oman}                                 {1F1F4 1F1F2}
-    \EMOJI{on}                                   {1F51B}
-    \EMOJI{oncoming-automobile}                  {1F698}
-    \EMOJI{oncoming-bus}                         {1F68D}
-    \EMOJI{oncoming-police-car}                  {1F694}
-    \EMOJI{oncoming-taxi}                        {1F696}
-    \EMOJI{open-book}                            {1F4D6}
-    \EMOJI{open-file-folder}                     {1F4C2}
-    \EMOJI{open-hands}                           {1F450}
-    \EMOJI{open-mouth}                           {1F62E}
-    \EMOJI{open-umbrella}                        {2602}
-    \EMOJI{ophiuchus}                            {26CE}
-    \EMOJI{orange-book}                          {1F4D9}
-    \EMOJI{orange}                               {1F34A}
-    \EMOJI{orthodox-cross}                       {2626}
-    \EMOJI{outbox-tray}                          {1F4E4}
-    \EMOJI{owl}                                  {1F989}
-    \EMOJI{ox}                                   {1F402}
-    \EMOJI{package}                              {1F4E6}
-    \EMOJI{page-facing-up}                       {1F4C4}
-    \EMOJI{page-with-curl}                       {1F4C3}
-    \EMOJI{pager}                                {1F4DF}
-    \EMOJI{paintbrush}                           {1F58C}
-    \EMOJI{pakistan}                             {1F1F5 1F1F0}
-    \EMOJI{palau}                                {1F1F5 1F1FC}
-    \EMOJI{palestinian-territories}              {1F1F5 1F1F8}
-    \EMOJI{palm-tree}                            {1F334}
-    \EMOJI{panama}                               {1F1F5 1F1E6}
-    \EMOJI{pancakes}                             {1F95E}
-    \EMOJI{panda-face}                           {1F43C}
-    \EMOJI{paperclip}                            {1F4CE}
-    \EMOJI{paperclips}                           {1F587}
-    \EMOJI{papua-new-guinea}                     {1F1F5 1F1EC}
-    \EMOJI{paraguay}                             {1F1F5 1F1FE}
-    \EMOJI{parasol-on-ground}                    {26F1}
-    \EMOJI{parking}                              {1F17F}
-    \EMOJI{part-alternation-mark}                {303D}
-    \EMOJI{partly-sunny}                         {26C5}
-    \EMOJI{passenger-ship}                       {1F6F3}
-    \EMOJI{passport-control}                     {1F6C2}
-    \EMOJI{pause-button}                         {23F8}
-    \EMOJI{paw-prints}                           {1F43E}
-    \EMOJI{peace-symbol}                         {262E}
-    \EMOJI{peach}                                {1F351}
-    \EMOJI{peanuts}                              {1F95C}
-    \EMOJI{pear}                                 {1F350}
-    \EMOJI{pen}                                  {1F58A}
-    \EMOJI{pencil}                               {1F4DD}
-    \EMOJI{pencil2}                              {270F}
-    \EMOJI{penguin}                              {1F427}
-    \EMOJI{pensive}                              {1F614}
-    \EMOJI{performing-arts}                      {1F3AD}
-    \EMOJI{persevere}                            {1F623}
-    \EMOJI{person-fencing}                       {1F93A}
-    \EMOJI{person-frowning}                      {1F64D}
-    \EMOJI{person-with-blond-hair}               {1F471}
-    \EMOJI{person-with-pouting-face}             {1F64E}
-    \EMOJI{peru}                                 {1F1F5 1F1EA}
-    \EMOJI{philippines}                          {1F1F5 1F1ED}
-    \EMOJI{phone}                                {260E}
-    \EMOJI{pick}                                 {26CF}
-    \EMOJI{pig-nose}                             {1F43D}
-    \EMOJI{pig}                                  {1F437}
-    \EMOJI{pig2}                                 {1F416}
-    \EMOJI{pill}                                 {1F48A}
-    \EMOJI{pineapple}                            {1F34D}
-    \EMOJI{ping-pong}                            {1F3D3}
-    \EMOJI{pisces}                               {2653}
-    \EMOJI{pitcairn-islands}                     {1F1F5 1F1F3}
-    \EMOJI{pizza}                                {1F355}
-    \EMOJI{place-of-worship}                     {1F6D0}
-    \EMOJI{plate-with-cutlery}                   {1F37D}
-    \EMOJI{play-or-pause-button}                 {23EF}
-    \EMOJI{point-down}                           {1F447}
-    \EMOJI{point-left}                           {1F448}
-    \EMOJI{point-right}                          {1F449}
-    \EMOJI{point-up-2}                           {1F446}
-    \EMOJI{point-up}                             {261D}
-    \EMOJI{poland}                               {1F1F5 1F1F1}
-    \EMOJI{police-car}                           {1F693}
-    \EMOJI{policeman}                            {1F46E}
-    \EMOJI{policewoman}                          {1F46E 200D 2640}
-    \EMOJI{poodle}                               {1F429}
-    \EMOJI{poop}                                 {1F4A9}
-    \EMOJI{popcorn}                              {1F37F}
-    \EMOJI{portugal}                             {1F1F5 1F1F9}
-    \EMOJI{post-office}                          {1F3E3}
-    \EMOJI{postal-horn}                          {1F4EF}
-    \EMOJI{postbox}                              {1F4EE}
-    \EMOJI{potable-water}                        {1F6B0}
-    \EMOJI{potato}                               {1F954}
-    \EMOJI{pouch}                                {1F45D}
-    \EMOJI{poultry-leg}                          {1F357}
-    \EMOJI{pound}                                {1F4B7}
-    \EMOJI{pout}                                 {1F621}
-    \EMOJI{pouting-cat}                          {1F63E}
-    \EMOJI{pouting-man}                          {1F64E 200D 2642}
-    \EMOJI{pouting-woman}                        {1F64E}
-    \EMOJI{pray}                                 {1F64F}
-    \EMOJI{prayer-beads}                         {1F4FF}
-    \EMOJI{pregnant-woman}                       {1F930}
-    \EMOJI{previous-track-button}                {23EE}
-    \EMOJI{prince}                               {1F934}
-    \EMOJI{princess}                             {1F478}
-    \EMOJI{printer}                              {1F5A8}
-    \EMOJI{puerto-rico}                          {1F1F5 1F1F7}
-    \EMOJI{punch}                                {1F44A}
-    \EMOJI{purple-heart}                         {1F49C}
-    \EMOJI{purse}                                {1F45B}
-    \EMOJI{pushpin}                              {1F4CC}
-    \EMOJI{put-litter-in-its-place}              {1F6AE}
-    \EMOJI{qatar}                                {1F1F6 1F1E6}
-    \EMOJI{question}                             {2753}
-    \EMOJI{rabbit}                               {1F430}
-    \EMOJI{rabbit2}                              {1F407}
-    \EMOJI{racehorse}                            {1F40E}
-    \EMOJI{racing-car}                           {1F3CE}
-    \EMOJI{radio-button}                         {1F518}
-    \EMOJI{radio}                                {1F4FB}
-    \EMOJI{radioactive}                          {2622}
-    \EMOJI{rage}                                 {1F621}
-    \EMOJI{railway-car}                          {1F683}
-    \EMOJI{railway-track}                        {1F6E4}
-    \EMOJI{rainbow-flag}                         {1F3F3 200D 1F308}
-    \EMOJI{rainbow}                              {1F308}
-    \EMOJI{raised-back-of-hand}                  {1F91A}
-    \EMOJI{raised-hand-with-fingers-splayed}     {1F590}
-    \EMOJI{raised-hand}                          {270B}
-    \EMOJI{raised-hands}                         {1F64C}
-    \EMOJI{raising-hand-man}                     {1F64B 200D 2642}
-    \EMOJI{raising-hand-woman}                   {1F64B}
-    \EMOJI{raising-hand}                         {1F64B}
-    \EMOJI{ram}                                  {1F40F}
-    \EMOJI{ramen}                                {1F35C}
-    \EMOJI{rat}                                  {1F400}
-    \EMOJI{record-button}                        {23FA}
-    \EMOJI{recycle}                              {267B}
-    \EMOJI{red-car}                              {1F697}
-    \EMOJI{red-circle}                           {1F534}
-    \EMOJI{registered}                           {0AE}
-    \EMOJI{relaxed}                              {263A}
-    \EMOJI{relieved}                             {1F60C}
-    \EMOJI{reminder-ribbon}                      {1F397}
-    \EMOJI{repeat-one}                           {1F502}
-    \EMOJI{repeat}                               {1F501}
-    \EMOJI{rescue-worker-helmet}                 {26D1}
-    \EMOJI{restroom}                             {1F6BB}
-    \EMOJI{reunion}                              {1F1F7 1F1EA}
-    \EMOJI{revolving-hearts}                     {1F49E}
-    \EMOJI{rewind}                               {23EA}
-    \EMOJI{rhinoceros}                           {1F98F}
-    \EMOJI{ribbon}                               {1F380}
-    \EMOJI{rice-ball}                            {1F359}
-    \EMOJI{rice-cracker}                         {1F358}
-    \EMOJI{rice-scene}                           {1F391}
-    \EMOJI{rice}                                 {1F35A}
-    \EMOJI{right-anger-bubble}                   {1F5EF}
-    \EMOJI{ring}                                 {1F48D}
-    \EMOJI{robot}                                {1F916}
-    \EMOJI{rocket}                               {1F680}
-    \EMOJI{rofl}                                 {1F923}
-    \EMOJI{roll-eyes}                            {1F644}
-    \EMOJI{roller-coaster}                       {1F3A2}
-    \EMOJI{romania}                              {1F1F7 1F1F4}
-    \EMOJI{rooster}                              {1F413}
-    \EMOJI{rose}                                 {1F339}
-    \EMOJI{rosette}                              {1F3F5}
-    \EMOJI{rotating-light}                       {1F6A8}
-    \EMOJI{round-pushpin}                        {1F4CD}
-    \EMOJI{rowboat}                              {1F6A3}
-    \EMOJI{rowing-man}                           {1F6A3}
-    \EMOJI{rowing-woman}                         {1F6A3 200D 2640}
-    \EMOJI{ru}                                   {1F1F7 1F1FA}
-    \EMOJI{rugby-football}                       {1F3C9}
-    \EMOJI{runner}                               {1F3C3}
-    \EMOJI{running-man}                          {1F3C3}
-    \EMOJI{running-shirt-with-sash}              {1F3BD}
-    \EMOJI{running-woman}                        {1F3C3 200D 2640}
-    \EMOJI{running}                              {1F3C3}
-    \EMOJI{rwanda}                               {1F1F7 1F1FC}
-    \EMOJI{sa}                                   {1F202}
-    \EMOJI{sagittarius}                          {2650}
-    \EMOJI{sailboat}                             {26F5}
-    \EMOJI{sake}                                 {1F376}
-    \EMOJI{samoa}                                {1F1FC 1F1F8}
-    \EMOJI{san-marino}                           {1F1F8 1F1F2}
-    \EMOJI{sandal}                               {1F461}
-    \EMOJI{santa}                                {1F385}
-    \EMOJI{sao-tome-principe}                    {1F1F8 1F1F9}
-    \EMOJI{sassy-man}                            {1F481 200D 2642}
-    \EMOJI{sassy-woman}                          {1F481}
-    \EMOJI{satellite}                            {1F4E1}
-    \EMOJI{satisfied}                            {1F606}
-    \EMOJI{saudi-arabia}                         {1F1F8 1F1E6}
-    \EMOJI{saxophone}                            {1F3B7}
-    \EMOJI{school-satchel}                       {1F392}
-    \EMOJI{school}                               {1F3EB}
-    \EMOJI{scissors}                             {2702}
-    \EMOJI{scorpion}                             {1F982}
-    \EMOJI{scorpius}                             {264F}
-    \EMOJI{scream-cat}                           {1F640}
-    \EMOJI{scream}                               {1F631}
-    \EMOJI{scroll}                               {1F4DC}
-    \EMOJI{seat}                                 {1F4BA}
-    \EMOJI{secret}                               {3299}
-    \EMOJI{see-no-evil}                          {1F648}
-    \EMOJI{seedling}                             {1F331}
-    \EMOJI{selfie}                               {1F933}
-    \EMOJI{senegal}                              {1F1F8 1F1F3}
-    \EMOJI{serbia}                               {1F1F7 1F1F8}
-    \EMOJI{seychelles}                           {1F1F8 1F1E8}
-    \EMOJI{shallow-pan-of-food}                  {1F958}
-    \EMOJI{shamrock}                             {2618}
-    \EMOJI{shark}                                {1F988}
-    \EMOJI{shaved-ice}                           {1F367}
-    \EMOJI{sheep}                                {1F411}
-    \EMOJI{shell}                                {1F41A}
-    \EMOJI{shield}                               {1F6E1}
-    \EMOJI{shinto-shrine}                        {26E9}
-    \EMOJI{ship}                                 {1F6A2}
-    \EMOJI{shirt}                                {1F455}
-    \EMOJI{shit}                                 {1F4A9}
-    \EMOJI{shoe}                                 {1F45E}
-    \EMOJI{shopping-cart}                        {1F6D2}
-    \EMOJI{shopping}                             {1F6CD}
-    \EMOJI{shower}                               {1F6BF}
-    \EMOJI{shrimp}                               {1F990}
-    \EMOJI{sierra-leone}                         {1F1F8 1F1F1}
-    \EMOJI{signal-strength}                      {1F4F6}
-    \EMOJI{singapore}                            {1F1F8 1F1EC}
-    \EMOJI{sint-maarten}                         {1F1F8 1F1FD}
-    \EMOJI{six-pointed-star}                     {1F52F}
-    \EMOJI{ski}                                  {1F3BF}
-    \EMOJI{skier}                                {26F7}
-    \EMOJI{skull-and-crossbones}                 {2620}
-    \EMOJI{skull}                                {1F480}
-    \EMOJI{sleeping-bed}                         {1F6CC}
-    \EMOJI{sleeping}                             {1F634}
-    \EMOJI{sleepy}                               {1F62A}
-    \EMOJI{slightly-frowning-face}               {1F641}
-    \EMOJI{slightly-smiling-face}                {1F642}
-    \EMOJI{slot-machine}                         {1F3B0}
-    \EMOJI{slovakia}                             {1F1F8 1F1F0}
-    \EMOJI{slovenia}                             {1F1F8 1F1EE}
-    \EMOJI{small-airplane}                       {1F6E9}
-    \EMOJI{small-blue-diamond}                   {1F539}
-    \EMOJI{small-orange-diamond}                 {1F538}
-    \EMOJI{small-red-triangle-down}              {1F53B}
-    \EMOJI{small-red-triangle}                   {1F53A}
-    \EMOJI{smile-cat}                            {1F638}
-    \EMOJI{smile}                                {1F604}
-    \EMOJI{smiley-cat}                           {1F63A}
-    \EMOJI{smiley}                               {1F603}
-    \EMOJI{smiling-imp}                          {1F608}
-    \EMOJI{smirk-cat}                            {1F63C}
-    \EMOJI{smirk}                                {1F60F}
-    \EMOJI{smoking}                              {1F6AC}
-    \EMOJI{snail}                                {1F40C}
-    \EMOJI{snake}                                {1F40D}
-    \EMOJI{sneezing-face}                        {1F927}
-    \EMOJI{snowboarder}                          {1F3C2}
-    \EMOJI{snowflake}                            {2744}
-    \EMOJI{snowman-with-snow}                    {2603}
-    \EMOJI{snowman}                              {26C4}
-    \EMOJI{sob}                                  {1F62D}
-    \EMOJI{soccer}                               {26BD}
-    \EMOJI{solomon-islands}                      {1F1F8 1F1E7}
-    \EMOJI{somalia}                              {1F1F8 1F1F4}
-    \EMOJI{soon}                                 {1F51C}
-    \EMOJI{sos}                                  {1F198}
-    \EMOJI{sound}                                {1F509}
-    \EMOJI{south-africa}                         {1F1FF 1F1E6}
-    \EMOJI{south-georgia-south-sandwich-islands} {1F1EC 1F1F8}
-    \EMOJI{south-sudan}                          {1F1F8 1F1F8}
-    \EMOJI{space-invader}                        {1F47E}
-    \EMOJI{spades}                               {2660}
-    \EMOJI{spaghetti}                            {1F35D}
-    \EMOJI{sparkle}                              {2747}
-    \EMOJI{sparkler}                             {1F387}
-    \EMOJI{sparkles}                             {2728}
-    \EMOJI{sparkling-heart}                      {1F496}
-    \EMOJI{speak-no-evil}                        {1F64A}
-    \EMOJI{speaker}                              {1F508}
-    \EMOJI{speaking-head}                        {1F5E3}
-    \EMOJI{speech-balloon}                       {1F4AC}
-    \EMOJI{speedboat}                            {1F6A4}
-    \EMOJI{spider-web}                           {1F578}
-    \EMOJI{spider}                               {1F577}
-    \EMOJI{spiral-calendar}                      {1F5D3}
-    \EMOJI{spiral-notepad}                       {1F5D2}
-    \EMOJI{spoon}                                {1F944}
-    \EMOJI{squid}                                {1F991}
-    \EMOJI{sri-lanka}                            {1F1F1 1F1F0}
-    \EMOJI{st-barthelemy}                        {1F1E7 1F1F1}
-    \EMOJI{st-helena}                            {1F1F8 1F1ED}
-    \EMOJI{st-kitts-nevis}                       {1F1F0 1F1F3}
-    \EMOJI{st-lucia}                             {1F1F1 1F1E8}
-    \EMOJI{st-pierre-miquelon}                   {1F1F5 1F1F2}
-    \EMOJI{st-vincent-grenadines}                {1F1FB 1F1E8}
-    \EMOJI{stadium}                              {1F3DF}
-    \EMOJI{star-and-crescent}                    {262A}
-    \EMOJI{star-of-david}                        {2721}
-    \EMOJI{star}                                 {2B50}
-    \EMOJI{star2}                                {1F31F}
-    \EMOJI{stars}                                {1F320}
-    \EMOJI{station}                              {1F689}
-    \EMOJI{statue-of-liberty}                    {1F5FD}
-    \EMOJI{steam-locomotive}                     {1F682}
-    \EMOJI{stew}                                 {1F372}
-    \EMOJI{stop-button}                          {23F9}
-    \EMOJI{stop-sign}                            {1F6D1}
-    \EMOJI{stopwatch}                            {23F1}
-    \EMOJI{straight-ruler}                       {1F4CF}
-    \EMOJI{strawberry}                           {1F353}
-    \EMOJI{stuck-out-tongue-closed-eyes}         {1F61D}
-    \EMOJI{stuck-out-tongue-winking-eye}         {1F61C}
-    \EMOJI{stuck-out-tongue}                     {1F61B}
-    \EMOJI{studio-microphone}                    {1F399}
-    \EMOJI{stuffed-flatbread}                    {1F959}
-    \EMOJI{sudan}                                {1F1F8 1F1E9}
-    \EMOJI{sun-behind-large-cloud}               {1F325}
-    \EMOJI{sun-behind-rain-cloud}                {1F326}
-    \EMOJI{sun-behind-small-cloud}               {1F324}
-    \EMOJI{sun-with-face}                        {1F31E}
-    \EMOJI{sunflower}                            {1F33B}
-    \EMOJI{sunglasses}                           {1F60E}
-    \EMOJI{sunny}                                {2600}
-    \EMOJI{sunrise-over-mountains}               {1F304}
-    \EMOJI{sunrise}                              {1F305}
-    \EMOJI{surfer}                               {1F3C4}
-    \EMOJI{surfing-man}                          {1F3C4}
-    \EMOJI{surfing-woman}                        {1F3C4 200D 2640}
-    \EMOJI{suriname}                             {1F1F8 1F1F7}
-    \EMOJI{sushi}                                {1F363}
-    \EMOJI{suspension-railway}                   {1F69F}
-    \EMOJI{swaziland}                            {1F1F8 1F1FF}
-    \EMOJI{sweat-drops}                          {1F4A6}
-    \EMOJI{sweat-smile}                          {1F605}
-    \EMOJI{sweat}                                {1F613}
-    \EMOJI{sweden}                               {1F1F8 1F1EA}
-    \EMOJI{sweet-potato}                         {1F360}
-    \EMOJI{swimmer}                              {1F3CA}
-    \EMOJI{swimming-man}                         {1F3CA}
-    \EMOJI{swimming-woman}                       {1F3CA 200D 2640}
-    \EMOJI{switzerland}                          {1F1E8 1F1ED}
-    \EMOJI{symbols}                              {1F523}
-    \EMOJI{synagogue}                            {1F54D}
-    \EMOJI{syria}                                {1F1F8 1F1FE}
-    \EMOJI{syringe}                              {1F489}
-    \EMOJI{taco}                                 {1F32E}
-    \EMOJI{tada}                                 {1F389}
-    \EMOJI{taiwan}                               {1F1F9 1F1FC}
-    \EMOJI{tajikistan}                           {1F1F9 1F1EF}
-    \EMOJI{tanabata-tree}                        {1F38B}
-    \EMOJI{tangerine}                            {1F34A}
-    \EMOJI{tanzania}                             {1F1F9 1F1FF}
-    \EMOJI{taurus}                               {2649}
-    \EMOJI{taxi}                                 {1F695}
-    \EMOJI{tea}                                  {1F375}
-    \EMOJI{telephone-receiver}                   {1F4DE}
-    \EMOJI{telephone}                            {260E}
-    \EMOJI{telescope}                            {1F52D}
-    \EMOJI{tennis}                               {1F3BE}
-    \EMOJI{tent}                                 {26FA}
-    \EMOJI{thailand}                             {1F1F9 1F1ED}
-    \EMOJI{thermometer}                          {1F321}
-    \EMOJI{thinking}                             {1F914}
-    \EMOJI{thought-balloon}                      {1F4AD}
-    \EMOJI{thumbsdown}                           {1F44E}
-    \EMOJI{thumbsup}                             {1F44D}
-    \EMOJI{ticket}                               {1F3AB}
-    \EMOJI{tickets}                              {1F39F}
-    \EMOJI{tiger}                                {1F42F}
-    \EMOJI{tiger2}                               {1F405}
-    \EMOJI{timer-clock}                          {23F2}
-    \EMOJI{timor-leste}                          {1F1F9 1F1F1}
-    \EMOJI{tipping-hand-man}                     {1F481 200D 2642}
-    \EMOJI{tipping-hand-woman}                   {1F481}
-    \EMOJI{tired-face}                           {1F62B}
-    \EMOJI{tm}                                   {2122}
-    \EMOJI{togo}                                 {1F1F9 1F1EC}
-    \EMOJI{toilet}                               {1F6BD}
-    \EMOJI{tokelau}                              {1F1F9 1F1F0}
-    \EMOJI{tokyo-tower}                          {1F5FC}
-    \EMOJI{tomato}                               {1F345}
-    \EMOJI{tonga}                                {1F1F9 1F1F4}
-    \EMOJI{tongue}                               {1F445}
-    \EMOJI{top}                                  {1F51D}
-    \EMOJI{tophat}                               {1F3A9}
-    \EMOJI{tornado}                              {1F32A}
-    \EMOJI{tr}                                   {1F1F9 1F1F7}
-    \EMOJI{trackball}                            {1F5B2}
-    \EMOJI{tractor}                              {1F69C}
-    \EMOJI{traffic-light}                        {1F6A5}
-    \EMOJI{train}                                {1F68B}
-    \EMOJI{train2}                               {1F686}
-    \EMOJI{tram}                                 {1F68A}
-    \EMOJI{triangular-flag-on-post}              {1F6A9}
-    \EMOJI{triangular-ruler}                     {1F4D0}
-    \EMOJI{trident}                              {1F531}
-    \EMOJI{trinidad-tobago}                      {1F1F9 1F1F9}
-    \EMOJI{triumph}                              {1F624}
-    \EMOJI{trolleybus}                           {1F68E}
-    \EMOJI{trophy}                               {1F3C6}
-    \EMOJI{tropical-drink}                       {1F379}
-    \EMOJI{tropical-fish}                        {1F420}
-    \EMOJI{truck}                                {1F69A}
-    \EMOJI{trumpet}                              {1F3BA}
-    \EMOJI{tshirt}                               {1F455}
-    \EMOJI{tulip}                                {1F337}
-    \EMOJI{tumbler-glass}                        {1F943}
-    \EMOJI{tunisia}                              {1F1F9 1F1F3}
-    \EMOJI{turkey}                               {1F983}
-    \EMOJI{turkmenistan}                         {1F1F9 1F1F2}
-    \EMOJI{turks-caicos-islands}                 {1F1F9 1F1E8}
-    \EMOJI{turtle}                               {1F422}
-    \EMOJI{tuvalu}                               {1F1F9 1F1FB}
-    \EMOJI{tv}                                   {1F4FA}
-    \EMOJI{twisted-rightwards-arrows}            {1F500}
-    \EMOJI{two-hearts}                           {1F495}
-    \EMOJI{two-men-holding-hands}                {1F46C}
-    \EMOJI{two-women-holding-hands}              {1F46D}
-    \EMOJI{u5272}                                {1F239}
-    \EMOJI{u5408}                                {1F234}
-    \EMOJI{u55b6}                                {1F23A}
-    \EMOJI{u6307}                                {1F22F}
-    \EMOJI{u6708}                                {1F237}
-    \EMOJI{u6709}                                {1F236}
-    \EMOJI{u6e80}                                {1F235}
-    \EMOJI{u7121}                                {1F21A}
-    \EMOJI{u7533}                                {1F238}
-    \EMOJI{u7981}                                {1F232}
-    \EMOJI{u7a7a}                                {1F233}
-    \EMOJI{uganda}                               {1F1FA 1F1EC}
-    \EMOJI{uk}                                   {1F1EC 1F1E7}
-    \EMOJI{ukraine}                              {1F1FA 1F1E6}
-    \EMOJI{umbrella}                             {2614}
-    \EMOJI{unamused}                             {1F612}
-    \EMOJI{underage}                             {1F51E}
-    \EMOJI{unicorn}                              {1F984}
-    \EMOJI{united-arab-emirates}                 {1F1E6 1F1EA}
-    \EMOJI{unlock}                               {1F513}
-    \EMOJI{up}                                   {1F199}
-    \EMOJI{upside-down-face}                     {1F643}
-    \EMOJI{uruguay}                              {1F1FA 1F1FE}
-    \EMOJI{us-virgin-islands}                    {1F1FB 1F1EE}
-    \EMOJI{us}                                   {1F1FA 1F1F8}
-    \EMOJI{uzbekistan}                           {1F1FA 1F1FF}
-    \EMOJI{v}                                    {270C}
-    \EMOJI{vanuatu}                              {1F1FB 1F1FA}
-    \EMOJI{vatican-city}                         {1F1FB 1F1E6}
-    \EMOJI{venezuela}                            {1F1FB 1F1EA}
-    \EMOJI{vertical-traffic-light}               {1F6A6}
-    \EMOJI{vhs}                                  {1F4FC}
-    \EMOJI{vibration-mode}                       {1F4F3}
-    \EMOJI{video-camera}                         {1F4F9}
-    \EMOJI{video-game}                           {1F3AE}
-    \EMOJI{vietnam}                              {1F1FB 1F1F3}
-    \EMOJI{violin}                               {1F3BB}
-    \EMOJI{virgo}                                {264D}
-    \EMOJI{volcano}                              {1F30B}
-    \EMOJI{volleyball}                           {1F3D0}
-    \EMOJI{vs}                                   {1F19A}
-    \EMOJI{vulcan-salute}                        {1F596}
-    \EMOJI{walking-man}                          {1F6B6}
-    \EMOJI{walking-woman}                        {1F6B6 200D 2640}
-    \EMOJI{walking}                              {1F6B6}
-    \EMOJI{wallis-futuna}                        {1F1FC 1F1EB}
-    \EMOJI{waning-crescent-moon}                 {1F318}
-    \EMOJI{waning-gibbous-moon}                  {1F316}
-    \EMOJI{warning}                              {26A0}
-    \EMOJI{wastebasket}                          {1F5D1}
-    \EMOJI{watch}                                {231A}
-    \EMOJI{water-buffalo}                        {1F403}
-    \EMOJI{watermelon}                           {1F349}
-    \EMOJI{wave}                                 {1F44B}
-    \EMOJI{wavy-dash}                            {3030}
-    \EMOJI{waxing-crescent-moon}                 {1F312}
-    \EMOJI{waxing-gibbous-moon}                  {1F314}
-    \EMOJI{wc}                                   {1F6BE}
-    \EMOJI{weary}                                {1F629}
-    \EMOJI{wedding}                              {1F492}
-    \EMOJI{weight-lifting-man}                   {1F3CB}
-    \EMOJI{weight-lifting-woman}                 {1F3CB 200D 2640}
-    \EMOJI{western-sahara}                       {1F1EA 1F1ED}
-    \EMOJI{whale}                                {1F433}
-    \EMOJI{whale2}                               {1F40B}
-    \EMOJI{wheel-of-dharma}                      {2638}
-    \EMOJI{wheelchair}                           {267F}
-    \EMOJI{white-check-mark}                     {2705}
-    \EMOJI{white-circle}                         {26AA}
-    \EMOJI{white-flag}                           {1F3F3}
-    \EMOJI{white-flower}                         {1F4AE}
-    \EMOJI{white-large-square}                   {2B1C}
-    \EMOJI{white-medium-small-square}            {25FD}
-    \EMOJI{white-medium-square}                  {25FB}
-    \EMOJI{white-small-square}                   {25AB}
-    \EMOJI{white-square-button}                  {1F533}
-    \EMOJI{wilted-flower}                        {1F940}
-    \EMOJI{wind-chime}                           {1F390}
-    \EMOJI{wind-face}                            {1F32C}
-    \EMOJI{wine-glass}                           {1F377}
-    \EMOJI{wink}                                 {1F609}
-    \EMOJI{wolf}                                 {1F43A}
-    \EMOJI{woman-artist}                         {1F469 200D 1F3A8}
-    \EMOJI{woman-astronaut}                      {1F469 200D 1F680}
-    \EMOJI{woman-cartwheeling}                   {1F938 200D 2640}
-    \EMOJI{woman-cook}                           {1F469 200D 1F373}
-    \EMOJI{woman-facepalming}                    {1F926 200D 2640}
-    \EMOJI{woman-factory-worker}                 {1F469 200D 1F3ED}
-    \EMOJI{woman-farmer}                         {1F469 200D 1F33E}
-    \EMOJI{woman-firefighter}                    {1F469 200D 1F692}
-    \EMOJI{woman-health-worker}                  {1F469 200D 2695}
-    \EMOJI{woman-judge}                          {1F469 200D 2696}
-    \EMOJI{woman-juggling}                       {1F939 200D 2640}
-    \EMOJI{woman-mechanic}                       {1F469 200D 1F527}
-    \EMOJI{woman-office-worker}                  {1F469 200D 1F4BC}
-    \EMOJI{woman-pilot}                          {1F469 200D 2708}
-    \EMOJI{woman-playing-handball}               {1F93E 200D 2640}
-    \EMOJI{woman-playing-water-polo}             {1F93D 200D 2640}
-    \EMOJI{woman-scientist}                      {1F469 200D 1F52C}
-    \EMOJI{woman-shrugging}                      {1F937 200D 2640}
-    \EMOJI{woman-singer}                         {1F469 200D 1F3A4}
-    \EMOJI{woman-student}                        {1F469 200D 1F393}
-    \EMOJI{woman-teacher}                        {1F469 200D 1F3EB}
-    \EMOJI{woman-technologist}                   {1F469 200D 1F4BB}
-    \EMOJI{woman-with-turban}                    {1F473 200D 2640}
-    \EMOJI{woman}                                {1F469}
-    \EMOJI{womans-clothes}                       {1F45A}
-    \EMOJI{womans-hat}                           {1F452}
-    \EMOJI{women-wrestling}                      {1F93C 200D 2640}
-    \EMOJI{womens}                               {1F6BA}
-    \EMOJI{world-map}                            {1F5FA}
-    \EMOJI{worried}                              {1F61F}
-    \EMOJI{wrench}                               {1F527}
-    \EMOJI{writing-hand}                         {270D}
-    \EMOJI{x}                                    {274C}
-    \EMOJI{yellow-heart}                         {1F49B}
-    \EMOJI{yemen}                                {1F1FE 1F1EA}
-    \EMOJI{yen}                                  {1F4B4}
-    \EMOJI{yin-yang}                             {262F}
-    \EMOJI{yum}                                  {1F60B}
-    \EMOJI{zambia}                               {1F1FF 1F1F2}
-    \EMOJI{zap}                                  {26A1}
-    \EMOJI{zimbabwe}                             {1F1FF 1F1FC}
-    \EMOJI{zipper-mouth-face}                    {1F910}
-    \EMOJI{zzz}                                  {1F4A4}
-\end{longtable}
-
-\endgroup
-
 \subsection{\emoji{construction} Known issues}
 
 The \pkg{emoji} package is highly experimental and may have a lot of bugs inevitably. For example:
 
 \begin{itemize}
   \item Spacing around emoji may be abnormal
-  \item Complex emoji may not combine correctly in some fonts
-  \item The emoji cannot be copied from PDF
+  \item The emoji may not be copied from PDF
 \end{itemize}
 
 If you have any problems when using this package, please create an issue on GitHub or send
@@ -1749,7 +386,6 @@ The following features may be added in the future:
 
 \begin{itemize}
   \item Allow direct input of emoji
-  \item Support more names/aliases
   \item Fulfill the Unicode emoji standard
   \item Add options including default skin tones, genders, etc.
   \item Support more fonts

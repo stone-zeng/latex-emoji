@@ -41,7 +41,8 @@ def texify(s: str):
 def normalize_name(s: str):
     # Remove accents.
     s = ''.join(c for c in ud.normalize('NFD', s.lower()) if ud.category(c) != 'Mn')
-    s = re.sub(r'\s+', '-', re.sub(r',|\.|:|\(|\)|’|“|”|&', '', s))
+    s = re.sub(r',|\.|:|\(|\)|’|“|”|&', '', s)
+    s = re.sub(r'\s+', '-', s)
     return s.replace('#', 'hash').replace('*', 'asterisk')
 
 def normalize_aliases(name: str, name_list: [str], s_list: [str]):
