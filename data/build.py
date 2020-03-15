@@ -23,8 +23,8 @@ COPYRIGHT_NOTICE = r"""%%
 %%
 """
 
-UNICODE_EMOJI_DATA_FILE = './data/emoji-12.1/emoji-test.txt'
-GITHUB_EMOJI_DATA_FILE = './data/github/emoji.json'
+UNICODE_EMOJI_DATA_FILE = './data/emoji-test.txt'
+GITHUB_EMOJI_DATA_FILE = './data/emoji.json'
 
 OUTPUT_FILE = 'emoji-table.def'
 OUTPUT_FILE_INFO = '{<data>}{<version>}{<description>}'
