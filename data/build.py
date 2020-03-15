@@ -102,9 +102,9 @@ with open(OUTPUT_FILE, 'w') as f:
     f.writelines(r'\ProvidesExplFile{{{}}}'.format(OUTPUT_FILE) + '\n')
     f.writelines('  ' + OUTPUT_FILE_INFO + '\n')
     for i in emoji:
-        f.writelines(r'\__emoji_subsection:n {' + texify(i) + '}\n')
+        f.writelines(r'\__emoji_group:n {' + texify(i) + '}\n')
         for j in emoji[i]:
-            f.writelines(r'\__emoji_subsubsection:n {' + texify(j) + '}\n')
+            f.writelines(r'\__emoji_subgroup:n {' + texify(j) + '}\n')
             for k in emoji[i][j]:
                 line = r'\__emoji_def:nnnn {{{}}} {{{}}} {{{}}} {{{}}}'.format(
                     k['code_points'], k['name'], k['aliases'], texify(k['description']))

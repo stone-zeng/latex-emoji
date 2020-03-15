@@ -17,8 +17,8 @@
 %%
 \ProvidesExplFile{emoji-table.def}
   {<data>}{<version>}{<description>}
-\__emoji_subsection:n {Smileys~\&~Emotion}
-\__emoji_subsubsection:n {Face-smiling}
+\__emoji_group:n {Smileys~\&~Emotion}
+\__emoji_subgroup:n {Face-smiling}
 \__emoji_def:nnnn {^^^^^^01f600} {grinning-face} {grinning} {Grinning~face}
 \__emoji_def:nnnn {^^^^^^01f603} {grinning-face-with-big-eyes} {smiley} {Grinning~face~with~big~eyes}
 \__emoji_def:nnnn {^^^^^^01f604} {grinning-face-with-smiling-eyes} {smile} {Grinning~face~with~smiling~eyes}
@@ -32,7 +32,7 @@
 \__emoji_def:nnnn {^^^^^^01f609} {winking-face} {wink} {Winking~face}
 \__emoji_def:nnnn {^^^^^^01f60a} {smiling-face-with-smiling-eyes} {blush} {Smiling~face~with~smiling~eyes}
 \__emoji_def:nnnn {^^^^^^01f607} {smiling-face-with-halo} {innocent} {Smiling~face~with~halo}
-\__emoji_subsubsection:n {Face-affection}
+\__emoji_subgroup:n {Face-affection}
 \__emoji_def:nnnn {^^^^^^01f970} {smiling-face-with-hearts} {smiling-face-with-three-hearts} {Smiling~face~with~hearts}
 \__emoji_def:nnnn {^^^^^^01f60d} {smiling-face-with-heart-eyes} {heart-eyes} {Smiling~face~with~heart-eyes}
 \__emoji_def:nnnn {^^^^^^01f929} {star-struck} {} {Star-struck}
@@ -41,19 +41,19 @@
 \__emoji_def:nnnn {^^^^263a^^^^fe0f} {smiling-face} {relaxed} {Smiling~face}
 \__emoji_def:nnnn {^^^^^^01f61a} {kissing-face-with-closed-eyes} {kissing-closed-eyes} {Kissing~face~with~closed~eyes}
 \__emoji_def:nnnn {^^^^^^01f619} {kissing-face-with-smiling-eyes} {kissing-smiling-eyes} {Kissing~face~with~smiling~eyes}
-\__emoji_subsubsection:n {Face-tongue}
+\__emoji_subgroup:n {Face-tongue}
 \__emoji_def:nnnn {^^^^^^01f60b} {face-savoring-food} {yum} {Face~savoring~food}
 \__emoji_def:nnnn {^^^^^^01f61b} {face-with-tongue} {stuck-out-tongue} {Face~with~tongue}
 \__emoji_def:nnnn {^^^^^^01f61c} {winking-face-with-tongue} {stuck-out-tongue-winking-eye} {Winking~face~with~tongue}
 \__emoji_def:nnnn {^^^^^^01f92a} {zany-face} {} {Zany~face}
 \__emoji_def:nnnn {^^^^^^01f61d} {squinting-face-with-tongue} {stuck-out-tongue-closed-eyes} {Squinting~face~with~tongue}
 \__emoji_def:nnnn {^^^^^^01f911} {money-mouth-face} {} {Money-mouth~face}
-\__emoji_subsubsection:n {Face-hand}
+\__emoji_subgroup:n {Face-hand}
 \__emoji_def:nnnn {^^^^^^01f917} {hugging-face} {hugs} {Hugging~face}
 \__emoji_def:nnnn {^^^^^^01f92d} {face-with-hand-over-mouth} {hand-over-mouth} {Face~with~hand~over~mouth}
 \__emoji_def:nnnn {^^^^^^01f92b} {shushing-face} {} {Shushing~face}
 \__emoji_def:nnnn {^^^^^^01f914} {thinking-face} {thinking} {Thinking~face}
-\__emoji_subsubsection:n {Face-neutral-skeptical}
+\__emoji_subgroup:n {Face-neutral-skeptical}
 \__emoji_def:nnnn {^^^^^^01f910} {zipper-mouth-face} {} {Zipper-mouth~face}
 \__emoji_def:nnnn {^^^^^^01f928} {face-with-raised-eyebrow} {raised-eyebrow} {Face~with~raised~eyebrow}
 \__emoji_def:nnnn {^^^^^^01f610} {neutral-face} {} {Neutral~face}
@@ -64,13 +64,13 @@
 \__emoji_def:nnnn {^^^^^^01f644} {face-with-rolling-eyes} {roll-eyes} {Face~with~rolling~eyes}
 \__emoji_def:nnnn {^^^^^^01f62c} {grimacing-face} {grimacing} {Grimacing~face}
 \__emoji_def:nnnn {^^^^^^01f925} {lying-face} {} {Lying~face}
-\__emoji_subsubsection:n {Face-sleepy}
+\__emoji_subgroup:n {Face-sleepy}
 \__emoji_def:nnnn {^^^^^^01f60c} {relieved-face} {relieved} {Relieved~face}
 \__emoji_def:nnnn {^^^^^^01f614} {pensive-face} {pensive} {Pensive~face}
 \__emoji_def:nnnn {^^^^^^01f62a} {sleepy-face} {sleepy} {Sleepy~face}
 \__emoji_def:nnnn {^^^^^^01f924} {drooling-face} {} {Drooling~face}
 \__emoji_def:nnnn {^^^^^^01f634} {sleeping-face} {sleeping} {Sleeping~face}
-\__emoji_subsubsection:n {Face-unwell}
+\__emoji_subgroup:n {Face-unwell}
 \__emoji_def:nnnn {^^^^^^01f637} {face-with-medical-mask} {mask} {Face~with~medical~mask}
 \__emoji_def:nnnn {^^^^^^01f912} {face-with-thermometer} {} {Face~with~thermometer}
 \__emoji_def:nnnn {^^^^^^01f915} {face-with-head-bandage} {} {Face~with~head-bandage}
@@ -82,14 +82,14 @@
 \__emoji_def:nnnn {^^^^^^01f974} {woozy-face} {} {Woozy~face}
 \__emoji_def:nnnn {^^^^^^01f635} {dizzy-face} {} {Dizzy~face}
 \__emoji_def:nnnn {^^^^^^01f92f} {exploding-head} {} {Exploding~head}
-\__emoji_subsubsection:n {Face-hat}
+\__emoji_subgroup:n {Face-hat}
 \__emoji_def:nnnn {^^^^^^01f920} {cowboy-hat-face} {} {Cowboy~hat~face}
 \__emoji_def:nnnn {^^^^^^01f973} {partying-face} {} {Partying~face}
-\__emoji_subsubsection:n {Face-glasses}
+\__emoji_subgroup:n {Face-glasses}
 \__emoji_def:nnnn {^^^^^^01f60e} {smiling-face-with-sunglasses} {} {Smiling~face~with~sunglasses}
 \__emoji_def:nnnn {^^^^^^01f913} {nerd-face} {} {Nerd~face}
 \__emoji_def:nnnn {^^^^^^01f9d0} {face-with-monocle} {monocle-face} {Face~with~monocle}
-\__emoji_subsubsection:n {Face-concerned}
+\__emoji_subgroup:n {Face-concerned}
 \__emoji_def:nnnn {^^^^^^01f615} {confused-face} {confused} {Confused~face}
 \__emoji_def:nnnn {^^^^^^01f61f} {worried-face} {worried} {Worried~face}
 \__emoji_def:nnnn {^^^^^^01f641} {slightly-frowning-face} {} {Slightly~frowning~face}
@@ -114,7 +114,7 @@
 \__emoji_def:nnnn {^^^^^^01f629} {weary-face} {weary} {Weary~face}
 \__emoji_def:nnnn {^^^^^^01f62b} {tired-face} {} {Tired~face}
 \__emoji_def:nnnn {^^^^^^01f971} {yawning-face} {} {Yawning~face}
-\__emoji_subsubsection:n {Face-negative}
+\__emoji_subgroup:n {Face-negative}
 \__emoji_def:nnnn {^^^^^^01f624} {face-with-steam-from-nose} {triumph} {Face~with~steam~from~nose}
 \__emoji_def:nnnn {^^^^^^01f621} {pouting-face} {rage, pout} {Pouting~face}
 \__emoji_def:nnnn {^^^^^^01f620} {angry-face} {angry} {Angry~face}
@@ -123,7 +123,7 @@
 \__emoji_def:nnnn {^^^^^^01f47f} {angry-face-with-horns} {imp} {Angry~face~with~horns}
 \__emoji_def:nnnn {^^^^^^01f480} {skull} {} {Skull}
 \__emoji_def:nnnn {^^^^2620^^^^fe0f} {skull-and-crossbones} {} {Skull~and~crossbones}
-\__emoji_subsubsection:n {Face-costume}
+\__emoji_subgroup:n {Face-costume}
 \__emoji_def:nnnn {^^^^^^01f4a9} {pile-of-poo} {hankey, poop, shit} {Pile~of~poo}
 \__emoji_def:nnnn {^^^^^^01f921} {clown-face} {} {Clown~face}
 \__emoji_def:nnnn {^^^^^^01f479} {ogre} {japanese-ogre} {Ogre}
@@ -132,7 +132,7 @@
 \__emoji_def:nnnn {^^^^^^01f47d} {alien} {} {Alien}
 \__emoji_def:nnnn {^^^^^^01f47e} {alien-monster} {space-invader} {Alien~monster}
 \__emoji_def:nnnn {^^^^^^01f916} {robot} {} {Robot}
-\__emoji_subsubsection:n {Cat-face}
+\__emoji_subgroup:n {Cat-face}
 \__emoji_def:nnnn {^^^^^^01f63a} {grinning-cat} {smiley-cat} {Grinning~cat}
 \__emoji_def:nnnn {^^^^^^01f638} {grinning-cat-with-smiling-eyes} {smile-cat} {Grinning~cat~with~smiling~eyes}
 \__emoji_def:nnnn {^^^^^^01f639} {cat-with-tears-of-joy} {joy-cat} {Cat~with~tears~of~joy}
@@ -142,11 +142,11 @@
 \__emoji_def:nnnn {^^^^^^01f640} {weary-cat} {scream-cat} {Weary~cat}
 \__emoji_def:nnnn {^^^^^^01f63f} {crying-cat} {crying-cat-face} {Crying~cat}
 \__emoji_def:nnnn {^^^^^^01f63e} {pouting-cat} {} {Pouting~cat}
-\__emoji_subsubsection:n {Monkey-face}
+\__emoji_subgroup:n {Monkey-face}
 \__emoji_def:nnnn {^^^^^^01f648} {see-no-evil-monkey} {see-no-evil} {See-no-evil~monkey}
 \__emoji_def:nnnn {^^^^^^01f649} {hear-no-evil-monkey} {hear-no-evil} {Hear-no-evil~monkey}
 \__emoji_def:nnnn {^^^^^^01f64a} {speak-no-evil-monkey} {speak-no-evil} {Speak-no-evil~monkey}
-\__emoji_subsubsection:n {Emotion}
+\__emoji_subgroup:n {Emotion}
 \__emoji_def:nnnn {^^^^^^01f48b} {kiss-mark} {} {Kiss~mark}
 \__emoji_def:nnnn {^^^^^^01f48c} {love-letter} {} {Love~letter}
 \__emoji_def:nnnn {^^^^^^01f498} {heart-with-arrow} {cupid} {Heart~with~arrow}
@@ -182,8 +182,8 @@
 \__emoji_def:nnnn {^^^^^^01f5ef^^^^fe0f} {right-anger-bubble} {} {Right~anger~bubble}
 \__emoji_def:nnnn {^^^^^^01f4ad} {thought-balloon} {} {Thought~balloon}
 \__emoji_def:nnnn {^^^^^^01f4a4} {zzz} {} {Zzz}
-\__emoji_subsection:n {People~\&~Body}
-\__emoji_subsubsection:n {Hand-fingers-open}
+\__emoji_group:n {People~\&~Body}
+\__emoji_subgroup:n {Hand-fingers-open}
 \__emoji_def:nnnn {^^^^^^01f44b} {waving-hand} {wave} {Waving~hand}
 \__emoji_def:nnnn {^^^^^^01f44b^^^^^^01f3fb} {waving-hand-light-skin-tone} {} {Waving~hand:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f44b^^^^^^01f3fc} {waving-hand-medium-light-skin-tone} {} {Waving~hand:~medium-light~skin~tone}
@@ -214,7 +214,7 @@
 \__emoji_def:nnnn {^^^^^^01f596^^^^^^01f3fd} {vulcan-salute-medium-skin-tone} {} {Vulcan~salute:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f596^^^^^^01f3fe} {vulcan-salute-medium-dark-skin-tone} {} {Vulcan~salute:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f596^^^^^^01f3ff} {vulcan-salute-dark-skin-tone} {} {Vulcan~salute:~dark~skin~tone}
-\__emoji_subsubsection:n {Hand-fingers-partial}
+\__emoji_subgroup:n {Hand-fingers-partial}
 \__emoji_def:nnnn {^^^^^^01f44c} {ok-hand} {} {OK~hand}
 \__emoji_def:nnnn {^^^^^^01f44c^^^^^^01f3fb} {ok-hand-light-skin-tone} {} {OK~hand:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f44c^^^^^^01f3fc} {ok-hand-medium-light-skin-tone} {} {OK~hand:~medium-light~skin~tone}
@@ -257,7 +257,7 @@
 \__emoji_def:nnnn {^^^^^^01f919^^^^^^01f3fd} {call-me-hand-medium-skin-tone} {} {Call~me~hand:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f919^^^^^^01f3fe} {call-me-hand-medium-dark-skin-tone} {} {Call~me~hand:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f919^^^^^^01f3ff} {call-me-hand-dark-skin-tone} {} {Call~me~hand:~dark~skin~tone}
-\__emoji_subsubsection:n {Hand-single-finger}
+\__emoji_subgroup:n {Hand-single-finger}
 \__emoji_def:nnnn {^^^^^^01f448} {backhand-index-pointing-left} {point-left} {Backhand~index~pointing~left}
 \__emoji_def:nnnn {^^^^^^01f448^^^^^^01f3fb} {backhand-index-pointing-left-light-skin-tone} {} {Backhand~index~pointing~left:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f448^^^^^^01f3fc} {backhand-index-pointing-left-medium-light-skin-tone} {} {Backhand~index~pointing~left:~medium-light~skin~tone}
@@ -294,7 +294,7 @@
 \__emoji_def:nnnn {^^^^261d^^^^^^01f3fd} {index-pointing-up-medium-skin-tone} {} {Index~pointing~up:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^261d^^^^^^01f3fe} {index-pointing-up-medium-dark-skin-tone} {} {Index~pointing~up:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^261d^^^^^^01f3ff} {index-pointing-up-dark-skin-tone} {} {Index~pointing~up:~dark~skin~tone}
-\__emoji_subsubsection:n {Hand-fingers-closed}
+\__emoji_subgroup:n {Hand-fingers-closed}
 \__emoji_def:nnnn {^^^^^^01f44d} {thumbs-up} {+1, thumbsup} {Thumbs~up}
 \__emoji_def:nnnn {^^^^^^01f44d^^^^^^01f3fb} {thumbs-up-light-skin-tone} {} {Thumbs~up:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f44d^^^^^^01f3fc} {thumbs-up-medium-light-skin-tone} {} {Thumbs~up:~medium-light~skin~tone}
@@ -331,7 +331,7 @@
 \__emoji_def:nnnn {^^^^^^01f91c^^^^^^01f3fd} {right-facing-fist-medium-skin-tone} {} {Right-facing~fist:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f91c^^^^^^01f3fe} {right-facing-fist-medium-dark-skin-tone} {} {Right-facing~fist:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f91c^^^^^^01f3ff} {right-facing-fist-dark-skin-tone} {} {Right-facing~fist:~dark~skin~tone}
-\__emoji_subsubsection:n {Hands}
+\__emoji_subgroup:n {Hands}
 \__emoji_def:nnnn {^^^^^^01f44f} {clapping-hands} {clap} {Clapping~hands}
 \__emoji_def:nnnn {^^^^^^01f44f^^^^^^01f3fb} {clapping-hands-light-skin-tone} {} {Clapping~hands:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f44f^^^^^^01f3fc} {clapping-hands-medium-light-skin-tone} {} {Clapping~hands:~medium-light~skin~tone}
@@ -363,7 +363,7 @@
 \__emoji_def:nnnn {^^^^^^01f64f^^^^^^01f3fd} {folded-hands-medium-skin-tone} {} {Folded~hands:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f64f^^^^^^01f3fe} {folded-hands-medium-dark-skin-tone} {} {Folded~hands:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f64f^^^^^^01f3ff} {folded-hands-dark-skin-tone} {} {Folded~hands:~dark~skin~tone}
-\__emoji_subsubsection:n {Hand-prop}
+\__emoji_subgroup:n {Hand-prop}
 \__emoji_def:nnnn {^^^^270d^^^^fe0f} {writing-hand} {} {Writing~hand}
 \__emoji_def:nnnn {^^^^270d^^^^^^01f3fb} {writing-hand-light-skin-tone} {} {Writing~hand:~light~skin~tone}
 \__emoji_def:nnnn {^^^^270d^^^^^^01f3fc} {writing-hand-medium-light-skin-tone} {} {Writing~hand:~medium-light~skin~tone}
@@ -382,7 +382,7 @@
 \__emoji_def:nnnn {^^^^^^01f933^^^^^^01f3fd} {selfie-medium-skin-tone} {} {Selfie:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f933^^^^^^01f3fe} {selfie-medium-dark-skin-tone} {} {Selfie:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f933^^^^^^01f3ff} {selfie-dark-skin-tone} {} {Selfie:~dark~skin~tone}
-\__emoji_subsubsection:n {Body-parts}
+\__emoji_subgroup:n {Body-parts}
 \__emoji_def:nnnn {^^^^^^01f4aa} {flexed-biceps} {muscle} {Flexed~biceps}
 \__emoji_def:nnnn {^^^^^^01f4aa^^^^^^01f3fb} {flexed-biceps-light-skin-tone} {} {Flexed~biceps:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f4aa^^^^^^01f3fc} {flexed-biceps-medium-light-skin-tone} {} {Flexed~biceps:~medium-light~skin~tone}
@@ -428,7 +428,7 @@
 \__emoji_def:nnnn {^^^^^^01f441^^^^fe0f} {eye} {} {Eye}
 \__emoji_def:nnnn {^^^^^^01f445} {tongue} {} {Tongue}
 \__emoji_def:nnnn {^^^^^^01f444} {mouth} {lips} {Mouth}
-\__emoji_subsubsection:n {Person}
+\__emoji_subgroup:n {Person}
 \__emoji_def:nnnn {^^^^^^01f476} {baby} {} {Baby}
 \__emoji_def:nnnn {^^^^^^01f476^^^^^^01f3fb} {baby-light-skin-tone} {} {Baby:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f476^^^^^^01f3fc} {baby-medium-light-skin-tone} {} {Baby:~medium-light~skin~tone}
@@ -585,7 +585,7 @@
 \__emoji_def:nnnn {^^^^^^01f475^^^^^^01f3fd} {old-woman-medium-skin-tone} {} {Old~woman:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f475^^^^^^01f3fe} {old-woman-medium-dark-skin-tone} {} {Old~woman:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f475^^^^^^01f3ff} {old-woman-dark-skin-tone} {} {Old~woman:~dark~skin~tone}
-\__emoji_subsubsection:n {Person-gesture}
+\__emoji_subgroup:n {Person-gesture}
 \__emoji_def:nnnn {^^^^^^01f64d} {person-frowning} {frowning-person} {Person~frowning}
 \__emoji_def:nnnn {^^^^^^01f64d^^^^^^01f3fb} {person-frowning-light-skin-tone} {} {Person~frowning:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f64d^^^^^^01f3fc} {person-frowning-medium-light-skin-tone} {} {Person~frowning:~medium-light~skin~tone}
@@ -766,7 +766,7 @@
 \__emoji_def:nnnn {^^^^^^01f937^^^^^^01f3fd^^^^200d^^^^2640^^^^fe0f} {woman-shrugging-medium-skin-tone} {} {Woman~shrugging:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f937^^^^^^01f3fe^^^^200d^^^^2640^^^^fe0f} {woman-shrugging-medium-dark-skin-tone} {} {Woman~shrugging:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f937^^^^^^01f3ff^^^^200d^^^^2640^^^^fe0f} {woman-shrugging-dark-skin-tone} {} {Woman~shrugging:~dark~skin~tone}
-\__emoji_subsubsection:n {Person-role}
+\__emoji_subgroup:n {Person-role}
 \__emoji_def:nnnn {^^^^^^01f9d1^^^^200d^^^^2695^^^^fe0f} {health-worker} {} {Health~worker}
 \__emoji_def:nnnn {^^^^^^01f9d1^^^^^^01f3fb^^^^200d^^^^2695^^^^fe0f} {health-worker-light-skin-tone} {} {Health~worker:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f9d1^^^^^^01f3fc^^^^200d^^^^2695^^^^fe0f} {health-worker-medium-light-skin-tone} {} {Health~worker:~medium-light~skin~tone}
@@ -1193,7 +1193,7 @@
 \__emoji_def:nnnn {^^^^^^01f931^^^^^^01f3fd} {breast-feeding-medium-skin-tone} {} {Breast-feeding:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f931^^^^^^01f3fe} {breast-feeding-medium-dark-skin-tone} {} {Breast-feeding:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f931^^^^^^01f3ff} {breast-feeding-dark-skin-tone} {} {Breast-feeding:~dark~skin~tone}
-\__emoji_subsubsection:n {Person-fantasy}
+\__emoji_subgroup:n {Person-fantasy}
 \__emoji_def:nnnn {^^^^^^01f47c} {baby-angel} {angel} {Baby~angel}
 \__emoji_def:nnnn {^^^^^^01f47c^^^^^^01f3fb} {baby-angel-light-skin-tone} {} {Baby~angel:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f47c^^^^^^01f3fc} {baby-angel-medium-light-skin-tone} {} {Baby~angel:~medium-light~skin~tone}
@@ -1344,7 +1344,7 @@
 \__emoji_def:nnnn {^^^^^^01f9df} {zombie} {} {Zombie}
 \__emoji_def:nnnn {^^^^^^01f9df^^^^200d^^^^2642^^^^fe0f} {man-zombie} {zombie-man} {Man~zombie}
 \__emoji_def:nnnn {^^^^^^01f9df^^^^200d^^^^2640^^^^fe0f} {woman-zombie} {zombie-woman} {Woman~zombie}
-\__emoji_subsubsection:n {Person-activity}
+\__emoji_subgroup:n {Person-activity}
 \__emoji_def:nnnn {^^^^^^01f486} {person-getting-massage} {massage} {Person~getting~massage}
 \__emoji_def:nnnn {^^^^^^01f486^^^^^^01f3fb} {person-getting-massage-light-skin-tone} {} {Person~getting~massage:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f486^^^^^^01f3fc} {person-getting-massage-medium-light-skin-tone} {} {Person~getting~massage:~medium-light~skin~tone}
@@ -1564,7 +1564,7 @@
 \__emoji_def:nnnn {^^^^^^01f9d7^^^^^^01f3fd^^^^200d^^^^2640^^^^fe0f} {woman-climbing-medium-skin-tone} {} {Woman~climbing:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f9d7^^^^^^01f3fe^^^^200d^^^^2640^^^^fe0f} {woman-climbing-medium-dark-skin-tone} {} {Woman~climbing:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f9d7^^^^^^01f3ff^^^^200d^^^^2640^^^^fe0f} {woman-climbing-dark-skin-tone} {} {Woman~climbing:~dark~skin~tone}
-\__emoji_subsubsection:n {Person-sport}
+\__emoji_subgroup:n {Person-sport}
 \__emoji_def:nnnn {^^^^^^01f93a} {person-fencing} {} {Person~fencing}
 \__emoji_def:nnnn {^^^^^^01f3c7} {horse-racing} {} {Horse~racing}
 \__emoji_def:nnnn {^^^^^^01f3c7^^^^^^01f3fb} {horse-racing-light-skin-tone} {} {Horse~racing:~light~skin~tone}
@@ -1798,7 +1798,7 @@
 \__emoji_def:nnnn {^^^^^^01f939^^^^^^01f3fd^^^^200d^^^^2640^^^^fe0f} {woman-juggling-medium-skin-tone} {} {Woman~juggling:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f939^^^^^^01f3fe^^^^200d^^^^2640^^^^fe0f} {woman-juggling-medium-dark-skin-tone} {} {Woman~juggling:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f939^^^^^^01f3ff^^^^200d^^^^2640^^^^fe0f} {woman-juggling-dark-skin-tone} {} {Woman~juggling:~dark~skin~tone}
-\__emoji_subsubsection:n {Person-resting}
+\__emoji_subgroup:n {Person-resting}
 \__emoji_def:nnnn {^^^^^^01f9d8} {person-in-lotus-position} {lotus-position} {Person~in~lotus~position}
 \__emoji_def:nnnn {^^^^^^01f9d8^^^^^^01f3fb} {person-in-lotus-position-light-skin-tone} {} {Person~in~lotus~position:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f9d8^^^^^^01f3fc} {person-in-lotus-position-medium-light-skin-tone} {} {Person~in~lotus~position:~medium-light~skin~tone}
@@ -1829,7 +1829,7 @@
 \__emoji_def:nnnn {^^^^^^01f6cc^^^^^^01f3fd} {person-in-bed-medium-skin-tone} {} {Person~in~bed:~medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f6cc^^^^^^01f3fe} {person-in-bed-medium-dark-skin-tone} {} {Person~in~bed:~medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f6cc^^^^^^01f3ff} {person-in-bed-dark-skin-tone} {} {Person~in~bed:~dark~skin~tone}
-\__emoji_subsubsection:n {Family}
+\__emoji_subgroup:n {Family}
 \__emoji_def:nnnn {^^^^^^01f9d1^^^^200d^^^^^^01f91d^^^^200d^^^^^^01f9d1} {people-holding-hands} {} {People~holding~hands}
 \__emoji_def:nnnn {^^^^^^01f9d1^^^^^^01f3fb^^^^200d^^^^^^01f91d^^^^200d^^^^^^01f9d1^^^^^^01f3fb} {people-holding-hands-light-skin-tone} {} {People~holding~hands:~light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f9d1^^^^^^01f3fb^^^^200d^^^^^^01f91d^^^^200d^^^^^^01f9d1^^^^^^01f3fc} {people-holding-hands-light-skin-tone-medium-light-skin-tone} {} {People~holding~hands:~light~skin~tone,~medium-light~skin~tone}
@@ -1968,25 +1968,25 @@
 \__emoji_def:nnnn {^^^^^^01f469^^^^200d^^^^^^01f467} {family-woman-girl} {} {Family:~woman,~girl}
 \__emoji_def:nnnn {^^^^^^01f469^^^^200d^^^^^^01f467^^^^200d^^^^^^01f466} {family-woman-girl-boy} {} {Family:~woman,~girl,~boy}
 \__emoji_def:nnnn {^^^^^^01f469^^^^200d^^^^^^01f467^^^^200d^^^^^^01f467} {family-woman-girl-girl} {} {Family:~woman,~girl,~girl}
-\__emoji_subsubsection:n {Person-symbol}
+\__emoji_subgroup:n {Person-symbol}
 \__emoji_def:nnnn {^^^^^^01f5e3^^^^fe0f} {speaking-head} {} {Speaking~head}
 \__emoji_def:nnnn {^^^^^^01f464} {bust-in-silhouette} {} {Bust~in~silhouette}
 \__emoji_def:nnnn {^^^^^^01f465} {busts-in-silhouette} {} {Busts~in~silhouette}
 \__emoji_def:nnnn {^^^^^^01f463} {footprints} {} {Footprints}
-\__emoji_subsection:n {Component}
-\__emoji_subsubsection:n {Skin-tone}
+\__emoji_group:n {Component}
+\__emoji_subgroup:n {Skin-tone}
 \__emoji_def:nnnn {^^^^^^01f3fb} {light-skin-tone} {} {Light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f3fc} {medium-light-skin-tone} {} {Medium-light~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f3fd} {medium-skin-tone} {} {Medium~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f3fe} {medium-dark-skin-tone} {} {Medium-dark~skin~tone}
 \__emoji_def:nnnn {^^^^^^01f3ff} {dark-skin-tone} {} {Dark~skin~tone}
-\__emoji_subsubsection:n {Hair-style}
+\__emoji_subgroup:n {Hair-style}
 \__emoji_def:nnnn {^^^^^^01f9b0} {red-hair} {} {Red~hair}
 \__emoji_def:nnnn {^^^^^^01f9b1} {curly-hair} {} {Curly~hair}
 \__emoji_def:nnnn {^^^^^^01f9b3} {white-hair} {} {White~hair}
 \__emoji_def:nnnn {^^^^^^01f9b2} {bald} {} {Bald}
-\__emoji_subsection:n {Animals~\&~Nature}
-\__emoji_subsubsection:n {Animal-mammal}
+\__emoji_group:n {Animals~\&~Nature}
+\__emoji_subgroup:n {Animal-mammal}
 \__emoji_def:nnnn {^^^^^^01f435} {monkey-face} {} {Monkey~face}
 \__emoji_def:nnnn {^^^^^^01f412} {monkey} {} {Monkey}
 \__emoji_def:nnnn {^^^^^^01f98d} {gorilla} {} {Gorilla}
@@ -2046,7 +2046,7 @@
 \__emoji_def:nnnn {^^^^^^01f998} {kangaroo} {} {Kangaroo}
 \__emoji_def:nnnn {^^^^^^01f9a1} {badger} {} {Badger}
 \__emoji_def:nnnn {^^^^^^01f43e} {paw-prints} {feet} {Paw~prints}
-\__emoji_subsubsection:n {Animal-bird}
+\__emoji_subgroup:n {Animal-bird}
 \__emoji_def:nnnn {^^^^^^01f983} {turkey} {} {Turkey}
 \__emoji_def:nnnn {^^^^^^01f414} {chicken} {} {Chicken}
 \__emoji_def:nnnn {^^^^^^01f413} {rooster} {} {Rooster}
@@ -2063,9 +2063,9 @@
 \__emoji_def:nnnn {^^^^^^01f9a9} {flamingo} {} {Flamingo}
 \__emoji_def:nnnn {^^^^^^01f99a} {peacock} {} {Peacock}
 \__emoji_def:nnnn {^^^^^^01f99c} {parrot} {} {Parrot}
-\__emoji_subsubsection:n {Animal-amphibian}
+\__emoji_subgroup:n {Animal-amphibian}
 \__emoji_def:nnnn {^^^^^^01f438} {frog} {} {Frog}
-\__emoji_subsubsection:n {Animal-reptile}
+\__emoji_subgroup:n {Animal-reptile}
 \__emoji_def:nnnn {^^^^^^01f40a} {crocodile} {} {Crocodile}
 \__emoji_def:nnnn {^^^^^^01f422} {turtle} {} {Turtle}
 \__emoji_def:nnnn {^^^^^^01f98e} {lizard} {} {Lizard}
@@ -2074,7 +2074,7 @@
 \__emoji_def:nnnn {^^^^^^01f409} {dragon} {} {Dragon}
 \__emoji_def:nnnn {^^^^^^01f995} {sauropod} {} {Sauropod}
 \__emoji_def:nnnn {^^^^^^01f996} {t-rex} {} {T-Rex}
-\__emoji_subsubsection:n {Animal-marine}
+\__emoji_subgroup:n {Animal-marine}
 \__emoji_def:nnnn {^^^^^^01f433} {spouting-whale} {} {Spouting~whale}
 \__emoji_def:nnnn {^^^^^^01f40b} {whale} {whale2} {Whale}
 \__emoji_def:nnnn {^^^^^^01f42c} {dolphin} {flipper} {Dolphin}
@@ -2084,7 +2084,7 @@
 \__emoji_def:nnnn {^^^^^^01f988} {shark} {} {Shark}
 \__emoji_def:nnnn {^^^^^^01f419} {octopus} {} {Octopus}
 \__emoji_def:nnnn {^^^^^^01f41a} {spiral-shell} {shell} {Spiral~shell}
-\__emoji_subsubsection:n {Animal-bug}
+\__emoji_subgroup:n {Animal-bug}
 \__emoji_def:nnnn {^^^^^^01f40c} {snail} {} {Snail}
 \__emoji_def:nnnn {^^^^^^01f98b} {butterfly} {} {Butterfly}
 \__emoji_def:nnnn {^^^^^^01f41b} {bug} {} {Bug}
@@ -2097,7 +2097,7 @@
 \__emoji_def:nnnn {^^^^^^01f982} {scorpion} {} {Scorpion}
 \__emoji_def:nnnn {^^^^^^01f99f} {mosquito} {} {Mosquito}
 \__emoji_def:nnnn {^^^^^^01f9a0} {microbe} {} {Microbe}
-\__emoji_subsubsection:n {Plant-flower}
+\__emoji_subgroup:n {Plant-flower}
 \__emoji_def:nnnn {^^^^^^01f490} {bouquet} {} {Bouquet}
 \__emoji_def:nnnn {^^^^^^01f338} {cherry-blossom} {} {Cherry~blossom}
 \__emoji_def:nnnn {^^^^^^01f4ae} {white-flower} {} {White~flower}
@@ -2108,7 +2108,7 @@
 \__emoji_def:nnnn {^^^^^^01f33b} {sunflower} {} {Sunflower}
 \__emoji_def:nnnn {^^^^^^01f33c} {blossom} {} {Blossom}
 \__emoji_def:nnnn {^^^^^^01f337} {tulip} {} {Tulip}
-\__emoji_subsubsection:n {Plant-other}
+\__emoji_subgroup:n {Plant-other}
 \__emoji_def:nnnn {^^^^^^01f331} {seedling} {} {Seedling}
 \__emoji_def:nnnn {^^^^^^01f332} {evergreen-tree} {} {Evergreen~tree}
 \__emoji_def:nnnn {^^^^^^01f333} {deciduous-tree} {} {Deciduous~tree}
@@ -2121,8 +2121,8 @@
 \__emoji_def:nnnn {^^^^^^01f341} {maple-leaf} {} {Maple~leaf}
 \__emoji_def:nnnn {^^^^^^01f342} {fallen-leaf} {} {Fallen~leaf}
 \__emoji_def:nnnn {^^^^^^01f343} {leaf-fluttering-in-wind} {leaves} {Leaf~fluttering~in~wind}
-\__emoji_subsection:n {Food~\&~Drink}
-\__emoji_subsubsection:n {Food-fruit}
+\__emoji_group:n {Food~\&~Drink}
+\__emoji_subgroup:n {Food-fruit}
 \__emoji_def:nnnn {^^^^^^01f347} {grapes} {} {Grapes}
 \__emoji_def:nnnn {^^^^^^01f348} {melon} {} {Melon}
 \__emoji_def:nnnn {^^^^^^01f349} {watermelon} {} {Watermelon}
@@ -2140,7 +2140,7 @@
 \__emoji_def:nnnn {^^^^^^01f95d} {kiwi-fruit} {} {Kiwi~fruit}
 \__emoji_def:nnnn {^^^^^^01f345} {tomato} {} {Tomato}
 \__emoji_def:nnnn {^^^^^^01f965} {coconut} {} {Coconut}
-\__emoji_subsubsection:n {Food-vegetable}
+\__emoji_subgroup:n {Food-vegetable}
 \__emoji_def:nnnn {^^^^^^01f951} {avocado} {} {Avocado}
 \__emoji_def:nnnn {^^^^^^01f346} {eggplant} {} {Eggplant}
 \__emoji_def:nnnn {^^^^^^01f954} {potato} {} {Potato}
@@ -2155,7 +2155,7 @@
 \__emoji_def:nnnn {^^^^^^01f344} {mushroom} {} {Mushroom}
 \__emoji_def:nnnn {^^^^^^01f95c} {peanuts} {} {Peanuts}
 \__emoji_def:nnnn {^^^^^^01f330} {chestnut} {} {Chestnut}
-\__emoji_subsubsection:n {Food-prepared}
+\__emoji_subgroup:n {Food-prepared}
 \__emoji_def:nnnn {^^^^^^01f35e} {bread} {} {Bread}
 \__emoji_def:nnnn {^^^^^^01f950} {croissant} {} {Croissant}
 \__emoji_def:nnnn {^^^^^^01f956} {baguette-bread} {} {Baguette~bread}
@@ -2187,7 +2187,7 @@
 \__emoji_def:nnnn {^^^^^^01f9c8} {butter} {} {Butter}
 \__emoji_def:nnnn {^^^^^^01f9c2} {salt} {} {Salt}
 \__emoji_def:nnnn {^^^^^^01f96b} {canned-food} {} {Canned~food}
-\__emoji_subsubsection:n {Food-asian}
+\__emoji_subgroup:n {Food-asian}
 \__emoji_def:nnnn {^^^^^^01f371} {bento-box} {bento} {Bento~box}
 \__emoji_def:nnnn {^^^^^^01f358} {rice-cracker} {} {Rice~cracker}
 \__emoji_def:nnnn {^^^^^^01f359} {rice-ball} {} {Rice~ball}
@@ -2205,13 +2205,13 @@
 \__emoji_def:nnnn {^^^^^^01f95f} {dumpling} {} {Dumpling}
 \__emoji_def:nnnn {^^^^^^01f960} {fortune-cookie} {} {Fortune~cookie}
 \__emoji_def:nnnn {^^^^^^01f961} {takeout-box} {} {Takeout~box}
-\__emoji_subsubsection:n {Food-marine}
+\__emoji_subgroup:n {Food-marine}
 \__emoji_def:nnnn {^^^^^^01f980} {crab} {} {Crab}
 \__emoji_def:nnnn {^^^^^^01f99e} {lobster} {} {Lobster}
 \__emoji_def:nnnn {^^^^^^01f990} {shrimp} {} {Shrimp}
 \__emoji_def:nnnn {^^^^^^01f991} {squid} {} {Squid}
 \__emoji_def:nnnn {^^^^^^01f9aa} {oyster} {} {Oyster}
-\__emoji_subsubsection:n {Food-sweet}
+\__emoji_subgroup:n {Food-sweet}
 \__emoji_def:nnnn {^^^^^^01f366} {soft-ice-cream} {icecream} {Soft~ice~cream}
 \__emoji_def:nnnn {^^^^^^01f367} {shaved-ice} {} {Shaved~ice}
 \__emoji_def:nnnn {^^^^^^01f368} {ice-cream} {} {Ice~cream}
@@ -2226,7 +2226,7 @@
 \__emoji_def:nnnn {^^^^^^01f36d} {lollipop} {} {Lollipop}
 \__emoji_def:nnnn {^^^^^^01f36e} {custard} {} {Custard}
 \__emoji_def:nnnn {^^^^^^01f36f} {honey-pot} {} {Honey~pot}
-\__emoji_subsubsection:n {Drink}
+\__emoji_subgroup:n {Drink}
 \__emoji_def:nnnn {^^^^^^01f37c} {baby-bottle} {} {Baby~bottle}
 \__emoji_def:nnnn {^^^^^^01f95b} {glass-of-milk} {milk-glass} {Glass~of~milk}
 \__emoji_def:nnnn {^^^^2615} {hot-beverage} {coffee} {Hot~beverage}
@@ -2244,15 +2244,15 @@
 \__emoji_def:nnnn {^^^^^^01f9c3} {beverage-box} {} {Beverage~box}
 \__emoji_def:nnnn {^^^^^^01f9c9} {mate} {} {Mate}
 \__emoji_def:nnnn {^^^^^^01f9ca} {ice} {ice-cube} {Ice}
-\__emoji_subsubsection:n {Dishware}
+\__emoji_subgroup:n {Dishware}
 \__emoji_def:nnnn {^^^^^^01f962} {chopsticks} {} {Chopsticks}
 \__emoji_def:nnnn {^^^^^^01f37d^^^^fe0f} {fork-and-knife-with-plate} {plate-with-cutlery} {Fork~and~knife~with~plate}
 \__emoji_def:nnnn {^^^^^^01f374} {fork-and-knife} {} {Fork~and~knife}
 \__emoji_def:nnnn {^^^^^^01f944} {spoon} {} {Spoon}
 \__emoji_def:nnnn {^^^^^^01f52a} {kitchen-knife} {hocho, knife} {Kitchen~knife}
 \__emoji_def:nnnn {^^^^^^01f3fa} {amphora} {} {Amphora}
-\__emoji_subsection:n {Travel~\&~Places}
-\__emoji_subsubsection:n {Place-map}
+\__emoji_group:n {Travel~\&~Places}
+\__emoji_subgroup:n {Place-map}
 \__emoji_def:nnnn {^^^^^^01f30d} {globe-showing-europe-africa} {earth-africa} {Globe~showing~Europe-Africa}
 \__emoji_def:nnnn {^^^^^^01f30e} {globe-showing-americas} {earth-americas} {Globe~showing~Americas}
 \__emoji_def:nnnn {^^^^^^01f30f} {globe-showing-asia-australia} {earth-asia} {Globe~showing~Asia-Australia}
@@ -2260,7 +2260,7 @@
 \__emoji_def:nnnn {^^^^^^01f5fa^^^^fe0f} {world-map} {} {World~map}
 \__emoji_def:nnnn {^^^^^^01f5fe} {map-of-japan} {japan} {Map~of~Japan}
 \__emoji_def:nnnn {^^^^^^01f9ed} {compass} {} {Compass}
-\__emoji_subsubsection:n {Place-geographic}
+\__emoji_subgroup:n {Place-geographic}
 \__emoji_def:nnnn {^^^^^^01f3d4^^^^fe0f} {snow-capped-mountain} {mountain-snow} {Snow-capped~mountain}
 \__emoji_def:nnnn {^^^^26f0^^^^fe0f} {mountain} {} {Mountain}
 \__emoji_def:nnnn {^^^^^^01f30b} {volcano} {} {Volcano}
@@ -2270,7 +2270,7 @@
 \__emoji_def:nnnn {^^^^^^01f3dc^^^^fe0f} {desert} {} {Desert}
 \__emoji_def:nnnn {^^^^^^01f3dd^^^^fe0f} {desert-island} {} {Desert~island}
 \__emoji_def:nnnn {^^^^^^01f3de^^^^fe0f} {national-park} {} {National~park}
-\__emoji_subsubsection:n {Place-building}
+\__emoji_subgroup:n {Place-building}
 \__emoji_def:nnnn {^^^^^^01f3df^^^^fe0f} {stadium} {} {Stadium}
 \__emoji_def:nnnn {^^^^^^01f3db^^^^fe0f} {classical-building} {} {Classical~building}
 \__emoji_def:nnnn {^^^^^^01f3d7^^^^fe0f} {building-construction} {} {Building~construction}
@@ -2295,14 +2295,14 @@
 \__emoji_def:nnnn {^^^^^^01f492} {wedding} {} {Wedding}
 \__emoji_def:nnnn {^^^^^^01f5fc} {tokyo-tower} {} {Tokyo~tower}
 \__emoji_def:nnnn {^^^^^^01f5fd} {statue-of-liberty} {} {Statue~of~Liberty}
-\__emoji_subsubsection:n {Place-religious}
+\__emoji_subgroup:n {Place-religious}
 \__emoji_def:nnnn {^^^^26ea} {church} {} {Church}
 \__emoji_def:nnnn {^^^^^^01f54c} {mosque} {} {Mosque}
 \__emoji_def:nnnn {^^^^^^01f6d5} {hindu-temple} {} {Hindu~temple}
 \__emoji_def:nnnn {^^^^^^01f54d} {synagogue} {} {Synagogue}
 \__emoji_def:nnnn {^^^^26e9^^^^fe0f} {shinto-shrine} {} {Shinto~shrine}
 \__emoji_def:nnnn {^^^^^^01f54b} {kaaba} {} {Kaaba}
-\__emoji_subsubsection:n {Place-other}
+\__emoji_subgroup:n {Place-other}
 \__emoji_def:nnnn {^^^^26f2} {fountain} {} {Fountain}
 \__emoji_def:nnnn {^^^^26fa} {tent} {} {Tent}
 \__emoji_def:nnnn {^^^^^^01f301} {foggy} {} {Foggy}
@@ -2319,7 +2319,7 @@
 \__emoji_def:nnnn {^^^^^^01f3a2} {roller-coaster} {} {Roller~coaster}
 \__emoji_def:nnnn {^^^^^^01f488} {barber-pole} {barber} {Barber~pole}
 \__emoji_def:nnnn {^^^^^^01f3aa} {circus-tent} {} {Circus~tent}
-\__emoji_subsubsection:n {Transport-ground}
+\__emoji_subgroup:n {Transport-ground}
 \__emoji_def:nnnn {^^^^^^01f682} {locomotive} {steam-locomotive} {Locomotive}
 \__emoji_def:nnnn {^^^^^^01f683} {railway-car} {} {Railway~car}
 \__emoji_def:nnnn {^^^^^^01f684} {high-speed-train} {bullettrain-side} {High-speed~train}
@@ -2367,7 +2367,7 @@
 \__emoji_def:nnnn {^^^^^^01f6a6} {vertical-traffic-light} {} {Vertical~traffic~light}
 \__emoji_def:nnnn {^^^^^^01f6d1} {stop-sign} {} {Stop~sign}
 \__emoji_def:nnnn {^^^^^^01f6a7} {construction} {} {Construction}
-\__emoji_subsubsection:n {Transport-water}
+\__emoji_subgroup:n {Transport-water}
 \__emoji_def:nnnn {^^^^2693} {anchor} {} {Anchor}
 \__emoji_def:nnnn {^^^^26f5} {sailboat} {boat} {Sailboat}
 \__emoji_def:nnnn {^^^^^^01f6f6} {canoe} {} {Canoe}
@@ -2376,7 +2376,7 @@
 \__emoji_def:nnnn {^^^^26f4^^^^fe0f} {ferry} {} {Ferry}
 \__emoji_def:nnnn {^^^^^^01f6e5^^^^fe0f} {motor-boat} {} {Motor~boat}
 \__emoji_def:nnnn {^^^^^^01f6a2} {ship} {} {Ship}
-\__emoji_subsubsection:n {Transport-air}
+\__emoji_subgroup:n {Transport-air}
 \__emoji_def:nnnn {^^^^2708^^^^fe0f} {airplane} {} {Airplane}
 \__emoji_def:nnnn {^^^^^^01f6e9^^^^fe0f} {small-airplane} {} {Small~airplane}
 \__emoji_def:nnnn {^^^^^^01f6eb} {airplane-departure} {flight-departure} {Airplane~departure}
@@ -2390,10 +2390,10 @@
 \__emoji_def:nnnn {^^^^^^01f6f0^^^^fe0f} {satellite} {artificial-satellite} {Satellite}
 \__emoji_def:nnnn {^^^^^^01f680} {rocket} {} {Rocket}
 \__emoji_def:nnnn {^^^^^^01f6f8} {flying-saucer} {} {Flying~saucer}
-\__emoji_subsubsection:n {Hotel}
+\__emoji_subgroup:n {Hotel}
 \__emoji_def:nnnn {^^^^^^01f6ce^^^^fe0f} {bellhop-bell} {} {Bellhop~bell}
 \__emoji_def:nnnn {^^^^^^01f9f3} {luggage} {} {Luggage}
-\__emoji_subsubsection:n {Time}
+\__emoji_subgroup:n {Time}
 \__emoji_def:nnnn {^^^^231b} {hourglass-done} {hourglass} {Hourglass~done}
 \__emoji_def:nnnn {^^^^23f3} {hourglass-not-done} {hourglass-flowing-sand} {Hourglass~not~done}
 \__emoji_def:nnnn {^^^^231a} {watch} {} {Watch}
@@ -2425,7 +2425,7 @@
 \__emoji_def:nnnn {^^^^^^01f565} {ten-thirty} {clock1030} {Ten-thirty}
 \__emoji_def:nnnn {^^^^^^01f55a} {eleven-oclock} {clock11} {Eleven~o'clock}
 \__emoji_def:nnnn {^^^^^^01f566} {eleven-thirty} {clock1130} {Eleven-thirty}
-\__emoji_subsubsection:n {Sky~\&~weather}
+\__emoji_subgroup:n {Sky~\&~weather}
 \__emoji_def:nnnn {^^^^^^01f311} {new-moon} {} {New~moon}
 \__emoji_def:nnnn {^^^^^^01f312} {waxing-crescent-moon} {} {Waxing~crescent~moon}
 \__emoji_def:nnnn {^^^^^^01f313} {first-quarter-moon} {} {First~quarter~moon}
@@ -2473,8 +2473,8 @@
 \__emoji_def:nnnn {^^^^^^01f525} {fire} {} {Fire}
 \__emoji_def:nnnn {^^^^^^01f4a7} {droplet} {} {Droplet}
 \__emoji_def:nnnn {^^^^^^01f30a} {water-wave} {ocean} {Water~wave}
-\__emoji_subsection:n {Activities}
-\__emoji_subsubsection:n {Event}
+\__emoji_group:n {Activities}
+\__emoji_subgroup:n {Event}
 \__emoji_def:nnnn {^^^^^^01f383} {jack-o-lantern} {} {Jack-o-lantern}
 \__emoji_def:nnnn {^^^^^^01f384} {christmas-tree} {} {Christmas~tree}
 \__emoji_def:nnnn {^^^^^^01f386} {fireworks} {} {Fireworks}
@@ -2496,14 +2496,14 @@
 \__emoji_def:nnnn {^^^^^^01f397^^^^fe0f} {reminder-ribbon} {} {Reminder~ribbon}
 \__emoji_def:nnnn {^^^^^^01f39f^^^^fe0f} {admission-tickets} {tickets} {Admission~tickets}
 \__emoji_def:nnnn {^^^^^^01f3ab} {ticket} {} {Ticket}
-\__emoji_subsubsection:n {Award-medal}
+\__emoji_subgroup:n {Award-medal}
 \__emoji_def:nnnn {^^^^^^01f396^^^^fe0f} {military-medal} {medal-military} {Military~medal}
 \__emoji_def:nnnn {^^^^^^01f3c6} {trophy} {} {Trophy}
 \__emoji_def:nnnn {^^^^^^01f3c5} {sports-medal} {medal-sports} {Sports~medal}
 \__emoji_def:nnnn {^^^^^^01f947} {1st-place-medal} {} {1st~place~medal}
 \__emoji_def:nnnn {^^^^^^01f948} {2nd-place-medal} {} {2nd~place~medal}
 \__emoji_def:nnnn {^^^^^^01f949} {3rd-place-medal} {} {3rd~place~medal}
-\__emoji_subsubsection:n {Sport}
+\__emoji_subgroup:n {Sport}
 \__emoji_def:nnnn {^^^^26bd} {soccer-ball} {soccer} {Soccer~ball}
 \__emoji_def:nnnn {^^^^26be} {baseball} {} {Baseball}
 \__emoji_def:nnnn {^^^^^^01f94e} {softball} {} {Softball}
@@ -2531,7 +2531,7 @@
 \__emoji_def:nnnn {^^^^^^01f3bf} {skis} {ski} {Skis}
 \__emoji_def:nnnn {^^^^^^01f6f7} {sled} {} {Sled}
 \__emoji_def:nnnn {^^^^^^01f94c} {curling-stone} {} {Curling~stone}
-\__emoji_subsubsection:n {Game}
+\__emoji_subgroup:n {Game}
 \__emoji_def:nnnn {^^^^^^01f3af} {direct-hit} {dart} {Direct~hit}
 \__emoji_def:nnnn {^^^^^^01fa80} {yo-yo} {} {Yo-yo}
 \__emoji_def:nnnn {^^^^^^01fa81} {kite} {} {Kite}
@@ -2552,14 +2552,14 @@
 \__emoji_def:nnnn {^^^^^^01f0cf} {joker} {black-joker} {Joker}
 \__emoji_def:nnnn {^^^^^^01f004} {mahjong-red-dragon} {mahjong} {Mahjong~red~dragon}
 \__emoji_def:nnnn {^^^^^^01f3b4} {flower-playing-cards} {} {Flower~playing~cards}
-\__emoji_subsubsection:n {Arts~\&~crafts}
+\__emoji_subgroup:n {Arts~\&~crafts}
 \__emoji_def:nnnn {^^^^^^01f3ad} {performing-arts} {} {Performing~arts}
 \__emoji_def:nnnn {^^^^^^01f5bc^^^^fe0f} {framed-picture} {} {Framed~picture}
 \__emoji_def:nnnn {^^^^^^01f3a8} {artist-palette} {art} {Artist~palette}
 \__emoji_def:nnnn {^^^^^^01f9f5} {thread} {} {Thread}
 \__emoji_def:nnnn {^^^^^^01f9f6} {yarn} {} {Yarn}
-\__emoji_subsection:n {Objects}
-\__emoji_subsubsection:n {Clothing}
+\__emoji_group:n {Objects}
+\__emoji_subgroup:n {Clothing}
 \__emoji_def:nnnn {^^^^^^01f453} {glasses} {eyeglasses} {Glasses}
 \__emoji_def:nnnn {^^^^^^01f576^^^^fe0f} {sunglasses} {dark-sunglasses} {Sunglasses}
 \__emoji_def:nnnn {^^^^^^01f97d} {goggles} {} {Goggles}
@@ -2603,7 +2603,7 @@
 \__emoji_def:nnnn {^^^^^^01f484} {lipstick} {} {Lipstick}
 \__emoji_def:nnnn {^^^^^^01f48d} {ring} {} {Ring}
 \__emoji_def:nnnn {^^^^^^01f48e} {gem-stone} {gem} {Gem~stone}
-\__emoji_subsubsection:n {Sound}
+\__emoji_subgroup:n {Sound}
 \__emoji_def:nnnn {^^^^^^01f507} {muted-speaker} {mute} {Muted~speaker}
 \__emoji_def:nnnn {^^^^^^01f508} {speaker-low-volume} {speaker} {Speaker~low~volume}
 \__emoji_def:nnnn {^^^^^^01f509} {speaker-medium-volume} {sound} {Speaker~medium~volume}
@@ -2613,7 +2613,7 @@
 \__emoji_def:nnnn {^^^^^^01f4ef} {postal-horn} {} {Postal~horn}
 \__emoji_def:nnnn {^^^^^^01f514} {bell} {} {Bell}
 \__emoji_def:nnnn {^^^^^^01f515} {bell-with-slash} {no-bell} {Bell~with~slash}
-\__emoji_subsubsection:n {Music}
+\__emoji_subgroup:n {Music}
 \__emoji_def:nnnn {^^^^^^01f3bc} {musical-score} {} {Musical~score}
 \__emoji_def:nnnn {^^^^^^01f3b5} {musical-note} {} {Musical~note}
 \__emoji_def:nnnn {^^^^^^01f3b6} {musical-notes} {notes} {Musical~notes}
@@ -2623,7 +2623,7 @@
 \__emoji_def:nnnn {^^^^^^01f3a4} {microphone} {} {Microphone}
 \__emoji_def:nnnn {^^^^^^01f3a7} {headphone} {headphones} {Headphone}
 \__emoji_def:nnnn {^^^^^^01f4fb} {radio} {} {Radio}
-\__emoji_subsubsection:n {Musical-instrument}
+\__emoji_subgroup:n {Musical-instrument}
 \__emoji_def:nnnn {^^^^^^01f3b7} {saxophone} {} {Saxophone}
 \__emoji_def:nnnn {^^^^^^01f3b8} {guitar} {} {Guitar}
 \__emoji_def:nnnn {^^^^^^01f3b9} {musical-keyboard} {} {Musical~keyboard}
@@ -2631,14 +2631,14 @@
 \__emoji_def:nnnn {^^^^^^01f3bb} {violin} {} {Violin}
 \__emoji_def:nnnn {^^^^^^01fa95} {banjo} {} {Banjo}
 \__emoji_def:nnnn {^^^^^^01f941} {drum} {} {Drum}
-\__emoji_subsubsection:n {Phone}
+\__emoji_subgroup:n {Phone}
 \__emoji_def:nnnn {^^^^^^01f4f1} {mobile-phone} {iphone} {Mobile~phone}
 \__emoji_def:nnnn {^^^^^^01f4f2} {mobile-phone-with-arrow} {calling} {Mobile~phone~with~arrow}
 \__emoji_def:nnnn {^^^^260e^^^^fe0f} {telephone} {phone} {Telephone}
 \__emoji_def:nnnn {^^^^^^01f4de} {telephone-receiver} {} {Telephone~receiver}
 \__emoji_def:nnnn {^^^^^^01f4df} {pager} {} {Pager}
 \__emoji_def:nnnn {^^^^^^01f4e0} {fax-machine} {fax} {Fax~machine}
-\__emoji_subsubsection:n {Computer}
+\__emoji_subgroup:n {Computer}
 \__emoji_def:nnnn {^^^^^^01f50b} {battery} {} {Battery}
 \__emoji_def:nnnn {^^^^^^01f50c} {electric-plug} {} {Electric~plug}
 \__emoji_def:nnnn {^^^^^^01f4bb} {laptop} {computer} {Laptop}
@@ -2652,7 +2652,7 @@
 \__emoji_def:nnnn {^^^^^^01f4bf} {optical-disk} {cd} {Optical~disk}
 \__emoji_def:nnnn {^^^^^^01f4c0} {dvd} {} {Dvd}
 \__emoji_def:nnnn {^^^^^^01f9ee} {abacus} {} {Abacus}
-\__emoji_subsubsection:n {Light~\&~video}
+\__emoji_subgroup:n {Light~\&~video}
 \__emoji_def:nnnn {^^^^^^01f3a5} {movie-camera} {} {Movie~camera}
 \__emoji_def:nnnn {^^^^^^01f39e^^^^fe0f} {film-frames} {film-strip} {Film~frames}
 \__emoji_def:nnnn {^^^^^^01f4fd^^^^fe0f} {film-projector} {} {Film~projector}
@@ -2669,7 +2669,7 @@
 \__emoji_def:nnnn {^^^^^^01f526} {flashlight} {} {Flashlight}
 \__emoji_def:nnnn {^^^^^^01f3ee} {red-paper-lantern} {izakaya-lantern, lantern} {Red~paper~lantern}
 \__emoji_def:nnnn {^^^^^^01fa94} {diya-lamp} {} {Diya~lamp}
-\__emoji_subsubsection:n {Book-paper}
+\__emoji_subgroup:n {Book-paper}
 \__emoji_def:nnnn {^^^^^^01f4d4} {notebook-with-decorative-cover} {} {Notebook~with~decorative~cover}
 \__emoji_def:nnnn {^^^^^^01f4d5} {closed-book} {} {Closed~book}
 \__emoji_def:nnnn {^^^^^^01f4d6} {open-book} {book} {Open~book}
@@ -2687,7 +2687,7 @@
 \__emoji_def:nnnn {^^^^^^01f4d1} {bookmark-tabs} {} {Bookmark~tabs}
 \__emoji_def:nnnn {^^^^^^01f516} {bookmark} {} {Bookmark}
 \__emoji_def:nnnn {^^^^^^01f3f7^^^^fe0f} {label} {} {Label}
-\__emoji_subsubsection:n {Money}
+\__emoji_subgroup:n {Money}
 \__emoji_def:nnnn {^^^^^^01f4b0} {money-bag} {moneybag} {Money~bag}
 \__emoji_def:nnnn {^^^^^^01f4b4} {yen-banknote} {yen} {Yen~banknote}
 \__emoji_def:nnnn {^^^^^^01f4b5} {dollar-banknote} {dollar} {Dollar~banknote}
@@ -2699,7 +2699,7 @@
 \__emoji_def:nnnn {^^^^^^01f4b9} {chart-increasing-with-yen} {chart} {Chart~increasing~with~yen}
 \__emoji_def:nnnn {^^^^^^01f4b1} {currency-exchange} {} {Currency~exchange}
 \__emoji_def:nnnn {^^^^^^01f4b2} {heavy-dollar-sign} {} {Heavy~dollar~sign}
-\__emoji_subsubsection:n {Mail}
+\__emoji_subgroup:n {Mail}
 \__emoji_def:nnnn {^^^^2709^^^^fe0f} {envelope} {email} {Envelope}
 \__emoji_def:nnnn {^^^^^^01f4e7} {e-mail} {} {E-mail}
 \__emoji_def:nnnn {^^^^^^01f4e8} {incoming-envelope} {} {Incoming~envelope}
@@ -2713,7 +2713,7 @@
 \__emoji_def:nnnn {^^^^^^01f4ed} {open-mailbox-with-lowered-flag} {mailbox-with-no-mail} {Open~mailbox~with~lowered~flag}
 \__emoji_def:nnnn {^^^^^^01f4ee} {postbox} {} {Postbox}
 \__emoji_def:nnnn {^^^^^^01f5f3^^^^fe0f} {ballot-box-with-ballot} {ballot-box} {Ballot~box~with~ballot}
-\__emoji_subsubsection:n {Writing}
+\__emoji_subgroup:n {Writing}
 \__emoji_def:nnnn {^^^^270f^^^^fe0f} {pencil} {pencil2} {Pencil}
 \__emoji_def:nnnn {^^^^2712^^^^fe0f} {black-nib} {} {Black~nib}
 \__emoji_def:nnnn {^^^^^^01f58b^^^^fe0f} {fountain-pen} {} {Fountain~pen}
@@ -2721,7 +2721,7 @@
 \__emoji_def:nnnn {^^^^^^01f58c^^^^fe0f} {paintbrush} {} {Paintbrush}
 \__emoji_def:nnnn {^^^^^^01f58d^^^^fe0f} {crayon} {} {Crayon}
 \__emoji_def:nnnn {^^^^^^01f4dd} {memo} {} {Memo}
-\__emoji_subsubsection:n {Office}
+\__emoji_subgroup:n {Office}
 \__emoji_def:nnnn {^^^^^^01f4bc} {briefcase} {} {Briefcase}
 \__emoji_def:nnnn {^^^^^^01f4c1} {file-folder} {} {File~folder}
 \__emoji_def:nnnn {^^^^^^01f4c2} {open-file-folder} {} {Open~file~folder}
@@ -2745,14 +2745,14 @@
 \__emoji_def:nnnn {^^^^^^01f5c3^^^^fe0f} {card-file-box} {} {Card~file~box}
 \__emoji_def:nnnn {^^^^^^01f5c4^^^^fe0f} {file-cabinet} {} {File~cabinet}
 \__emoji_def:nnnn {^^^^^^01f5d1^^^^fe0f} {wastebasket} {} {Wastebasket}
-\__emoji_subsubsection:n {Lock}
+\__emoji_subgroup:n {Lock}
 \__emoji_def:nnnn {^^^^^^01f512} {locked} {lock} {Locked}
 \__emoji_def:nnnn {^^^^^^01f513} {unlocked} {unlock} {Unlocked}
 \__emoji_def:nnnn {^^^^^^01f50f} {locked-with-pen} {lock-with-ink-pen} {Locked~with~pen}
 \__emoji_def:nnnn {^^^^^^01f510} {locked-with-key} {closed-lock-with-key} {Locked~with~key}
 \__emoji_def:nnnn {^^^^^^01f511} {key} {} {Key}
 \__emoji_def:nnnn {^^^^^^01f5dd^^^^fe0f} {old-key} {} {Old~key}
-\__emoji_subsubsection:n {Tool}
+\__emoji_subgroup:n {Tool}
 \__emoji_def:nnnn {^^^^^^01f528} {hammer} {} {Hammer}
 \__emoji_def:nnnn {^^^^^^01fa93} {axe} {} {Axe}
 \__emoji_def:nnnn {^^^^26cf^^^^fe0f} {pick} {} {Pick}
@@ -2773,7 +2773,7 @@
 \__emoji_def:nnnn {^^^^26d3^^^^fe0f} {chains} {} {Chains}
 \__emoji_def:nnnn {^^^^^^01f9f0} {toolbox} {} {Toolbox}
 \__emoji_def:nnnn {^^^^^^01f9f2} {magnet} {} {Magnet}
-\__emoji_subsubsection:n {Science}
+\__emoji_subgroup:n {Science}
 \__emoji_def:nnnn {^^^^2697^^^^fe0f} {alembic} {} {Alembic}
 \__emoji_def:nnnn {^^^^^^01f9ea} {test-tube} {} {Test~tube}
 \__emoji_def:nnnn {^^^^^^01f9eb} {petri-dish} {} {Petri~dish}
@@ -2781,13 +2781,13 @@
 \__emoji_def:nnnn {^^^^^^01f52c} {microscope} {} {Microscope}
 \__emoji_def:nnnn {^^^^^^01f52d} {telescope} {} {Telescope}
 \__emoji_def:nnnn {^^^^^^01f4e1} {satellite-antenna} {} {Satellite~antenna}
-\__emoji_subsubsection:n {Medical}
+\__emoji_subgroup:n {Medical}
 \__emoji_def:nnnn {^^^^^^01f489} {syringe} {} {Syringe}
 \__emoji_def:nnnn {^^^^^^01fa78} {drop-of-blood} {} {Drop~of~blood}
 \__emoji_def:nnnn {^^^^^^01f48a} {pill} {} {Pill}
 \__emoji_def:nnnn {^^^^^^01fa79} {adhesive-bandage} {} {Adhesive~bandage}
 \__emoji_def:nnnn {^^^^^^01fa7a} {stethoscope} {} {Stethoscope}
-\__emoji_subsubsection:n {Household}
+\__emoji_subgroup:n {Household}
 \__emoji_def:nnnn {^^^^^^01f6aa} {door} {} {Door}
 \__emoji_def:nnnn {^^^^^^01f6cf^^^^fe0f} {bed} {} {Bed}
 \__emoji_def:nnnn {^^^^^^01f6cb^^^^fe0f} {couch-and-lamp} {} {Couch~and~lamp}
@@ -2805,13 +2805,13 @@
 \__emoji_def:nnnn {^^^^^^01f9fd} {sponge} {} {Sponge}
 \__emoji_def:nnnn {^^^^^^01f9ef} {fire-extinguisher} {} {Fire~extinguisher}
 \__emoji_def:nnnn {^^^^^^01f6d2} {shopping-cart} {} {Shopping~cart}
-\__emoji_subsubsection:n {Other-object}
+\__emoji_subgroup:n {Other-object}
 \__emoji_def:nnnn {^^^^^^01f6ac} {cigarette} {smoking} {Cigarette}
 \__emoji_def:nnnn {^^^^26b0^^^^fe0f} {coffin} {} {Coffin}
 \__emoji_def:nnnn {^^^^26b1^^^^fe0f} {funeral-urn} {} {Funeral~urn}
 \__emoji_def:nnnn {^^^^^^01f5ff} {moai} {moyai} {Moai}
-\__emoji_subsection:n {Symbols}
-\__emoji_subsubsection:n {Transport-sign}
+\__emoji_group:n {Symbols}
+\__emoji_subgroup:n {Transport-sign}
 \__emoji_def:nnnn {^^^^^^01f3e7} {atm-sign} {atm} {ATM~sign}
 \__emoji_def:nnnn {^^^^^^01f6ae} {litter-in-bin-sign} {put-litter-in-its-place} {Litter~in~bin~sign}
 \__emoji_def:nnnn {^^^^^^01f6b0} {potable-water} {} {Potable~water}
@@ -2825,7 +2825,7 @@
 \__emoji_def:nnnn {^^^^^^01f6c3} {customs} {} {Customs}
 \__emoji_def:nnnn {^^^^^^01f6c4} {baggage-claim} {} {Baggage~claim}
 \__emoji_def:nnnn {^^^^^^01f6c5} {left-luggage} {} {Left~luggage}
-\__emoji_subsubsection:n {Warning}
+\__emoji_subgroup:n {Warning}
 \__emoji_def:nnnn {^^^^26a0^^^^fe0f} {warning} {} {Warning}
 \__emoji_def:nnnn {^^^^^^01f6b8} {children-crossing} {} {Children~crossing}
 \__emoji_def:nnnn {^^^^26d4} {no-entry} {} {No~entry}
@@ -2839,7 +2839,7 @@
 \__emoji_def:nnnn {^^^^^^01f51e} {no-one-under-eighteen} {underage} {No~one~under~eighteen}
 \__emoji_def:nnnn {^^^^2622^^^^fe0f} {radioactive} {} {Radioactive}
 \__emoji_def:nnnn {^^^^2623^^^^fe0f} {biohazard} {} {Biohazard}
-\__emoji_subsubsection:n {Arrow}
+\__emoji_subgroup:n {Arrow}
 \__emoji_def:nnnn {^^^^2b06^^^^fe0f} {up-arrow} {arrow-up} {Up~arrow}
 \__emoji_def:nnnn {^^^^2197^^^^fe0f} {up-right-arrow} {arrow-upper-right} {Up-right~arrow}
 \__emoji_def:nnnn {^^^^27a1^^^^fe0f} {right-arrow} {arrow-right} {Right~arrow}
@@ -2861,7 +2861,7 @@
 \__emoji_def:nnnn {^^^^^^01f51b} {on!-arrow} {on} {ON!~arrow}
 \__emoji_def:nnnn {^^^^^^01f51c} {soon-arrow} {soon} {SOON~arrow}
 \__emoji_def:nnnn {^^^^^^01f51d} {top-arrow} {top} {TOP~arrow}
-\__emoji_subsubsection:n {Religion}
+\__emoji_subgroup:n {Religion}
 \__emoji_def:nnnn {^^^^^^01f6d0} {place-of-worship} {} {Place~of~worship}
 \__emoji_def:nnnn {^^^^269b^^^^fe0f} {atom-symbol} {} {Atom~symbol}
 \__emoji_def:nnnn {^^^^^^01f549^^^^fe0f} {om} {} {Om}
@@ -2874,7 +2874,7 @@
 \__emoji_def:nnnn {^^^^262e^^^^fe0f} {peace-symbol} {} {Peace~symbol}
 \__emoji_def:nnnn {^^^^^^01f54e} {menorah} {} {Menorah}
 \__emoji_def:nnnn {^^^^^^01f52f} {dotted-six-pointed-star} {six-pointed-star} {Dotted~six-pointed~star}
-\__emoji_subsubsection:n {Zodiac}
+\__emoji_subgroup:n {Zodiac}
 \__emoji_def:nnnn {^^^^2648} {aries} {} {Aries}
 \__emoji_def:nnnn {^^^^2649} {taurus} {} {Taurus}
 \__emoji_def:nnnn {^^^^264a} {gemini} {} {Gemini}
@@ -2888,7 +2888,7 @@
 \__emoji_def:nnnn {^^^^2652} {aquarius} {} {Aquarius}
 \__emoji_def:nnnn {^^^^2653} {pisces} {} {Pisces}
 \__emoji_def:nnnn {^^^^26ce} {ophiuchus} {} {Ophiuchus}
-\__emoji_subsubsection:n {Av-symbol}
+\__emoji_subgroup:n {Av-symbol}
 \__emoji_def:nnnn {^^^^^^01f500} {shuffle-tracks-button} {twisted-rightwards-arrows} {Shuffle~tracks~button}
 \__emoji_def:nnnn {^^^^^^01f501} {repeat-button} {repeat} {Repeat~button}
 \__emoji_def:nnnn {^^^^^^01f502} {repeat-single-button} {repeat-one} {Repeat~single~button}
@@ -2913,10 +2913,10 @@
 \__emoji_def:nnnn {^^^^^^01f4f6} {antenna-bars} {signal-strength} {Antenna~bars}
 \__emoji_def:nnnn {^^^^^^01f4f3} {vibration-mode} {} {Vibration~mode}
 \__emoji_def:nnnn {^^^^^^01f4f4} {mobile-phone-off} {} {Mobile~phone~off}
-\__emoji_subsubsection:n {Gender}
+\__emoji_subgroup:n {Gender}
 \__emoji_def:nnnn {^^^^2640^^^^fe0f} {female-sign} {} {Female~sign}
 \__emoji_def:nnnn {^^^^2642^^^^fe0f} {male-sign} {} {Male~sign}
-\__emoji_subsubsection:n {Other-symbol}
+\__emoji_subgroup:n {Other-symbol}
 \__emoji_def:nnnn {^^^^2695^^^^fe0f} {medical-symbol} {} {Medical~symbol}
 \__emoji_def:nnnn {^^^^267e^^^^fe0f} {infinity} {} {Infinity}
 \__emoji_def:nnnn {^^^^267b^^^^fe0f} {recycling-symbol} {recycle} {Recycling~symbol}
@@ -2950,7 +2950,7 @@
 \__emoji_def:nnnn {^^^^00a9^^^^fe0f} {copyright} {} {Copyright}
 \__emoji_def:nnnn {^^^^00ae^^^^fe0f} {registered} {} {Registered}
 \__emoji_def:nnnn {^^^^2122^^^^fe0f} {trade-mark} {tm} {Trade~mark}
-\__emoji_subsubsection:n {Keycap}
+\__emoji_subgroup:n {Keycap}
 \__emoji_def:nnnn {^^^^0023^^^^fe0f^^^^20e3} {keycap-hash} {hash} {Keycap:~\#}
 \__emoji_def:nnnn {^^^^002a^^^^fe0f^^^^20e3} {keycap-asterisk} {asterisk} {Keycap:~*}
 \__emoji_def:nnnn {^^^^0030^^^^fe0f^^^^20e3} {keycap-0} {zero} {Keycap:~0}
@@ -2964,7 +2964,7 @@
 \__emoji_def:nnnn {^^^^0038^^^^fe0f^^^^20e3} {keycap-8} {eight} {Keycap:~8}
 \__emoji_def:nnnn {^^^^0039^^^^fe0f^^^^20e3} {keycap-9} {nine} {Keycap:~9}
 \__emoji_def:nnnn {^^^^^^01f51f} {keycap-10} {keycap-ten} {Keycap:~10}
-\__emoji_subsubsection:n {Alphanum}
+\__emoji_subgroup:n {Alphanum}
 \__emoji_def:nnnn {^^^^^^01f520} {input-latin-uppercase} {capital-abcd} {Input~latin~uppercase}
 \__emoji_def:nnnn {^^^^^^01f521} {input-latin-lowercase} {abcd} {Input~latin~lowercase}
 \__emoji_def:nnnn {^^^^^^01f522} {input-numbers} {1234} {Input~numbers}
@@ -3004,7 +3004,7 @@
 \__emoji_def:nnnn {^^^^3299^^^^fe0f} {japanese-secret-button} {secret} {Japanese~``secret''~button}
 \__emoji_def:nnnn {^^^^^^01f23a} {japanese-open-for-business-button} {u55b6} {Japanese~``open~for~business''~button}
 \__emoji_def:nnnn {^^^^^^01f235} {japanese-no-vacancy-button} {u6e80} {Japanese~``no~vacancy''~button}
-\__emoji_subsubsection:n {Geometric}
+\__emoji_subgroup:n {Geometric}
 \__emoji_def:nnnn {^^^^^^01f534} {red-circle} {} {Red~circle}
 \__emoji_def:nnnn {^^^^^^01f7e0} {orange-circle} {} {Orange~circle}
 \__emoji_def:nnnn {^^^^^^01f7e1} {yellow-circle} {} {Yellow~circle}
@@ -3039,8 +3039,8 @@
 \__emoji_def:nnnn {^^^^^^01f518} {radio-button} {} {Radio~button}
 \__emoji_def:nnnn {^^^^^^01f533} {white-square-button} {} {White~square~button}
 \__emoji_def:nnnn {^^^^^^01f532} {black-square-button} {} {Black~square~button}
-\__emoji_subsection:n {Flags}
-\__emoji_subsubsection:n {Flag}
+\__emoji_group:n {Flags}
+\__emoji_subgroup:n {Flag}
 \__emoji_def:nnnn {^^^^^^01f3c1} {chequered-flag} {checkered-flag} {Chequered~flag}
 \__emoji_def:nnnn {^^^^^^01f6a9} {triangular-flag} {triangular-flag-on-post} {Triangular~flag}
 \__emoji_def:nnnn {^^^^^^01f38c} {crossed-flags} {} {Crossed~flags}
@@ -3048,7 +3048,7 @@
 \__emoji_def:nnnn {^^^^^^01f3f3^^^^fe0f} {white-flag} {} {White~flag}
 \__emoji_def:nnnn {^^^^^^01f3f3^^^^fe0f^^^^200d^^^^^^01f308} {rainbow-flag} {} {Rainbow~flag}
 \__emoji_def:nnnn {^^^^^^01f3f4^^^^200d^^^^2620^^^^fe0f} {pirate-flag} {} {Pirate~flag}
-\__emoji_subsubsection:n {Country-flag}
+\__emoji_subgroup:n {Country-flag}
 \__emoji_def:nnnn {^^^^^^01f1e6^^^^^^01f1e8} {flag-ascension-island} {ascension-island} {Flag:~Ascension~Island}
 \__emoji_def:nnnn {^^^^^^01f1e6^^^^^^01f1e9} {flag-andorra} {andorra} {Flag:~Andorra}
 \__emoji_def:nnnn {^^^^^^01f1e6^^^^^^01f1ea} {flag-united-arab-emirates} {united-arab-emirates} {Flag:~United~Arab~Emirates}
@@ -3307,7 +3307,7 @@
 \__emoji_def:nnnn {^^^^^^01f1ff^^^^^^01f1e6} {flag-south-africa} {south-africa} {Flag:~South~Africa}
 \__emoji_def:nnnn {^^^^^^01f1ff^^^^^^01f1f2} {flag-zambia} {zambia} {Flag:~Zambia}
 \__emoji_def:nnnn {^^^^^^01f1ff^^^^^^01f1fc} {flag-zimbabwe} {zimbabwe} {Flag:~Zimbabwe}
-\__emoji_subsubsection:n {Subdivision-flag}
+\__emoji_subgroup:n {Subdivision-flag}
 \__emoji_def:nnnn {^^^^^^01f3f4^^^^^^0e0067^^^^^^0e0062^^^^^^0e0065^^^^^^0e006e^^^^^^0e0067^^^^^^0e007f} {flag-england} {england} {Flag:~England}
 \__emoji_def:nnnn {^^^^^^01f3f4^^^^^^0e0067^^^^^^0e0062^^^^^^0e0073^^^^^^0e0063^^^^^^0e0074^^^^^^0e007f} {flag-scotland} {scotland} {Flag:~Scotland}
 \__emoji_def:nnnn {^^^^^^01f3f4^^^^^^0e0067^^^^^^0e0062^^^^^^0e0077^^^^^^0e006c^^^^^^0e0073^^^^^^0e007f} {flag-wales} {wales} {Flag:~Wales}
