@@ -43,8 +43,7 @@
 
 \newfontface\fontja{Noto Serif CJK JP Light}
 \newfontface\fontsymbol{Noto Sans Symbols Light}
-\newfontface\ttcond{NotoSansMono-ExtraCondensedLight.ttf}
-% \def\fontja{}
+\newfontface\ttcond{NotoSansMono-ExtraCondensedLight.ttf}[Ligatures=CommonOff]
 
 \makeatletter
 \ExplSyntaxOn
@@ -93,28 +92,29 @@
     \clist_use:Nn \l__clist_internal_clist
   }
 
-\cs_set:Npn \__emoji_def:nnnn
+\cs_set:Npn \__emoji_def:nnnnn
   {
     \int_gincr:N \g__emoji_doc_group_count_int
     \int_gincr:N \g__emoji_doc_subgroup_count_int
     \int_gincr:N \g__emoji_doc_total_count_int
     \char_set_catcode_other:N \^
-    \__emoji_def_aux:nnnn
+    \__emoji_def_aux:nnnnn
   }
-\cs_set:Npn \__emoji_def_aux:nnnn #1#2#3#4
+\cs_set:Npn \__emoji_def_aux:nnnnn #1#2#3#4#5
   {
       \emoji {#2}
-    & \ttfamily \scriptsize #2
-    & \ttfamily \scriptsize
+    & \ttcond \scriptsize #2
+    & \ttcond \scriptsize
       \clist_use:nn {#3} { , ~ }
     & \scriptsize #4
-    & \ttfamily \scriptsize
+    & \ttcond \scriptsize
       \str_set:Nn \l_tmpa_str {#1}
       \str_replace_all:Nnn \l_tmpa_str { ^ ^ ^ ^ ^ ^ 0 } { , }
       \str_replace_all:Nnn \l_tmpa_str { ^ ^ ^ ^ }       { , }
       \exp_args:Nx \clist_use:nn
         { \str_uppercase:f { \str_tail:N \l_tmpa_str } }
         { ~ }
+    & \ttcond \scriptsize E#5
     \char_set_catcode_math_superscript:N \^
     \\
   }
@@ -151,7 +151,7 @@
 
 \cs_set:Npn \__emoji_doc_begin_longtable:n #1
   {
-    \begin{longtable} { C{1.2cm} P{4cm} P{2.8cm} P{4cm} C{1.8cm} }
+    \begin{longtable} { C{1.1cm} P{3.5cm} P{2.3cm} P{3.5cm} C{1.8cm} C{1.2cm} }
         \caption{#1} \\
         \__emoji_doc_longtable_head:
       \endfirsthead
@@ -169,7 +169,8 @@
     & \strong{\small Fullname}
     & \strong{\small Aliases}
     & \strong{\small Description}
-    & \strong{\small Codepoints}  \\
+    & \strong{\small Codepoints}
+    & \strong{\small Version} \\
     \midrule
   }
 
@@ -238,13 +239,18 @@ that represent emotions, feelings, or activities.\textsuperscript{\cite{utr51}}
 In 2019, \href{https://github.com/luigiScarso}{Luigi Scarso} has integrated the
 \href{https://github.com/harfbuzz/harfbuzz}{HarfBuzz} library into \LuaTeX.%
 \footnote{\href{https://github.com/khaledhosny}{Khaled Hosny} has also created a similar project
-\href{https://github.com/khaledhosny/harftex}{HarfTeX}.}
+  \href{https://github.com/khaledhosny/harftex}{HarfTeX}.}
 While the original purpose is to optimize the rendering of indic and arabic scripts, emoji is
 also supported by this new extended version of \TeX{} at the same time.
 
 The \pkg{emoji} package allows user to typeset emoji in a \LaTeX{} document. It requires
 \LuaHBTeX{}: at present, only \texttt{lualatex-dev} can be used to compile. In \TeX{} Live 2020,
 \texttt{lualatex} will base on the new \LuaHBTeX{} engine and can be used as well.
+
+Emoji has been included in the Unicode Standard since 2009. The \pkg{emoji} package support
+the latest version Emoji 13.0 (published on 2020-03-10).%
+\footnote{Starting with version 11.0, the repertoire of emoji characters is synchronized with
+  the Unicode Standard, and has the same version numbering system.}
 
 \section{\emoji{fire} Basic usage}
 
@@ -291,7 +297,7 @@ Examples:
     \cs{emoji}\marg{name}
   \end{syntax}
   This is the main command to use emoji. All valid \meta{name} can be found in
-  \autoref{subsec:emoji-list}.
+  \autoref{subsec:emoji-list} (fullnames and aliases are both OK).
 \end{function}
 
 Examples:
@@ -318,6 +324,11 @@ while the aliases are from GitHub's
 
 There are totally \ref*{count:emoji} emoji listed here. This should equal to the number of
 fully-qualified emoji and components in Unicode standard.
+
+In the following list, emoji is shown with Twemoji font. Note that not all emoji are supported
+in this font as present. The fullname is actually a sanitized version of description, which is
+from the CLDR short name. The version field \texttt{Ex.x} corresponds to the Emoji version when
+the emoji character or emoji sequence was first defined.
 
 \EMOJITABLE
 

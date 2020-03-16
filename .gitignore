@@ -11,6 +11,7 @@
 *.pdf
 *.toc
 
+.vscode/
 data/
 fonts/
 release/

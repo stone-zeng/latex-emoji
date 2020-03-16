@@ -107,7 +107,12 @@ with open(OUTPUT_FILE, 'w') as f:
         for j in emoji[i]:
             f.writelines(r'\__emoji_subgroup:n {' + texify(j) + '}\n')
             for k in emoji[i][j]:
-                line = r'\__emoji_def:nnnn {{{}}} {{{}}} {{{}}} {{{}}}'.format(
-                    k['code_points'], k['name'], k['aliases'], texify(k['description']))
+                line = (r'\__emoji_def:nnnnn' + ' {{{}}}' * 5).format(
+                    k['code_points'],
+                    k['name'],
+                    k['aliases'],
+                    texify(k['description']),
+                    k['version']
+                )
                 f.writelines(line + '\n')
     f.writelines("%%\n%% End of file `{}'.\n".format(OUTPUT_FILE))
