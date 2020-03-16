@@ -20,12 +20,13 @@ The `emoji` package allows user to typeset emoji in a LaTeX document. It require
 \emoji{joy}
 \emoji{+1}
 \emoji{family-man-woman-girl-boy}
+\emoji{woman-and-man-holding-hands-light-skin-tone-medium-dark-skin-tone}
 \end{document}
 ```
 
 Result:
 
-> &#x1F602; &#x1F44D; &#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;
+> &#x1F602; &#x1F44D; &#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466; &#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;
 
 ## License
 
