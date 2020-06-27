@@ -16,7 +16,7 @@
 %%  The Current Maintainer of this work is Xiangdong Zeng.
 %%
 \ProvidesExplFile{emoji-table.def}
-  {2020/03/16}{0.2}{Emoji support in (Lua)LaTeX}
+  {2020/06/27}{0.2.1}{Emoji support in (Lua)LaTeX}
 \__emoji_group:n {Smileys~\&~Emotion}
 \__emoji_subgroup:n {Face-smiling}
 \__emoji_def:nnnnn {^^^^^^01f600} {grinning-face} {grinning} {Grinning~face} {1.0}

@@ -6,7 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
-## [v0.2] - 2020/03/16
+## [v0.2.1] - 2020-06-27
+
+### Fix
+
+- Update documentation to fully support Unicode 12.1
+
+## [v0.2] - 2020-03-16
 
 ### Added
 
@@ -19,11 +25,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 - Fix preamble detection
 - Update documentation for history of LuaHBTeX
 
-## [v0.1] - 2020/02/23
+## [v0.1] - 2020-02-23
 
 ### Added
 
-- First public version
+- First (experimental) version of the `emoji` package
 
 [Unreleased]: https://github.com/stone-zeng/latex-emoji/compare/v0.2...HEAD
 [v0.2]: https://github.com/stone-zeng/latex-emoji/compare/v0.1...v0.2
