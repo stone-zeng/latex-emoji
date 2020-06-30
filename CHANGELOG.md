@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Fix
+
+- Compatibility with `ctex` and `luatexja`.
+
 ## [v0.2.1] - 2020-06-27
 
 ### Fix
@@ -31,6 +35,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 - First (experimental) version of the `emoji` package
 
-[Unreleased]: https://github.com/stone-zeng/latex-emoji/compare/v0.2...HEAD
+[Unreleased]: https://github.com/stone-zeng/latex-emoji/compare/v0.2.1...HEAD
+[v0.2.1]: https://github.com/stone-zeng/latex-emoji/compare/v0.2...v0.2.1
 [v0.2]: https://github.com/stone-zeng/latex-emoji/compare/v0.1...v0.2
 [v0.1]: https://github.com/stone-zeng/latex-emoji/releases/tag/v0.1
