@@ -173,23 +173,23 @@
           }
       }
 
-      % Compatibility with luatexja.
-      % Emoji should be "ALchar" so that the correct font can be used.
-      \__emoji_if_package_loaded:nT { luatexja }
-        {
-          \cs_set_protected:Npn \__emoji_ltj_set_range:n #1
-            {
-              \tl_set:Nx \l_tmpa_tl
-                { \tl_map_function:nN {#1} \__emoji_encode_from_char:n }
-              % Range 4 means "characters usually not in Japanese fonts".
-              % `\ltjdefcharrange` does not accespt empty value, so we need to
-              % remove extra comma.
-              \exp_args:Nnx \ltjdefcharrange {4} { \tl_tail:N \l_tmpa_tl }
-            }
-          % 0-7F are always treated as an ALchar and can't be customized.
-          \cs_new:Npn \__emoji_encode_from_char:n #1
-            { \int_compare:nNnF {`#1} < {"80} {,`#1} }
-        }
+    % Compatibility with luatexja.
+    % Emoji should be "ALchar" so that the correct font can be used.
+    \__emoji_if_package_loaded:nT { luatexja }
+      {
+        \cs_set_protected:Npn \__emoji_ltj_set_range:n #1
+          {
+            \tl_set:Nx \l_tmpa_tl
+              { \tl_map_function:nN {#1} \__emoji_encode_from_char:n }
+            % Range 4 means "characters usually not in Japanese fonts".
+            % `\ltjdefcharrange` does not accespt empty value, so we need to
+            % remove extra comma.
+            \exp_args:Nnx \ltjdefcharrange {4} { \tl_tail:N \l_tmpa_tl }
+          }
+        % 0-7F are always treated as an ALchar and can't be customized.
+        \cs_new:Npn \__emoji_encode_from_char:n #1
+          { \int_compare:nNnF {`#1} < {"80} {,`#1} }
+      }
 
     % If the user doesn't set emoji font explicitly, then detect and set default
     % fonts automatically.

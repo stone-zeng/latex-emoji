@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Fix
 
-- Compatibility with `ctex` and `luatexja`.
+- Compatibility with `luatexja`
 
 ## [v0.2.1] - 2020-06-27
 
