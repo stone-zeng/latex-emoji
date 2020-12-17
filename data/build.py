@@ -3,6 +3,7 @@
 import json
 import re
 import unicodedata as ud
+from typing import List
 
 COPYRIGHT_NOTICE = r"""%%
 %%  Copyright (C) 2020 by Xiangdong Zeng <xdzeng96@gmail.com>
@@ -29,7 +30,7 @@ GITHUB_EMOJI_DATA_FILE = './data/emoji.json'
 OUTPUT_FILE = 'emoji-table.def'
 OUTPUT_FILE_INFO = '{2020/06/27}{0.2.1}{Emoji support in (Lua)LaTeX}'
 
-# 0 = unicode_seq, 1 = version, 2 = name
+# 0 = code points, 1 = version, 2 = description
 EMOJI_ENTRY_PATTERN = re.compile(r'^(.+?)\W+;\W(?:fully-qualified|component).+E(\d+\.\d+)\W+(.+)')
 
 def texify(s: str):
@@ -45,13 +46,19 @@ def normalize_name(s: str):
     s = re.sub(r'\s+', '-', s)
     return s.replace('#', 'hash').replace('*', 'asterisk')
 
-def normalize_aliases(name: str, name_list: [str], s_list: [str]):
-    if s_list is None:
+def normalize_aliases(name: str, names: List[str], raw_aliases: List[str]):
+    aliases = []
+    if raw_aliases[0] is not None:
+        aliases = raw_aliases[0]
+    if raw_aliases[1] is not None:
+        aliases += raw_aliases[1]
+    aliases = sorted(set(aliases))
+    if not aliases:
         return ''
-    s_list = [s.replace('_', '-') for s in s_list]
-    return ', '.join([s for s in s_list if s != name and s not in name_list])
+    aliases = [s.replace('_', '-') for s in aliases]
+    return ', '.join([s for s in aliases if s != name and s not in names])
 
-def normalize_code_points(c_list: [str]):
+def to_tex_code_points(c_list: List[str]):
     return ''.join([to_tex_hex(c) for c in c_list]).lower()
 
 def to_tex_hex(s: str):
@@ -59,6 +66,9 @@ def to_tex_hex(s: str):
         return '^^^^' + s
     if len(s) == 5:
         return '^^^^^^0' + s
+
+def to_code_points(s: str):
+    return ' '.join([hex(ord(i))[2:].upper() for i in s])
 
 with open(UNICODE_EMOJI_DATA_FILE) as f:
     emoji = dict()
@@ -69,26 +79,31 @@ with open(UNICODE_EMOJI_DATA_FILE) as f:
         elif line.startswith('# subgroup'):
             subgroup_name = line[12:-1]
             emoji[group_name][subgroup_name] = []
-        elif (not line.startswith('#')) and line != '\n':
+        elif not line.startswith('#') and line != '\n':
             entry = re.findall(EMOJI_ENTRY_PATTERN, line)
-            if entry != []:
+            if entry:
                 emoji[group_name][subgroup_name].append(entry[0])
 
 with open(GITHUB_EMOJI_DATA_FILE) as f:
-    github_data = {i['description']: i['aliases'] for i in json.load(f)}
+    github_data = {}
+    github_hex_data = {}
+    for i in json.load(f):
+        github_data[i['description']] = i['aliases']
+        github_hex_data[to_code_points(i['emoji'])] = i['aliases']
 
 emoji_names = []
 for i in emoji:
     for j in emoji[i]:
         entries = []
         for k in emoji[i][j]:
-            name = normalize_name(k[2])
+            (code_points, version, description) = (k[0], k[1], k[2])
+            name = normalize_name(description)
             entries.append({
-                'code_points': normalize_code_points(k[0].split()),
+                'code_points': to_tex_code_points(code_points.split()),
                 'name': name,
-                'aliases': github_data.get(k[2]),
-                'version': k[1],
-                'description': k[2]})
+                'aliases': [github_hex_data.get(code_points), github_data.get(description)],
+                'version': version,
+                'description': description})
             emoji_names.append(name)
         emoji[i][j] = entries
 
