@@ -1,5 +1,5 @@
 %%
-%%  Copyright (C) 2020 by Xiangdong Zeng <xdzeng96@gmail.com>
+%%  Copyright (C) 2020, 2021 by Xiangdong Zeng <xdzeng96@gmail.com>
 %%
 %%  This work may be distributed and/or modified under the
 %%  conditions of the LaTeX Project Public License, either
@@ -492,7 +492,7 @@
 \__emoji_def:nnnnn {^^^^^^01f9d4^^^^^^01f3fd} {person-medium-skin-tone-beard} {} {Person:~medium~skin~tone,~beard} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f9d4^^^^^^01f3fe} {person-medium-dark-skin-tone-beard} {} {Person:~medium-dark~skin~tone,~beard} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f9d4^^^^^^01f3ff} {person-dark-skin-tone-beard} {} {Person:~dark~skin~tone,~beard} {5.0}
-\__emoji_def:nnnnn {^^^^^^01f9d4^^^^200d^^^^2642^^^^fe0f} {man-beard} {bearded-person} {Man:~beard} {13.1}
+\__emoji_def:nnnnn {^^^^^^01f9d4^^^^200d^^^^2642^^^^fe0f} {man-beard} {} {Man:~beard} {13.1}
 \__emoji_def:nnnnn {^^^^^^01f9d4^^^^^^01f3fb^^^^200d^^^^2642^^^^fe0f} {man-light-skin-tone-beard} {} {Man:~light~skin~tone,~beard} {13.1}
 \__emoji_def:nnnnn {^^^^^^01f9d4^^^^^^01f3fc^^^^200d^^^^2642^^^^fe0f} {man-medium-light-skin-tone-beard} {} {Man:~medium-light~skin~tone,~beard} {13.1}
 \__emoji_def:nnnnn {^^^^^^01f9d4^^^^^^01f3fd^^^^200d^^^^2642^^^^fe0f} {man-medium-skin-tone-beard} {} {Man:~medium~skin~tone,~beard} {13.1}
