@@ -2,7 +2,7 @@
 
 This is a COLR/CPAL-based color OpenType font from the [Twemoji](https://twemoji.twitter.com/) collection of emoji images.
 
-- Version: v0.5.1 (2020-06-09)
+- Version: v0.6.0 (2021-07-17)
 - Homepage: https://github.com/mozilla/twemoji-colr
 - CTAN maintainer: Xiangdong Zeng <xdzeng96@gmail.com>
 
