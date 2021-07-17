@@ -8,7 +8,7 @@ Emoji support in (Lua)LaTeX.
 ## Introduction
 
 The `emoji` package allows user to typeset emoji in a LaTeX document. It requires LuaHBTeX engine,
-which can be called by `lualatex` in TeX Live 2020 or `lualatex-dev` in TeX Live 2019.
+which can be called by `lualatex` since TeX Live 2020 or `lualatex-dev` in TeX Live 2019.
 
 ## Usage
 
@@ -35,4 +35,4 @@ This work may be distributed and/or modified under the conditions of the [LaTeX 
 
 -----
 
-Copyright (C) 2020 by Xiangdong Zeng.
+Copyright (C) 2020, 2021 by Xiangdong Zeng.

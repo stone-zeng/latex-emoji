@@ -1,5 +1,5 @@
 %%
-%%  Copyright (C) 2020 by Xiangdong Zeng <xdzeng96@gmail.com>
+%%  Copyright (C) 2020, 2021 by Xiangdong Zeng <xdzeng96@gmail.com>
 %%
 %%  This work may be distributed and/or modified under the
 %%  conditions of the LaTeX Project Public License, either
@@ -18,7 +18,7 @@
 \documentclass{l3doc}
 \usepackage{array,booktabs,emoji,fontspec,geometry,graphicx,longtable,xcolor}
 
-\geometry{left=3.2cm, right=1.8cm, vmargin=3.2cm}
+\geometry{left=3cm, right=1.6cm, vmargin=3.2cm}
 \setmainfont{NotoSerif}[
   Extension      = .ttf,
   UprightFont    = *-Light,
@@ -39,14 +39,16 @@
   UprightFont    = *-CondensedLight,
   BoldFont       = *-CondensedMedium,
 ]
-\setemojifont{Twemoji Mozilla}
+\setemojifont{Twemoji Mozilla}[BoldFont=*]
 
-\newfontface\fontja{Noto Serif CJK JP Light}
+\newfontface\fontja{Source Han Serif Light}
 \newfontface\fontsymbol{Noto Sans Symbols Light}
 \newfontface\ttcond{NotoSansMono-ExtraCondensedLight.ttf}[Ligatures=CommonOff]
 
 \makeatletter
 \ExplSyntaxOn
+
+\cs_set:Npn \@pnumwidth { 1.8em }
 
 \cs_set_protected:Npn \__codedoc_meta_original:n #1
   {
@@ -85,12 +87,6 @@
 \int_new:N  \g__emoji_doc_total_count_int
 \str_new:N  \g__emoji_doc_group_str
 \str_new:N  \g__emoji_doc_subgroup_str
-
-\cs_new_protected:Npn \clist_use:nn #1
-  {
-    \clist_set:Nn \l__clist_internal_clist {#1}
-    \clist_use:Nn \l__clist_internal_clist
-  }
 
 \cs_set:Npn \__emoji_def:nnnnn
   {
@@ -151,7 +147,7 @@
 
 \cs_set:Npn \__emoji_doc_begin_longtable:n #1
   {
-    \begin{longtable} { C{1.1cm} P{3.5cm} P{2.3cm} P{3.5cm} C{1.8cm} C{1.2cm} }
+    \begin{longtable} { C{1.1cm} P{3.6cm} P{2.4cm} P{3.6cm} C{1.8cm} C{1.2cm} }
         \caption{#1} \\
         \__emoji_doc_longtable_head:
       \endfirsthead
@@ -221,7 +217,7 @@
 \title{The \pkg{emoji} package \thanks{\url{https://github.com/stone-zeng/latex-emoji}} \\
   Emoji support in (Lua)\LaTeX}
 \author{Xiangdong Zeng \thanks{\url{xdzeng96@gmail.com}}}
-\date{\emoji{date} 2020/06/27\quad v0.2.1}
+\date{\emoji{date} 2021/07/17\quad v0.2.2}
 
 \begin{document}
 
@@ -240,15 +236,15 @@ In 2019, \href{https://github.com/luigiScarso}{Luigi Scarso} has integrated the
 \href{https://github.com/harfbuzz/harfbuzz}{HarfBuzz} library into \LuaTeX.%
 \footnote{\href{https://github.com/khaledhosny}{Khaled Hosny} has also created a similar project
   \href{https://github.com/khaledhosny/harftex}{HarfTeX}.}
-While the original purpose is to optimize the rendering of indic and arabic scripts, emoji is
+While the original purpose is to optimize the rendering of indic and arabic scripts, emoji are
 also supported by this new extended version of \TeX{} at the same time.
 
 The \pkg{emoji} package allows user to typeset emoji in a \LaTeX{} document. It requires
-\LuaHBTeX{}: in \TeX{} Live 2020, \texttt{lualatex} will base on this new engine; but in
-\TeX{} Live 2019, only \texttt{lualatex-dev} can be used to compile.
+\LuaHBTeX{}, which is the backend of \texttt{lualatex} since \TeX{} Live 2020. In \TeX{} Live
+2019, only \texttt{lualatex-dev} can be used to compile.
 
 Emoji has been included in the Unicode Standard since 2009. The \pkg{emoji} package support
-the latest version Emoji 13.0 (published on 2020-03-10).%
+the latest version Emoji 13.1 (published on 2020-09-18).%
 \footnote{Starting with version 11.0, the repertoire of emoji characters is synchronized with
   the Unicode Standard, and has the same version numbering system.}
 
@@ -264,7 +260,7 @@ The package should be loaded in the usual way:
 
 \subsection{\emoji{beer} Set emoji fonts}
 
-On Windows, macOS or Ubuntu system, the \pkg{emoji} package will automatically select available
+On Windows, macOS or Linux systems, the \pkg{emoji} package will automatically select available
 emoji fonts. If the package can't find any emoji fonts, or if you want to change the default font,
 you can use the following command to set emoji font manually.
 
@@ -325,10 +321,9 @@ while the aliases are from GitHub's
 There are totally \ref*{count:emoji} emoji listed here. This should equal to the number of
 fully-qualified emoji and components in Unicode standard.
 
-In the following list, emoji is shown with Twemoji font. Note that not all emoji are supported
-in this font as present. The fullname is actually a sanitized version of description, which is
-from the CLDR short name. The version field \texttt{Ex.x} corresponds to the Emoji version when
-the emoji character or emoji sequence was first defined.
+In the following list, emoji is shown with Twemoji font. The fullname is actually a sanitized
+version of description, which is from the CLDR short name. The version field \texttt{Ex.x}
+corresponds to the Emoji version when the emoji character or emoji sequence was first defined.
 
 \EMOJITABLE
 
@@ -375,7 +370,7 @@ This document uses the following fonts:
   \item Noto Sans
   \item Noto Sans Mono
   \item Noto Sans Symbols
-  \item Noto Serif CJK JP ({\fontja 源ノ明朝})
+  \item Source Han Serif ({\fontja 源ノ明朝})
   \item Twemoji Mozilla
 \end{itemize}
 

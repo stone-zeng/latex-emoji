@@ -6,13 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
-### Fix
+## [v0.2.2] - 2021-07-17
 
-- Compatibility with `luatexja`
+### Added
+
+- Support Unicode 13.1 - [#5](https://github.com/stone-zeng/latex-emoji/issues/5)
+
+### Fixed
+
+- Compatibility with `luatexja` - [#4](https://github.com/stone-zeng/latex-emoji/issues/4)
+- Fix incorrect aliases - [#7](https://github.com/stone-zeng/latex-emoji/issues/7)
 
 ## [v0.2.1] - 2020-06-27
 
-### Fix
+### Fixed
 
 - Update documentation to fully support Unicode 12.1
 
@@ -24,7 +31,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 - Support Unicode 13.0
 - Detect Noto Color Emoji automatically
 
-### Fix
+### Fixed
 
 - Fix preamble detection
 - Update documentation for history of LuaHBTeX
@@ -35,7 +42,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 - First (experimental) version of the `emoji` package
 
-[Unreleased]: https://github.com/stone-zeng/latex-emoji/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/stone-zeng/latex-emoji/compare/v0.2.2...HEAD
+[v0.2.2]: https://github.com/stone-zeng/latex-emoji/compare/v0.2.1...v0.2.2
 [v0.2.1]: https://github.com/stone-zeng/latex-emoji/compare/v0.2...v0.2.1
 [v0.2]: https://github.com/stone-zeng/latex-emoji/compare/v0.1...v0.2
 [v0.1]: https://github.com/stone-zeng/latex-emoji/releases/tag/v0.1

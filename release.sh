@@ -1,6 +1,6 @@
 #!/bin/sh
 
-latexmk -pdflua -lualatex=lualatex-dev emoji-doc.tex
+# latexmk -pdflua emoji-doc.tex
 
 working_dir=$PWD
 tmp_dir=/tmp/emoji

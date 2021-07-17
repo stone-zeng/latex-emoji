@@ -27,7 +27,7 @@ UNICODE_EMOJI_DATA_FILE = './data/emoji-test.txt'
 GITHUB_EMOJI_DATA_FILE = './data/emoji.json'
 
 OUTPUT_FILE = 'emoji-table.def'
-OUTPUT_FILE_INFO = '{2020/06/27}{0.2.1}{Emoji support in (Lua)LaTeX}'
+OUTPUT_FILE_INFO = '{2021/07/17}{0.2.2}{Emoji support in (Lua)LaTeX}'
 
 # 0 = code points, 1 = version, 2 = description
 EMOJI_ENTRY_PATTERN = re.compile(r'^(.+?)\W+;\W(?:fully-qualified|component).+E(\d+\.\d+)\W+(.+)')
