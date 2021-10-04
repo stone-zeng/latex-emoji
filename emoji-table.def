@@ -29,6 +29,7 @@
 \__emoji_def:nnnnn {^^^^^^01f602} {face-with-tears-of-joy} {joy} {Face~with~tears~of~joy} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f642} {slightly-smiling-face} {} {Slightly~smiling~face} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f643} {upside-down-face} {} {Upside-down~face} {1.0}
+\__emoji_def:nnnnn {^^^^^^01fae0} {melting-face} {} {Melting~face} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f609} {winking-face} {wink} {Winking~face} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f60a} {smiling-face-with-smiling-eyes} {blush} {Smiling~face~with~smiling~eyes} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f607} {smiling-face-with-halo} {innocent} {Smiling~face~with~halo} {1.0}
@@ -50,16 +51,20 @@
 \__emoji_def:nnnnn {^^^^^^01f61d} {squinting-face-with-tongue} {stuck-out-tongue-closed-eyes} {Squinting~face~with~tongue} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f911} {money-mouth-face} {} {Money-mouth~face} {1.0}
 \__emoji_subgroup:n {Face-hand}
-\__emoji_def:nnnnn {^^^^^^01f917} {hugging-face} {hugs} {Hugging~face} {1.0}
+\__emoji_def:nnnnn {^^^^^^01f917} {smiling-face-with-open-hands} {hugs} {Smiling~face~with~open~hands} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f92d} {face-with-hand-over-mouth} {hand-over-mouth} {Face~with~hand~over~mouth} {5.0}
+\__emoji_def:nnnnn {^^^^^^01fae2} {face-with-open-eyes-and-hand-over-mouth} {} {Face~with~open~eyes~and~hand~over~mouth} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fae3} {face-with-peeking-eye} {} {Face~with~peeking~eye} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f92b} {shushing-face} {} {Shushing~face} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f914} {thinking-face} {thinking} {Thinking~face} {1.0}
+\__emoji_def:nnnnn {^^^^^^01fae1} {saluting-face} {} {Saluting~face} {14.0}
 \__emoji_subgroup:n {Face-neutral-skeptical}
 \__emoji_def:nnnnn {^^^^^^01f910} {zipper-mouth-face} {} {Zipper-mouth~face} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f928} {face-with-raised-eyebrow} {raised-eyebrow} {Face~with~raised~eyebrow} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f610} {neutral-face} {} {Neutral~face} {0.7}
 \__emoji_def:nnnnn {^^^^^^01f611} {expressionless-face} {expressionless} {Expressionless~face} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f636} {face-without-mouth} {no-mouth} {Face~without~mouth} {1.0}
+\__emoji_def:nnnnn {^^^^^^01fae5} {dotted-line-face} {} {Dotted~line~face} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f636^^^^200d^^^^^^01f32b^^^^fe0f} {face-in-clouds} {} {Face~in~clouds} {13.1}
 \__emoji_def:nnnnn {^^^^^^01f60f} {smirking-face} {smirk} {Smirking~face} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f612} {unamused-face} {unamused} {Unamused~face} {0.6}
@@ -83,7 +88,7 @@
 \__emoji_def:nnnnn {^^^^^^01f975} {hot-face} {} {Hot~face} {11.0}
 \__emoji_def:nnnnn {^^^^^^01f976} {cold-face} {} {Cold~face} {11.0}
 \__emoji_def:nnnnn {^^^^^^01f974} {woozy-face} {} {Woozy~face} {11.0}
-\__emoji_def:nnnnn {^^^^^^01f635} {knocked-out-face} {dizzy-face} {Knocked-out~face} {0.6}
+\__emoji_def:nnnnn {^^^^^^01f635} {face-with-crossed-out-eyes} {dizzy-face} {Face~with~crossed-out~eyes} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f635^^^^200d^^^^^^01f4ab} {face-with-spiral-eyes} {} {Face~with~spiral~eyes} {13.1}
 \__emoji_def:nnnnn {^^^^^^01f92f} {exploding-head} {} {Exploding~head} {5.0}
 \__emoji_subgroup:n {Face-hat}
@@ -96,6 +101,7 @@
 \__emoji_def:nnnnn {^^^^^^01f9d0} {face-with-monocle} {monocle-face} {Face~with~monocle} {5.0}
 \__emoji_subgroup:n {Face-concerned}
 \__emoji_def:nnnnn {^^^^^^01f615} {confused-face} {confused} {Confused~face} {1.0}
+\__emoji_def:nnnnn {^^^^^^01fae4} {face-with-diagonal-mouth} {} {Face~with~diagonal~mouth} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f61f} {worried-face} {worried} {Worried~face} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f641} {slightly-frowning-face} {} {Slightly~frowning~face} {1.0}
 \__emoji_def:nnnnn {^^^^2639^^^^fe0f} {frowning-face} {} {Frowning~face} {0.7}
@@ -104,6 +110,7 @@
 \__emoji_def:nnnnn {^^^^^^01f632} {astonished-face} {astonished} {Astonished~face} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f633} {flushed-face} {flushed} {Flushed~face} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f97a} {pleading-face} {} {Pleading~face} {11.0}
+\__emoji_def:nnnnn {^^^^^^01f979} {face-holding-back-tears} {} {Face~holding~back~tears} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f626} {frowning-face-with-open-mouth} {frowning} {Frowning~face~with~open~mouth} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f627} {anguished-face} {anguished} {Anguished~face} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f628} {fearful-face} {fearful} {Fearful~face} {0.6}
@@ -221,6 +228,30 @@
 \__emoji_def:nnnnn {^^^^^^01f596^^^^^^01f3fd} {vulcan-salute-medium-skin-tone} {} {Vulcan~salute:~medium~skin~tone} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f596^^^^^^01f3fe} {vulcan-salute-medium-dark-skin-tone} {} {Vulcan~salute:~medium-dark~skin~tone} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f596^^^^^^01f3ff} {vulcan-salute-dark-skin-tone} {} {Vulcan~salute:~dark~skin~tone} {1.0}
+\__emoji_def:nnnnn {^^^^^^01faf1} {rightwards-hand} {} {Rightwards~hand} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fb} {rightwards-hand-light-skin-tone} {} {Rightwards~hand:~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fc} {rightwards-hand-medium-light-skin-tone} {} {Rightwards~hand:~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fd} {rightwards-hand-medium-skin-tone} {} {Rightwards~hand:~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fe} {rightwards-hand-medium-dark-skin-tone} {} {Rightwards~hand:~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3ff} {rightwards-hand-dark-skin-tone} {} {Rightwards~hand:~dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf2} {leftwards-hand} {} {Leftwards~hand} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf2^^^^^^01f3fb} {leftwards-hand-light-skin-tone} {} {Leftwards~hand:~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf2^^^^^^01f3fc} {leftwards-hand-medium-light-skin-tone} {} {Leftwards~hand:~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf2^^^^^^01f3fd} {leftwards-hand-medium-skin-tone} {} {Leftwards~hand:~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf2^^^^^^01f3fe} {leftwards-hand-medium-dark-skin-tone} {} {Leftwards~hand:~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf2^^^^^^01f3ff} {leftwards-hand-dark-skin-tone} {} {Leftwards~hand:~dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf3} {palm-down-hand} {} {Palm~down~hand} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf3^^^^^^01f3fb} {palm-down-hand-light-skin-tone} {} {Palm~down~hand:~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf3^^^^^^01f3fc} {palm-down-hand-medium-light-skin-tone} {} {Palm~down~hand:~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf3^^^^^^01f3fd} {palm-down-hand-medium-skin-tone} {} {Palm~down~hand:~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf3^^^^^^01f3fe} {palm-down-hand-medium-dark-skin-tone} {} {Palm~down~hand:~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf3^^^^^^01f3ff} {palm-down-hand-dark-skin-tone} {} {Palm~down~hand:~dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf4} {palm-up-hand} {} {Palm~up~hand} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf4^^^^^^01f3fb} {palm-up-hand-light-skin-tone} {} {Palm~up~hand:~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf4^^^^^^01f3fc} {palm-up-hand-medium-light-skin-tone} {} {Palm~up~hand:~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf4^^^^^^01f3fd} {palm-up-hand-medium-skin-tone} {} {Palm~up~hand:~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf4^^^^^^01f3fe} {palm-up-hand-medium-dark-skin-tone} {} {Palm~up~hand:~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf4^^^^^^01f3ff} {palm-up-hand-dark-skin-tone} {} {Palm~up~hand:~dark~skin~tone} {14.0}
 \__emoji_subgroup:n {Hand-fingers-partial}
 \__emoji_def:nnnnn {^^^^^^01f44c} {ok-hand} {} {OK~hand} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f44c^^^^^^01f3fb} {ok-hand-light-skin-tone} {} {OK~hand:~light~skin~tone} {1.0}
@@ -252,6 +283,12 @@
 \__emoji_def:nnnnn {^^^^^^01f91e^^^^^^01f3fd} {crossed-fingers-medium-skin-tone} {} {Crossed~fingers:~medium~skin~tone} {3.0}
 \__emoji_def:nnnnn {^^^^^^01f91e^^^^^^01f3fe} {crossed-fingers-medium-dark-skin-tone} {} {Crossed~fingers:~medium-dark~skin~tone} {3.0}
 \__emoji_def:nnnnn {^^^^^^01f91e^^^^^^01f3ff} {crossed-fingers-dark-skin-tone} {} {Crossed~fingers:~dark~skin~tone} {3.0}
+\__emoji_def:nnnnn {^^^^^^01faf0} {hand-with-index-finger-and-thumb-crossed} {} {Hand~with~index~finger~and~thumb~crossed} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf0^^^^^^01f3fb} {hand-with-index-finger-and-thumb-crossed-light-skin-tone} {} {Hand~with~index~finger~and~thumb~crossed:~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf0^^^^^^01f3fc} {hand-with-index-finger-and-thumb-crossed-medium-light-skin-tone} {} {Hand~with~index~finger~and~thumb~crossed:~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf0^^^^^^01f3fd} {hand-with-index-finger-and-thumb-crossed-medium-skin-tone} {} {Hand~with~index~finger~and~thumb~crossed:~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf0^^^^^^01f3fe} {hand-with-index-finger-and-thumb-crossed-medium-dark-skin-tone} {} {Hand~with~index~finger~and~thumb~crossed:~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf0^^^^^^01f3ff} {hand-with-index-finger-and-thumb-crossed-dark-skin-tone} {} {Hand~with~index~finger~and~thumb~crossed:~dark~skin~tone} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f91f} {love-you-gesture} {} {Love-you~gesture} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f91f^^^^^^01f3fb} {love-you-gesture-light-skin-tone} {} {Love-you~gesture:~light~skin~tone} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f91f^^^^^^01f3fc} {love-you-gesture-medium-light-skin-tone} {} {Love-you~gesture:~medium-light~skin~tone} {5.0}
@@ -307,6 +344,12 @@
 \__emoji_def:nnnnn {^^^^261d^^^^^^01f3fd} {index-pointing-up-medium-skin-tone} {} {Index~pointing~up:~medium~skin~tone} {1.0}
 \__emoji_def:nnnnn {^^^^261d^^^^^^01f3fe} {index-pointing-up-medium-dark-skin-tone} {} {Index~pointing~up:~medium-dark~skin~tone} {1.0}
 \__emoji_def:nnnnn {^^^^261d^^^^^^01f3ff} {index-pointing-up-dark-skin-tone} {} {Index~pointing~up:~dark~skin~tone} {1.0}
+\__emoji_def:nnnnn {^^^^^^01faf5} {index-pointing-at-the-viewer} {} {Index~pointing~at~the~viewer} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf5^^^^^^01f3fb} {index-pointing-at-the-viewer-light-skin-tone} {} {Index~pointing~at~the~viewer:~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf5^^^^^^01f3fc} {index-pointing-at-the-viewer-medium-light-skin-tone} {} {Index~pointing~at~the~viewer:~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf5^^^^^^01f3fd} {index-pointing-at-the-viewer-medium-skin-tone} {} {Index~pointing~at~the~viewer:~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf5^^^^^^01f3fe} {index-pointing-at-the-viewer-medium-dark-skin-tone} {} {Index~pointing~at~the~viewer:~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf5^^^^^^01f3ff} {index-pointing-at-the-viewer-dark-skin-tone} {} {Index~pointing~at~the~viewer:~dark~skin~tone} {14.0}
 \__emoji_subgroup:n {Hand-fingers-closed}
 \__emoji_def:nnnnn {^^^^^^01f44d} {thumbs-up} {+1, thumbsup} {Thumbs~up} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f44d^^^^^^01f3fb} {thumbs-up-light-skin-tone} {} {Thumbs~up:~light~skin~tone} {1.0}
@@ -357,6 +400,12 @@
 \__emoji_def:nnnnn {^^^^^^01f64c^^^^^^01f3fd} {raising-hands-medium-skin-tone} {} {Raising~hands:~medium~skin~tone} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f64c^^^^^^01f3fe} {raising-hands-medium-dark-skin-tone} {} {Raising~hands:~medium-dark~skin~tone} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f64c^^^^^^01f3ff} {raising-hands-dark-skin-tone} {} {Raising~hands:~dark~skin~tone} {1.0}
+\__emoji_def:nnnnn {^^^^^^01faf6} {heart-hands} {} {Heart~hands} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf6^^^^^^01f3fb} {heart-hands-light-skin-tone} {} {Heart~hands:~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf6^^^^^^01f3fc} {heart-hands-medium-light-skin-tone} {} {Heart~hands:~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf6^^^^^^01f3fd} {heart-hands-medium-skin-tone} {} {Heart~hands:~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf6^^^^^^01f3fe} {heart-hands-medium-dark-skin-tone} {} {Heart~hands:~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf6^^^^^^01f3ff} {heart-hands-dark-skin-tone} {} {Heart~hands:~dark~skin~tone} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f450} {open-hands} {} {Open~hands} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f450^^^^^^01f3fb} {open-hands-light-skin-tone} {} {Open~hands:~light~skin~tone} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f450^^^^^^01f3fc} {open-hands-medium-light-skin-tone} {} {Open~hands:~medium-light~skin~tone} {1.0}
@@ -370,6 +419,31 @@
 \__emoji_def:nnnnn {^^^^^^01f932^^^^^^01f3fe} {palms-up-together-medium-dark-skin-tone} {} {Palms~up~together:~medium-dark~skin~tone} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f932^^^^^^01f3ff} {palms-up-together-dark-skin-tone} {} {Palms~up~together:~dark~skin~tone} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f91d} {handshake} {} {Handshake} {3.0}
+\__emoji_def:nnnnn {^^^^^^01f91d^^^^^^01f3fb} {handshake-light-skin-tone} {} {Handshake:~light~skin~tone} {3.0}
+\__emoji_def:nnnnn {^^^^^^01f91d^^^^^^01f3fc} {handshake-medium-light-skin-tone} {} {Handshake:~medium-light~skin~tone} {3.0}
+\__emoji_def:nnnnn {^^^^^^01f91d^^^^^^01f3fd} {handshake-medium-skin-tone} {} {Handshake:~medium~skin~tone} {3.0}
+\__emoji_def:nnnnn {^^^^^^01f91d^^^^^^01f3fe} {handshake-medium-dark-skin-tone} {} {Handshake:~medium-dark~skin~tone} {3.0}
+\__emoji_def:nnnnn {^^^^^^01f91d^^^^^^01f3ff} {handshake-dark-skin-tone} {} {Handshake:~dark~skin~tone} {3.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fb^^^^200d^^^^^^01faf2^^^^^^01f3fc} {handshake-light-skin-tone-medium-light-skin-tone} {} {Handshake:~light~skin~tone,~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fb^^^^200d^^^^^^01faf2^^^^^^01f3fd} {handshake-light-skin-tone-medium-skin-tone} {} {Handshake:~light~skin~tone,~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fb^^^^200d^^^^^^01faf2^^^^^^01f3fe} {handshake-light-skin-tone-medium-dark-skin-tone} {} {Handshake:~light~skin~tone,~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fb^^^^200d^^^^^^01faf2^^^^^^01f3ff} {handshake-light-skin-tone-dark-skin-tone} {} {Handshake:~light~skin~tone,~dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fc^^^^200d^^^^^^01faf2^^^^^^01f3fb} {handshake-medium-light-skin-tone-light-skin-tone} {} {Handshake:~medium-light~skin~tone,~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fc^^^^200d^^^^^^01faf2^^^^^^01f3fd} {handshake-medium-light-skin-tone-medium-skin-tone} {} {Handshake:~medium-light~skin~tone,~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fc^^^^200d^^^^^^01faf2^^^^^^01f3fe} {handshake-medium-light-skin-tone-medium-dark-skin-tone} {} {Handshake:~medium-light~skin~tone,~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fc^^^^200d^^^^^^01faf2^^^^^^01f3ff} {handshake-medium-light-skin-tone-dark-skin-tone} {} {Handshake:~medium-light~skin~tone,~dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fd^^^^200d^^^^^^01faf2^^^^^^01f3fb} {handshake-medium-skin-tone-light-skin-tone} {} {Handshake:~medium~skin~tone,~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fd^^^^200d^^^^^^01faf2^^^^^^01f3fc} {handshake-medium-skin-tone-medium-light-skin-tone} {} {Handshake:~medium~skin~tone,~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fd^^^^200d^^^^^^01faf2^^^^^^01f3fe} {handshake-medium-skin-tone-medium-dark-skin-tone} {} {Handshake:~medium~skin~tone,~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fd^^^^200d^^^^^^01faf2^^^^^^01f3ff} {handshake-medium-skin-tone-dark-skin-tone} {} {Handshake:~medium~skin~tone,~dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fe^^^^200d^^^^^^01faf2^^^^^^01f3fb} {handshake-medium-dark-skin-tone-light-skin-tone} {} {Handshake:~medium-dark~skin~tone,~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fe^^^^200d^^^^^^01faf2^^^^^^01f3fc} {handshake-medium-dark-skin-tone-medium-light-skin-tone} {} {Handshake:~medium-dark~skin~tone,~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fe^^^^200d^^^^^^01faf2^^^^^^01f3fd} {handshake-medium-dark-skin-tone-medium-skin-tone} {} {Handshake:~medium-dark~skin~tone,~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3fe^^^^200d^^^^^^01faf2^^^^^^01f3ff} {handshake-medium-dark-skin-tone-dark-skin-tone} {} {Handshake:~medium-dark~skin~tone,~dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3ff^^^^200d^^^^^^01faf2^^^^^^01f3fb} {handshake-dark-skin-tone-light-skin-tone} {} {Handshake:~dark~skin~tone,~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3ff^^^^200d^^^^^^01faf2^^^^^^01f3fc} {handshake-dark-skin-tone-medium-light-skin-tone} {} {Handshake:~dark~skin~tone,~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3ff^^^^200d^^^^^^01faf2^^^^^^01f3fd} {handshake-dark-skin-tone-medium-skin-tone} {} {Handshake:~dark~skin~tone,~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faf1^^^^^^01f3ff^^^^200d^^^^^^01faf2^^^^^^01f3fe} {handshake-dark-skin-tone-medium-dark-skin-tone} {} {Handshake:~dark~skin~tone,~medium-dark~skin~tone} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f64f} {folded-hands} {pray} {Folded~hands} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f64f^^^^^^01f3fb} {folded-hands-light-skin-tone} {} {Folded~hands:~light~skin~tone} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f64f^^^^^^01f3fc} {folded-hands-medium-light-skin-tone} {} {Folded~hands:~medium-light~skin~tone} {1.0}
@@ -443,6 +517,7 @@
 \__emoji_def:nnnnn {^^^^^^01f441^^^^fe0f} {eye} {} {Eye} {0.7}
 \__emoji_def:nnnnn {^^^^^^01f445} {tongue} {} {Tongue} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f444} {mouth} {lips} {Mouth} {0.6}
+\__emoji_def:nnnnn {^^^^^^01fae6} {biting-lip} {} {Biting~lip} {14.0}
 \__emoji_subgroup:n {Person}
 \__emoji_def:nnnnn {^^^^^^01f476} {baby} {} {Baby} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f476^^^^^^01f3fb} {baby-light-skin-tone} {} {Baby:~light~skin~tone} {1.0}
@@ -1160,6 +1235,12 @@
 \__emoji_def:nnnnn {^^^^^^01f477^^^^^^01f3fd^^^^200d^^^^2640^^^^fe0f} {woman-construction-worker-medium-skin-tone} {} {Woman~construction~worker:~medium~skin~tone} {4.0}
 \__emoji_def:nnnnn {^^^^^^01f477^^^^^^01f3fe^^^^200d^^^^2640^^^^fe0f} {woman-construction-worker-medium-dark-skin-tone} {} {Woman~construction~worker:~medium-dark~skin~tone} {4.0}
 \__emoji_def:nnnnn {^^^^^^01f477^^^^^^01f3ff^^^^200d^^^^2640^^^^fe0f} {woman-construction-worker-dark-skin-tone} {} {Woman~construction~worker:~dark~skin~tone} {4.0}
+\__emoji_def:nnnnn {^^^^^^01fac5} {person-with-crown} {} {Person~with~crown} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac5^^^^^^01f3fb} {person-with-crown-light-skin-tone} {} {Person~with~crown:~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac5^^^^^^01f3fc} {person-with-crown-medium-light-skin-tone} {} {Person~with~crown:~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac5^^^^^^01f3fd} {person-with-crown-medium-skin-tone} {} {Person~with~crown:~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac5^^^^^^01f3fe} {person-with-crown-medium-dark-skin-tone} {} {Person~with~crown:~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac5^^^^^^01f3ff} {person-with-crown-dark-skin-tone} {} {Person~with~crown:~dark~skin~tone} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f934} {prince} {} {Prince} {3.0}
 \__emoji_def:nnnnn {^^^^^^01f934^^^^^^01f3fb} {prince-light-skin-tone} {} {Prince:~light~skin~tone} {3.0}
 \__emoji_def:nnnnn {^^^^^^01f934^^^^^^01f3fc} {prince-medium-light-skin-tone} {} {Prince:~medium-light~skin~tone} {3.0}
@@ -1244,6 +1325,18 @@
 \__emoji_def:nnnnn {^^^^^^01f930^^^^^^01f3fd} {pregnant-woman-medium-skin-tone} {} {Pregnant~woman:~medium~skin~tone} {3.0}
 \__emoji_def:nnnnn {^^^^^^01f930^^^^^^01f3fe} {pregnant-woman-medium-dark-skin-tone} {} {Pregnant~woman:~medium-dark~skin~tone} {3.0}
 \__emoji_def:nnnnn {^^^^^^01f930^^^^^^01f3ff} {pregnant-woman-dark-skin-tone} {} {Pregnant~woman:~dark~skin~tone} {3.0}
+\__emoji_def:nnnnn {^^^^^^01fac3} {pregnant-man} {} {Pregnant~man} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac3^^^^^^01f3fb} {pregnant-man-light-skin-tone} {} {Pregnant~man:~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac3^^^^^^01f3fc} {pregnant-man-medium-light-skin-tone} {} {Pregnant~man:~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac3^^^^^^01f3fd} {pregnant-man-medium-skin-tone} {} {Pregnant~man:~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac3^^^^^^01f3fe} {pregnant-man-medium-dark-skin-tone} {} {Pregnant~man:~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac3^^^^^^01f3ff} {pregnant-man-dark-skin-tone} {} {Pregnant~man:~dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac4} {pregnant-person} {} {Pregnant~person} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac4^^^^^^01f3fb} {pregnant-person-light-skin-tone} {} {Pregnant~person:~light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac4^^^^^^01f3fc} {pregnant-person-medium-light-skin-tone} {} {Pregnant~person:~medium-light~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac4^^^^^^01f3fd} {pregnant-person-medium-skin-tone} {} {Pregnant~person:~medium~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac4^^^^^^01f3fe} {pregnant-person-medium-dark-skin-tone} {} {Pregnant~person:~medium-dark~skin~tone} {14.0}
+\__emoji_def:nnnnn {^^^^^^01fac4^^^^^^01f3ff} {pregnant-person-dark-skin-tone} {} {Pregnant~person:~dark~skin~tone} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f931} {breast-feeding} {} {Breast-feeding} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f931^^^^^^01f3fb} {breast-feeding-light-skin-tone} {} {Breast-feeding:~light~skin~tone} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f931^^^^^^01f3fc} {breast-feeding-medium-light-skin-tone} {} {Breast-feeding:~medium-light~skin~tone} {5.0}
@@ -1425,6 +1518,7 @@
 \__emoji_def:nnnnn {^^^^^^01f9df} {zombie} {} {Zombie} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f9df^^^^200d^^^^2642^^^^fe0f} {man-zombie} {zombie-man} {Man~zombie} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f9df^^^^200d^^^^2640^^^^fe0f} {woman-zombie} {zombie-woman} {Woman~zombie} {5.0}
+\__emoji_def:nnnnn {^^^^^^01f9cc} {troll} {} {Troll} {14.0}
 \__emoji_subgroup:n {Person-activity}
 \__emoji_def:nnnnn {^^^^^^01f486} {person-getting-massage} {massage} {Person~getting~massage} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f486^^^^^^01f3fb} {person-getting-massage-light-skin-tone} {} {Person~getting~massage:~light~skin~tone} {1.0}
@@ -2374,6 +2468,7 @@
 \__emoji_def:nnnnn {^^^^^^01f988} {shark} {} {Shark} {3.0}
 \__emoji_def:nnnnn {^^^^^^01f419} {octopus} {} {Octopus} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f41a} {spiral-shell} {shell} {Spiral~shell} {0.6}
+\__emoji_def:nnnnn {^^^^^^01fab8} {coral} {} {Coral} {14.0}
 \__emoji_subgroup:n {Animal-bug}
 \__emoji_def:nnnnn {^^^^^^01f40c} {snail} {} {Snail} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f98b} {butterfly} {} {Butterfly} {3.0}
@@ -2395,6 +2490,7 @@
 \__emoji_def:nnnnn {^^^^^^01f490} {bouquet} {} {Bouquet} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f338} {cherry-blossom} {} {Cherry~blossom} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f4ae} {white-flower} {} {White~flower} {0.6}
+\__emoji_def:nnnnn {^^^^^^01fab7} {lotus} {} {Lotus} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f3f5^^^^fe0f} {rosette} {} {Rosette} {0.7}
 \__emoji_def:nnnnn {^^^^^^01f339} {rose} {} {Rose} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f940} {wilted-flower} {} {Wilted~flower} {3.0}
@@ -2416,6 +2512,8 @@
 \__emoji_def:nnnnn {^^^^^^01f341} {maple-leaf} {} {Maple~leaf} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f342} {fallen-leaf} {} {Fallen~leaf} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f343} {leaf-fluttering-in-wind} {leaves} {Leaf~fluttering~in~wind} {0.6}
+\__emoji_def:nnnnn {^^^^^^01fab9} {empty-nest} {} {Empty~nest} {14.0}
+\__emoji_def:nnnnn {^^^^^^01faba} {nest-with-eggs} {} {Nest~with~eggs} {14.0}
 \__emoji_group:n {Food~\&~Drink}
 \__emoji_subgroup:n {Food-fruit}
 \__emoji_def:nnnnn {^^^^^^01f347} {grapes} {} {Grapes} {0.6}
@@ -2452,6 +2550,7 @@
 \__emoji_def:nnnnn {^^^^^^01f9c5} {onion} {} {Onion} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f344} {mushroom} {} {Mushroom} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f95c} {peanuts} {} {Peanuts} {3.0}
+\__emoji_def:nnnnn {^^^^^^01fad8} {beans} {} {Beans} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f330} {chestnut} {} {Chestnut} {0.6}
 \__emoji_subgroup:n {Food-prepared}
 \__emoji_def:nnnnn {^^^^^^01f35e} {bread} {} {Bread} {0.6}
@@ -2542,6 +2641,7 @@
 \__emoji_def:nnnnn {^^^^^^01f37b} {clinking-beer-mugs} {beers} {Clinking~beer~mugs} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f942} {clinking-glasses} {} {Clinking~glasses} {3.0}
 \__emoji_def:nnnnn {^^^^^^01f943} {tumbler-glass} {} {Tumbler~glass} {3.0}
+\__emoji_def:nnnnn {^^^^^^01fad7} {pouring-liquid} {} {Pouring~liquid} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f964} {cup-with-straw} {} {Cup~with~straw} {5.0}
 \__emoji_def:nnnnn {^^^^^^01f9cb} {bubble-tea} {} {Bubble~tea} {13.0}
 \__emoji_def:nnnnn {^^^^^^01f9c3} {beverage-box} {} {Beverage~box} {12.0}
@@ -2553,6 +2653,7 @@
 \__emoji_def:nnnnn {^^^^^^01f374} {fork-and-knife} {} {Fork~and~knife} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f944} {spoon} {} {Spoon} {3.0}
 \__emoji_def:nnnnn {^^^^^^01f52a} {kitchen-knife} {hocho, knife} {Kitchen~knife} {0.6}
+\__emoji_def:nnnnn {^^^^^^01fad9} {jar} {} {Jar} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f3fa} {amphora} {} {Amphora} {1.0}
 \__emoji_group:n {Travel~\&~Places}
 \__emoji_subgroup:n {Place-map}
@@ -2621,6 +2722,7 @@
 \__emoji_def:nnnnn {^^^^^^01f309} {bridge-at-night} {} {Bridge~at~night} {0.6}
 \__emoji_def:nnnnn {^^^^2668^^^^fe0f} {hot-springs} {hotsprings} {Hot~springs} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f3a0} {carousel-horse} {} {Carousel~horse} {0.6}
+\__emoji_def:nnnnn {^^^^^^01f6dd} {playground-slide} {} {Playground~slide} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f3a1} {ferris-wheel} {} {Ferris~wheel} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f3a2} {roller-coaster} {} {Roller~coaster} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f488} {barber-pole} {barber} {Barber~pole} {0.6}
@@ -2670,6 +2772,7 @@
 \__emoji_def:nnnnn {^^^^^^01f6e4^^^^fe0f} {railway-track} {} {Railway~track} {0.7}
 \__emoji_def:nnnnn {^^^^^^01f6e2^^^^fe0f} {oil-drum} {} {Oil~drum} {0.7}
 \__emoji_def:nnnnn {^^^^26fd} {fuel-pump} {fuelpump} {Fuel~pump} {0.6}
+\__emoji_def:nnnnn {^^^^^^01f6de} {wheel} {} {Wheel} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f6a8} {police-car-light} {rotating-light} {Police~car~light} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f6a5} {horizontal-traffic-light} {traffic-light} {Horizontal~traffic~light} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f6a6} {vertical-traffic-light} {} {Vertical~traffic~light} {1.0}
@@ -2677,6 +2780,7 @@
 \__emoji_def:nnnnn {^^^^^^01f6a7} {construction} {} {Construction} {0.6}
 \__emoji_subgroup:n {Transport-water}
 \__emoji_def:nnnnn {^^^^2693} {anchor} {} {Anchor} {0.6}
+\__emoji_def:nnnnn {^^^^^^01f6df} {ring-buoy} {} {Ring~buoy} {14.0}
 \__emoji_def:nnnnn {^^^^26f5} {sailboat} {boat} {Sailboat} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f6f6} {canoe} {} {Canoe} {3.0}
 \__emoji_def:nnnnn {^^^^^^01f6a4} {speedboat} {} {Speedboat} {0.6}
@@ -2847,6 +2951,7 @@
 \__emoji_def:nnnnn {^^^^^^01f52e} {crystal-ball} {} {Crystal~ball} {0.6}
 \__emoji_def:nnnnn {^^^^^^01fa84} {magic-wand} {} {Magic~wand} {13.0}
 \__emoji_def:nnnnn {^^^^^^01f9ff} {nazar-amulet} {} {Nazar~amulet} {11.0}
+\__emoji_def:nnnnn {^^^^^^01faac} {hamsa} {} {Hamsa} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f3ae} {video-game} {} {Video~game} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f579^^^^fe0f} {joystick} {} {Joystick} {0.7}
 \__emoji_def:nnnnn {^^^^^^01f3b0} {slot-machine} {} {Slot~machine} {0.6}
@@ -2854,6 +2959,7 @@
 \__emoji_def:nnnnn {^^^^^^01f9e9} {puzzle-piece} {jigsaw} {Puzzle~piece} {11.0}
 \__emoji_def:nnnnn {^^^^^^01f9f8} {teddy-bear} {} {Teddy~bear} {11.0}
 \__emoji_def:nnnnn {^^^^^^01fa85} {pinata} {} {Piñata} {13.0}
+\__emoji_def:nnnnn {^^^^^^01faa9} {mirror-ball} {} {Mirror~ball} {14.0}
 \__emoji_def:nnnnn {^^^^^^01fa86} {nesting-dolls} {} {Nesting~dolls} {13.0}
 \__emoji_def:nnnnn {^^^^2660^^^^fe0f} {spade-suit} {spades} {Spade~suit} {0.6}
 \__emoji_def:nnnnn {^^^^2665^^^^fe0f} {heart-suit} {hearts} {Heart~suit} {0.6}
@@ -2957,6 +3063,7 @@
 \__emoji_def:nnnnn {^^^^^^01f4e0} {fax-machine} {fax} {Fax~machine} {0.6}
 \__emoji_subgroup:n {Computer}
 \__emoji_def:nnnnn {^^^^^^01f50b} {battery} {} {Battery} {0.6}
+\__emoji_def:nnnnn {^^^^^^01faab} {low-battery} {} {Low~battery} {14.0}
 \__emoji_def:nnnnn {^^^^^^01f50c} {electric-plug} {} {Electric~plug} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f4bb} {laptop} {computer} {Laptop} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f5a5^^^^fe0f} {desktop-computer} {} {Desktop~computer} {0.7}
@@ -3107,7 +3214,9 @@
 \__emoji_def:nnnnn {^^^^^^01fa78} {drop-of-blood} {} {Drop~of~blood} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f48a} {pill} {} {Pill} {0.6}
 \__emoji_def:nnnnn {^^^^^^01fa79} {adhesive-bandage} {} {Adhesive~bandage} {12.0}
+\__emoji_def:nnnnn {^^^^^^01fa7c} {crutch} {} {Crutch} {14.0}
 \__emoji_def:nnnnn {^^^^^^01fa7a} {stethoscope} {} {Stethoscope} {12.0}
+\__emoji_def:nnnnn {^^^^^^01fa7b} {x-ray} {} {X-ray} {14.0}
 \__emoji_subgroup:n {Household}
 \__emoji_def:nnnnn {^^^^^^01f6aa} {door} {} {Door} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f6d7} {elevator} {} {Elevator} {13.0}
@@ -3129,6 +3238,7 @@
 \__emoji_def:nnnnn {^^^^^^01f9fb} {roll-of-paper} {} {Roll~of~paper} {11.0}
 \__emoji_def:nnnnn {^^^^^^01faa3} {bucket} {} {Bucket} {13.0}
 \__emoji_def:nnnnn {^^^^^^01f9fc} {soap} {} {Soap} {11.0}
+\__emoji_def:nnnnn {^^^^^^01fae7} {bubbles} {} {Bubbles} {14.0}
 \__emoji_def:nnnnn {^^^^^^01faa5} {toothbrush} {} {Toothbrush} {13.0}
 \__emoji_def:nnnnn {^^^^^^01f9fd} {sponge} {} {Sponge} {11.0}
 \__emoji_def:nnnnn {^^^^^^01f9ef} {fire-extinguisher} {} {Fire~extinguisher} {11.0}
@@ -3140,6 +3250,7 @@
 \__emoji_def:nnnnn {^^^^26b1^^^^fe0f} {funeral-urn} {} {Funeral~urn} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f5ff} {moai} {moyai} {Moai} {0.6}
 \__emoji_def:nnnnn {^^^^^^01faa7} {placard} {} {Placard} {13.0}
+\__emoji_def:nnnnn {^^^^^^01faaa} {identification-card} {} {Identification~card} {14.0}
 \__emoji_group:n {Symbols}
 \__emoji_subgroup:n {Transport-sign}
 \__emoji_def:nnnnn {^^^^^^01f3e7} {atm-sign} {atm} {ATM~sign} {0.6}
@@ -3252,6 +3363,7 @@
 \__emoji_def:nnnnn {^^^^2795} {plus} {heavy-plus-sign} {Plus} {0.6}
 \__emoji_def:nnnnn {^^^^2796} {minus} {heavy-minus-sign} {Minus} {0.6}
 \__emoji_def:nnnnn {^^^^2797} {divide} {heavy-division-sign} {Divide} {0.6}
+\__emoji_def:nnnnn {^^^^^^01f7f0} {heavy-equals-sign} {} {Heavy~equals~sign} {14.0}
 \__emoji_def:nnnnn {^^^^267e^^^^fe0f} {infinity} {} {Infinity} {11.0}
 \__emoji_subgroup:n {Punctuation}
 \__emoji_def:nnnnn {^^^^203c^^^^fe0f} {double-exclamation-mark} {bangbang} {Double~exclamation~mark} {0.6}
