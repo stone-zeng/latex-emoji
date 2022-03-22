@@ -5,6 +5,6 @@
 # curl -L -o twemoji-colr/TwemojiMozilla.ttf  https://github.com/mozilla/twemoji-colr/releases/download/v0.6.0/TwemojiMozilla.ttf
 
 rm */.DS_Store
-zip -r -j -9 noto-emoji.zip   noto-emoji
-zip -r -j -9 twemoji-colr.zip twemoji-colr
+zip -r -9 noto-emoji.zip   noto-emoji
+zip -r -9 twemoji-colr.zip twemoji-colr
 mv *.zip ../release

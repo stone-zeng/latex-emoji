@@ -2,7 +2,7 @@
 
 Noto Color Emoji supports all emoji defined in the latest Unicode version.
 
-- Version: v2.034
+- Version: v2.034 (2021-11-02)
 - Homepage: https://github.com/googlefonts/noto-emoji
 - CTAN maintainer: Xiangdong Zeng <xdzeng96@gmail.com>
 
