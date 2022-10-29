@@ -53,6 +53,7 @@ def to_tex_hex(s: str):
         return '^^^^' + s
     if len(s) == 5:
         return '^^^^^^0' + s
+    raise ValueError('Invalid code point')
 
 def texify(s: str):
     replace = {'&': '\\&', '#': '\\#', '’': '\'', '“': '``', '”': '\'\'', ' ': '~'}
@@ -60,74 +61,90 @@ def texify(s: str):
         s = s.replace(k, v)
     return s[0].capitalize() + s[1:]
 
-# Read from Unicode data
-with open(UNICODE_EMOJI_DATA_FILE) as f:
-    emoji = {}
-    for line in f.readlines():
-        if line.startswith('# group'):
-            group_name = line[9:-1]
-            emoji[group_name] = {}
-        elif line.startswith('# subgroup'):
-            subgroup_name = line[12:-1]
-            emoji[group_name][subgroup_name] = []
-        elif not line.startswith('#') and line != '\n':
-            entry = re.findall(EMOJI_ENTRY_PATTERN, line)
-            if entry:
-                emoji[group_name][subgroup_name].append(entry[0])
+class Builder:
+    def __init__(self):
+        self.emoji: dict[str, dict[str, list]] = {}
+        self.emoji_names: set[str] = set()
+        self.github_data: dict[str, list[str]] = {}
+        self.github_hex_data: dict[str, list[str]] = {}
+        self._read_from_unicode_data()
+        self._read_from_github_data()
+        self._normalize()
+        self._remove_duplicates()
 
-# Read from GitHub data
-with open(GITHUB_EMOJI_DATA_FILE) as f:
-    github_data = {}
-    github_hex_data = {}
-    for i in json.load(f):
-        github_data[i['description']] = i['aliases']
-        github_hex_data[to_code_points(i['emoji'])] = i['aliases']
+    def _read_from_unicode_data(self):
+        with open(UNICODE_EMOJI_DATA_FILE, encoding='utf-8') as f:
+            for line in f.readlines():
+                if line.startswith('# group'):
+                    group_name = line[9:-1]
+                    self.emoji[group_name] = {}
+                elif line.startswith('# subgroup'):
+                    subgroup_name = line[12:-1]
+                    self.emoji[group_name][subgroup_name] = []
+                elif not line.startswith('#') and line != '\n':
+                    entry = re.findall(EMOJI_ENTRY_PATTERN, line)
+                    if entry:
+                        self.emoji[group_name][subgroup_name].append(entry[0])
 
-# Normalize emoji data
-emoji_names = set()
-for i in emoji:
-    for j in emoji[i]:
-        entries = []
-        for k in emoji[i][j]:
-            (code_points, version, description) = (k[0], k[1], k[2])
-            name = normalize_name(description)
-            aliases = github_hex_data.get(code_points, []) + github_data.get(description, [])
-            emoji_names.add(name)
-            entries.append({
-                'code_points': to_tex_code_points(code_points.split()),
-                'name': name,
-                'aliases': aliases,
-                'version': version,
-                'description': description,
-            })
-        emoji[i][j] = entries
+    def _read_from_github_data(self):
+        with open(GITHUB_EMOJI_DATA_FILE, encoding='utf-8') as f:
+            for i in json.load(f):
+                self.github_data[i['description']] = i['aliases']
+                self.github_hex_data[to_code_points(i['emoji'])] = i['aliases']
 
-# Remove duplicated aliases
-# The aliases should be distinct from all the emoji names and previous aliases
-previous_aliases = set()
-for i in emoji:
-    for j in emoji[i]:
-        for k in emoji[i][j]:
-            aliases = normalize_aliases(k['aliases'], emoji_names, previous_aliases)
-            previous_aliases.update(aliases)
-            k['aliases'] = ', '.join(aliases)
+    def _normalize(self):
+        for group in self.emoji.values():
+            for subgroup_name, subgroup in group.items():
+                entries = []
+                for item in subgroup:
+                    (code_points, version, description) = (item[0], item[1], item[2])
+                    name = normalize_name(description)
+                    aliases = (
+                        self.github_hex_data.get(code_points, []) +
+                        self.github_data.get(description, [])
+                    )
+                    self.emoji_names.add(name)
+                    entries.append({
+                        'code_points': to_tex_code_points(code_points.split()),
+                        'name': name,
+                        'aliases': aliases,
+                        'version': version,
+                        'description': description,
+                    })
+                group[subgroup_name] = entries
 
-# Write into LaTeX file
-with open(OUTPUT_FILE, 'w') as f:
-    f.write(COPYRIGHT_NOTICE)
-    f.write(f'\\ProvidesExplFile{{{OUTPUT_FILE}}}\n')
-    f.write(f'  {OUTPUT_FILE_INFO}\n')
-    for i in emoji:
-        f.write(f'\\__emoji_group:n {{{texify(i)}}}\n')
-        for j in emoji[i]:
-            f.write(f'\\__emoji_subgroup:n {{{texify(j)}}}\n')
-            for k in emoji[i][j]:
-                line = ('\\__emoji_def:nnnnn' + ' {{{}}}' * 5).format(
-                    k['code_points'],
-                    k['name'],
-                    k['aliases'],
-                    texify(k['description']),
-                    k['version']
-                )
-                f.write(line + '\n')
-    f.write(f'%%\n%% End of file `{OUTPUT_FILE}\'.\n')
+    def _remove_duplicates(self):
+        # The aliases should be distinct from all the emoji names and previous aliases
+        previous_aliases = set()
+        for group in self.emoji.values():
+            for subgroup in group.values():
+                for item in subgroup:
+                    aliases = normalize_aliases(item['aliases'], self.emoji_names, previous_aliases)
+                    previous_aliases.update(aliases)
+                    item['aliases'] = ', '.join(aliases)
+
+    def write(self):
+        with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            f.writelines([
+                COPYRIGHT_NOTICE,
+                f'\\ProvidesExplFile{{{OUTPUT_FILE}}}\n',
+                f'  {OUTPUT_FILE_INFO}\n',
+            ])
+            for group_name, group in self.emoji.items():
+                f.write(f'\\__emoji_group:n {{{texify(group_name)}}}\n')
+                for subgroup_name, subgroup in group.items():
+                    f.write(f'\\__emoji_subgroup:n {{{texify(subgroup_name)}}}\n')
+                    f.writelines(
+                        ('\\__emoji_def:nnnnn' + ' {{{}}}' * 5).format(
+                            item['code_points'],
+                            item['name'],
+                            item['aliases'],
+                            texify(item['description']),
+                            item['version']
+                        ) + '\n'
+                        for item in subgroup
+                    )
+            f.write(f'%%\n%% End of file `{OUTPUT_FILE}\'.\n')
+
+if __name__ == '__main__':
+    Builder().write()
