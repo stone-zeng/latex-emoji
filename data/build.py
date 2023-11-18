@@ -5,7 +5,7 @@ import re
 import unicodedata as ud
 
 COPYRIGHT_NOTICE = r'''%%
-%%  Copyright (C) 2020--2022 by Xiangdong Zeng <xdzeng96@gmail.com>
+%%  Copyright (C) 2020--2023 by Xiangdong Zeng <xdzeng96@gmail.com>
 %%
 %%  This work may be distributed and/or modified under the
 %%  conditions of the LaTeX Project Public License, either

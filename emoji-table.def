@@ -1,5 +1,5 @@
 %%
-%%  Copyright (C) 2020--2022 by Xiangdong Zeng <xdzeng96@gmail.com>
+%%  Copyright (C) 2020--2023 by Xiangdong Zeng <xdzeng96@gmail.com>
 %%
 %%  This work may be distributed and/or modified under the
 %%  conditions of the LaTeX Project Public License, either
@@ -73,6 +73,8 @@
 \__emoji_def:nnnnn {^^^^^^01f62e^^^^200d^^^^^^01f4a8} {face-exhaling} {} {Face~exhaling} {13.1}
 \__emoji_def:nnnnn {^^^^^^01f925} {lying-face} {} {Lying~face} {3.0}
 \__emoji_def:nnnnn {^^^^^^01fae8} {shaking-face} {} {Shaking~face} {15.0}
+\__emoji_def:nnnnn {^^^^^^01f642^^^^200d^^^^2194^^^^fe0f} {head-shaking-horizontally} {} {Head~shaking~horizontally} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f642^^^^200d^^^^2195^^^^fe0f} {head-shaking-vertically} {} {Head~shaking~vertically} {15.1}
 \__emoji_subgroup:n {Face-sleepy}
 \__emoji_def:nnnnn {^^^^^^01f60c} {relieved-face} {relieved} {Relieved~face} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f614} {pensive-face} {pensive} {Pensive~face} {0.6}
@@ -1590,6 +1592,24 @@
 \__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fd^^^^200d^^^^2640^^^^fe0f} {woman-walking-medium-skin-tone} {} {Woman~walking:~medium~skin~tone} {4.0}
 \__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fe^^^^200d^^^^2640^^^^fe0f} {woman-walking-medium-dark-skin-tone} {} {Woman~walking:~medium-dark~skin~tone} {4.0}
 \__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3ff^^^^200d^^^^2640^^^^fe0f} {woman-walking-dark-skin-tone} {} {Woman~walking:~dark~skin~tone} {4.0}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^200d^^^^27a1^^^^fe0f} {person-walking-facing-right} {} {Person~walking~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fb^^^^200d^^^^27a1^^^^fe0f} {person-walking-facing-right-light-skin-tone} {} {Person~walking~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fc^^^^200d^^^^27a1^^^^fe0f} {person-walking-facing-right-medium-light-skin-tone} {} {Person~walking~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fd^^^^200d^^^^27a1^^^^fe0f} {person-walking-facing-right-medium-skin-tone} {} {Person~walking~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fe^^^^200d^^^^27a1^^^^fe0f} {person-walking-facing-right-medium-dark-skin-tone} {} {Person~walking~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3ff^^^^200d^^^^27a1^^^^fe0f} {person-walking-facing-right-dark-skin-tone} {} {Person~walking~facing~right:~dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-walking-facing-right} {} {Woman~walking~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fb^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-walking-facing-right-light-skin-tone} {} {Woman~walking~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fc^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-walking-facing-right-medium-light-skin-tone} {} {Woman~walking~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fd^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-walking-facing-right-medium-skin-tone} {} {Woman~walking~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fe^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-walking-facing-right-medium-dark-skin-tone} {} {Woman~walking~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3ff^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-walking-facing-right-dark-skin-tone} {} {Woman~walking~facing~right:~dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-walking-facing-right} {} {Man~walking~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fb^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-walking-facing-right-light-skin-tone} {} {Man~walking~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fc^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-walking-facing-right-medium-light-skin-tone} {} {Man~walking~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fd^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-walking-facing-right-medium-skin-tone} {} {Man~walking~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3fe^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-walking-facing-right-medium-dark-skin-tone} {} {Man~walking~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f6b6^^^^^^01f3ff^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-walking-facing-right-dark-skin-tone} {} {Man~walking~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f9cd} {person-standing} {standing-person} {Person~standing} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f9cd^^^^^^01f3fb} {person-standing-light-skin-tone} {} {Person~standing:~light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f9cd^^^^^^01f3fc} {person-standing-medium-light-skin-tone} {} {Person~standing:~medium-light~skin~tone} {12.0}
@@ -1626,60 +1646,132 @@
 \__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fd^^^^200d^^^^2640^^^^fe0f} {woman-kneeling-medium-skin-tone} {} {Woman~kneeling:~medium~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fe^^^^200d^^^^2640^^^^fe0f} {woman-kneeling-medium-dark-skin-tone} {} {Woman~kneeling:~medium-dark~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3ff^^^^200d^^^^2640^^^^fe0f} {woman-kneeling-dark-skin-tone} {} {Woman~kneeling:~dark~skin~tone} {12.0}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^200d^^^^27a1^^^^fe0f} {person-kneeling-facing-right} {} {Person~kneeling~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fb^^^^200d^^^^27a1^^^^fe0f} {person-kneeling-facing-right-light-skin-tone} {} {Person~kneeling~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fc^^^^200d^^^^27a1^^^^fe0f} {person-kneeling-facing-right-medium-light-skin-tone} {} {Person~kneeling~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fd^^^^200d^^^^27a1^^^^fe0f} {person-kneeling-facing-right-medium-skin-tone} {} {Person~kneeling~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fe^^^^200d^^^^27a1^^^^fe0f} {person-kneeling-facing-right-medium-dark-skin-tone} {} {Person~kneeling~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3ff^^^^200d^^^^27a1^^^^fe0f} {person-kneeling-facing-right-dark-skin-tone} {} {Person~kneeling~facing~right:~dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-kneeling-facing-right} {} {Woman~kneeling~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fb^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-kneeling-facing-right-light-skin-tone} {} {Woman~kneeling~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fc^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-kneeling-facing-right-medium-light-skin-tone} {} {Woman~kneeling~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fd^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-kneeling-facing-right-medium-skin-tone} {} {Woman~kneeling~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fe^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-kneeling-facing-right-medium-dark-skin-tone} {} {Woman~kneeling~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3ff^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-kneeling-facing-right-dark-skin-tone} {} {Woman~kneeling~facing~right:~dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-kneeling-facing-right} {} {Man~kneeling~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fb^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-kneeling-facing-right-light-skin-tone} {} {Man~kneeling~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fc^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-kneeling-facing-right-medium-light-skin-tone} {} {Man~kneeling~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fd^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-kneeling-facing-right-medium-skin-tone} {} {Man~kneeling~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3fe^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-kneeling-facing-right-medium-dark-skin-tone} {} {Man~kneeling~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9ce^^^^^^01f3ff^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-kneeling-facing-right-dark-skin-tone} {} {Man~kneeling~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^200d^^^^^^01f9af} {person-with-white-cane} {person-with-probing-cane} {Person~with~white~cane} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fb^^^^200d^^^^^^01f9af} {person-with-white-cane-light-skin-tone} {} {Person~with~white~cane:~light~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fc^^^^200d^^^^^^01f9af} {person-with-white-cane-medium-light-skin-tone} {} {Person~with~white~cane:~medium-light~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fd^^^^200d^^^^^^01f9af} {person-with-white-cane-medium-skin-tone} {} {Person~with~white~cane:~medium~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fe^^^^200d^^^^^^01f9af} {person-with-white-cane-medium-dark-skin-tone} {} {Person~with~white~cane:~medium-dark~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3ff^^^^200d^^^^^^01f9af} {person-with-white-cane-dark-skin-tone} {} {Person~with~white~cane:~dark~skin~tone} {12.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {person-with-white-cane-facing-right} {} {Person~with~white~cane~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fb^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {person-with-white-cane-facing-right-light-skin-tone} {} {Person~with~white~cane~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fc^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {person-with-white-cane-facing-right-medium-light-skin-tone} {} {Person~with~white~cane~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fd^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {person-with-white-cane-facing-right-medium-skin-tone} {} {Person~with~white~cane~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fe^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {person-with-white-cane-facing-right-medium-dark-skin-tone} {} {Person~with~white~cane~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3ff^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {person-with-white-cane-facing-right-dark-skin-tone} {} {Person~with~white~cane~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^200d^^^^^^01f9af} {man-with-white-cane} {man-with-probing-cane} {Man~with~white~cane} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fb^^^^200d^^^^^^01f9af} {man-with-white-cane-light-skin-tone} {} {Man~with~white~cane:~light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fc^^^^200d^^^^^^01f9af} {man-with-white-cane-medium-light-skin-tone} {} {Man~with~white~cane:~medium-light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fd^^^^200d^^^^^^01f9af} {man-with-white-cane-medium-skin-tone} {} {Man~with~white~cane:~medium~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fe^^^^200d^^^^^^01f9af} {man-with-white-cane-medium-dark-skin-tone} {} {Man~with~white~cane:~medium-dark~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3ff^^^^200d^^^^^^01f9af} {man-with-white-cane-dark-skin-tone} {} {Man~with~white~cane:~dark~skin~tone} {12.0}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {man-with-white-cane-facing-right} {} {Man~with~white~cane~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fb^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {man-with-white-cane-facing-right-light-skin-tone} {} {Man~with~white~cane~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fc^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {man-with-white-cane-facing-right-medium-light-skin-tone} {} {Man~with~white~cane~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fd^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {man-with-white-cane-facing-right-medium-skin-tone} {} {Man~with~white~cane~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fe^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {man-with-white-cane-facing-right-medium-dark-skin-tone} {} {Man~with~white~cane~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3ff^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {man-with-white-cane-facing-right-dark-skin-tone} {} {Man~with~white~cane~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^200d^^^^^^01f9af} {woman-with-white-cane} {woman-with-probing-cane} {Woman~with~white~cane} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fb^^^^200d^^^^^^01f9af} {woman-with-white-cane-light-skin-tone} {} {Woman~with~white~cane:~light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fc^^^^200d^^^^^^01f9af} {woman-with-white-cane-medium-light-skin-tone} {} {Woman~with~white~cane:~medium-light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fd^^^^200d^^^^^^01f9af} {woman-with-white-cane-medium-skin-tone} {} {Woman~with~white~cane:~medium~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fe^^^^200d^^^^^^01f9af} {woman-with-white-cane-medium-dark-skin-tone} {} {Woman~with~white~cane:~medium-dark~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3ff^^^^200d^^^^^^01f9af} {woman-with-white-cane-dark-skin-tone} {} {Woman~with~white~cane:~dark~skin~tone} {12.0}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {woman-with-white-cane-facing-right} {} {Woman~with~white~cane~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fb^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {woman-with-white-cane-facing-right-light-skin-tone} {} {Woman~with~white~cane~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fc^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {woman-with-white-cane-facing-right-medium-light-skin-tone} {} {Woman~with~white~cane~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fd^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {woman-with-white-cane-facing-right-medium-skin-tone} {} {Woman~with~white~cane~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fe^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {woman-with-white-cane-facing-right-medium-dark-skin-tone} {} {Woman~with~white~cane~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3ff^^^^200d^^^^^^01f9af^^^^200d^^^^27a1^^^^fe0f} {woman-with-white-cane-facing-right-dark-skin-tone} {} {Woman~with~white~cane~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^200d^^^^^^01f9bc} {person-in-motorized-wheelchair} {} {Person~in~motorized~wheelchair} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fb^^^^200d^^^^^^01f9bc} {person-in-motorized-wheelchair-light-skin-tone} {} {Person~in~motorized~wheelchair:~light~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fc^^^^200d^^^^^^01f9bc} {person-in-motorized-wheelchair-medium-light-skin-tone} {} {Person~in~motorized~wheelchair:~medium-light~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fd^^^^200d^^^^^^01f9bc} {person-in-motorized-wheelchair-medium-skin-tone} {} {Person~in~motorized~wheelchair:~medium~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fe^^^^200d^^^^^^01f9bc} {person-in-motorized-wheelchair-medium-dark-skin-tone} {} {Person~in~motorized~wheelchair:~medium-dark~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3ff^^^^200d^^^^^^01f9bc} {person-in-motorized-wheelchair-dark-skin-tone} {} {Person~in~motorized~wheelchair:~dark~skin~tone} {12.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {person-in-motorized-wheelchair-facing-right} {} {Person~in~motorized~wheelchair~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fb^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {person-in-motorized-wheelchair-facing-right-light-skin-tone} {} {Person~in~motorized~wheelchair~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fc^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {person-in-motorized-wheelchair-facing-right-medium-light-skin-tone} {} {Person~in~motorized~wheelchair~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fd^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {person-in-motorized-wheelchair-facing-right-medium-skin-tone} {} {Person~in~motorized~wheelchair~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fe^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {person-in-motorized-wheelchair-facing-right-medium-dark-skin-tone} {} {Person~in~motorized~wheelchair~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3ff^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {person-in-motorized-wheelchair-facing-right-dark-skin-tone} {} {Person~in~motorized~wheelchair~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^200d^^^^^^01f9bc} {man-in-motorized-wheelchair} {} {Man~in~motorized~wheelchair} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fb^^^^200d^^^^^^01f9bc} {man-in-motorized-wheelchair-light-skin-tone} {} {Man~in~motorized~wheelchair:~light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fc^^^^200d^^^^^^01f9bc} {man-in-motorized-wheelchair-medium-light-skin-tone} {} {Man~in~motorized~wheelchair:~medium-light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fd^^^^200d^^^^^^01f9bc} {man-in-motorized-wheelchair-medium-skin-tone} {} {Man~in~motorized~wheelchair:~medium~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fe^^^^200d^^^^^^01f9bc} {man-in-motorized-wheelchair-medium-dark-skin-tone} {} {Man~in~motorized~wheelchair:~medium-dark~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3ff^^^^200d^^^^^^01f9bc} {man-in-motorized-wheelchair-dark-skin-tone} {} {Man~in~motorized~wheelchair:~dark~skin~tone} {12.0}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {man-in-motorized-wheelchair-facing-right} {} {Man~in~motorized~wheelchair~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fb^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {man-in-motorized-wheelchair-facing-right-light-skin-tone} {} {Man~in~motorized~wheelchair~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fc^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {man-in-motorized-wheelchair-facing-right-medium-light-skin-tone} {} {Man~in~motorized~wheelchair~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fd^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {man-in-motorized-wheelchair-facing-right-medium-skin-tone} {} {Man~in~motorized~wheelchair~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fe^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {man-in-motorized-wheelchair-facing-right-medium-dark-skin-tone} {} {Man~in~motorized~wheelchair~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3ff^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {man-in-motorized-wheelchair-facing-right-dark-skin-tone} {} {Man~in~motorized~wheelchair~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^200d^^^^^^01f9bc} {woman-in-motorized-wheelchair} {} {Woman~in~motorized~wheelchair} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fb^^^^200d^^^^^^01f9bc} {woman-in-motorized-wheelchair-light-skin-tone} {} {Woman~in~motorized~wheelchair:~light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fc^^^^200d^^^^^^01f9bc} {woman-in-motorized-wheelchair-medium-light-skin-tone} {} {Woman~in~motorized~wheelchair:~medium-light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fd^^^^200d^^^^^^01f9bc} {woman-in-motorized-wheelchair-medium-skin-tone} {} {Woman~in~motorized~wheelchair:~medium~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fe^^^^200d^^^^^^01f9bc} {woman-in-motorized-wheelchair-medium-dark-skin-tone} {} {Woman~in~motorized~wheelchair:~medium-dark~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3ff^^^^200d^^^^^^01f9bc} {woman-in-motorized-wheelchair-dark-skin-tone} {} {Woman~in~motorized~wheelchair:~dark~skin~tone} {12.0}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {woman-in-motorized-wheelchair-facing-right} {} {Woman~in~motorized~wheelchair~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fb^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {woman-in-motorized-wheelchair-facing-right-light-skin-tone} {} {Woman~in~motorized~wheelchair~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fc^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {woman-in-motorized-wheelchair-facing-right-medium-light-skin-tone} {} {Woman~in~motorized~wheelchair~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fd^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {woman-in-motorized-wheelchair-facing-right-medium-skin-tone} {} {Woman~in~motorized~wheelchair~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fe^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {woman-in-motorized-wheelchair-facing-right-medium-dark-skin-tone} {} {Woman~in~motorized~wheelchair~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3ff^^^^200d^^^^^^01f9bc^^^^200d^^^^27a1^^^^fe0f} {woman-in-motorized-wheelchair-facing-right-dark-skin-tone} {} {Woman~in~motorized~wheelchair~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^200d^^^^^^01f9bd} {person-in-manual-wheelchair} {} {Person~in~manual~wheelchair} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fb^^^^200d^^^^^^01f9bd} {person-in-manual-wheelchair-light-skin-tone} {} {Person~in~manual~wheelchair:~light~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fc^^^^200d^^^^^^01f9bd} {person-in-manual-wheelchair-medium-light-skin-tone} {} {Person~in~manual~wheelchair:~medium-light~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fd^^^^200d^^^^^^01f9bd} {person-in-manual-wheelchair-medium-skin-tone} {} {Person~in~manual~wheelchair:~medium~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fe^^^^200d^^^^^^01f9bd} {person-in-manual-wheelchair-medium-dark-skin-tone} {} {Person~in~manual~wheelchair:~medium-dark~skin~tone} {12.1}
 \__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3ff^^^^200d^^^^^^01f9bd} {person-in-manual-wheelchair-dark-skin-tone} {} {Person~in~manual~wheelchair:~dark~skin~tone} {12.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {person-in-manual-wheelchair-facing-right} {} {Person~in~manual~wheelchair~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fb^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {person-in-manual-wheelchair-facing-right-light-skin-tone} {} {Person~in~manual~wheelchair~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fc^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {person-in-manual-wheelchair-facing-right-medium-light-skin-tone} {} {Person~in~manual~wheelchair~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fd^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {person-in-manual-wheelchair-facing-right-medium-skin-tone} {} {Person~in~manual~wheelchair~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3fe^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {person-in-manual-wheelchair-facing-right-medium-dark-skin-tone} {} {Person~in~manual~wheelchair~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^^^01f3ff^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {person-in-manual-wheelchair-facing-right-dark-skin-tone} {} {Person~in~manual~wheelchair~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^200d^^^^^^01f9bd} {man-in-manual-wheelchair} {} {Man~in~manual~wheelchair} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fb^^^^200d^^^^^^01f9bd} {man-in-manual-wheelchair-light-skin-tone} {} {Man~in~manual~wheelchair:~light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fc^^^^200d^^^^^^01f9bd} {man-in-manual-wheelchair-medium-light-skin-tone} {} {Man~in~manual~wheelchair:~medium-light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fd^^^^200d^^^^^^01f9bd} {man-in-manual-wheelchair-medium-skin-tone} {} {Man~in~manual~wheelchair:~medium~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fe^^^^200d^^^^^^01f9bd} {man-in-manual-wheelchair-medium-dark-skin-tone} {} {Man~in~manual~wheelchair:~medium-dark~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3ff^^^^200d^^^^^^01f9bd} {man-in-manual-wheelchair-dark-skin-tone} {} {Man~in~manual~wheelchair:~dark~skin~tone} {12.0}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {man-in-manual-wheelchair-facing-right} {} {Man~in~manual~wheelchair~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fb^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {man-in-manual-wheelchair-facing-right-light-skin-tone} {} {Man~in~manual~wheelchair~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fc^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {man-in-manual-wheelchair-facing-right-medium-light-skin-tone} {} {Man~in~manual~wheelchair~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fd^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {man-in-manual-wheelchair-facing-right-medium-skin-tone} {} {Man~in~manual~wheelchair~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3fe^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {man-in-manual-wheelchair-facing-right-medium-dark-skin-tone} {} {Man~in~manual~wheelchair~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f468^^^^^^01f3ff^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {man-in-manual-wheelchair-facing-right-dark-skin-tone} {} {Man~in~manual~wheelchair~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^200d^^^^^^01f9bd} {woman-in-manual-wheelchair} {} {Woman~in~manual~wheelchair} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fb^^^^200d^^^^^^01f9bd} {woman-in-manual-wheelchair-light-skin-tone} {} {Woman~in~manual~wheelchair:~light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fc^^^^200d^^^^^^01f9bd} {woman-in-manual-wheelchair-medium-light-skin-tone} {} {Woman~in~manual~wheelchair:~medium-light~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fd^^^^200d^^^^^^01f9bd} {woman-in-manual-wheelchair-medium-skin-tone} {} {Woman~in~manual~wheelchair:~medium~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fe^^^^200d^^^^^^01f9bd} {woman-in-manual-wheelchair-medium-dark-skin-tone} {} {Woman~in~manual~wheelchair:~medium-dark~skin~tone} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3ff^^^^200d^^^^^^01f9bd} {woman-in-manual-wheelchair-dark-skin-tone} {} {Woman~in~manual~wheelchair:~dark~skin~tone} {12.0}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {woman-in-manual-wheelchair-facing-right} {} {Woman~in~manual~wheelchair~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fb^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {woman-in-manual-wheelchair-facing-right-light-skin-tone} {} {Woman~in~manual~wheelchair~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fc^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {woman-in-manual-wheelchair-facing-right-medium-light-skin-tone} {} {Woman~in~manual~wheelchair~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fd^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {woman-in-manual-wheelchair-facing-right-medium-skin-tone} {} {Woman~in~manual~wheelchair~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3fe^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {woman-in-manual-wheelchair-facing-right-medium-dark-skin-tone} {} {Woman~in~manual~wheelchair~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3ff^^^^200d^^^^^^01f9bd^^^^200d^^^^27a1^^^^fe0f} {woman-in-manual-wheelchair-facing-right-dark-skin-tone} {} {Woman~in~manual~wheelchair~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f3c3} {person-running} {runner, running} {Person~running} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fb} {person-running-light-skin-tone} {} {Person~running:~light~skin~tone} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fc} {person-running-medium-light-skin-tone} {} {Person~running:~medium-light~skin~tone} {1.0}
@@ -1698,6 +1790,24 @@
 \__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fd^^^^200d^^^^2640^^^^fe0f} {woman-running-medium-skin-tone} {} {Woman~running:~medium~skin~tone} {4.0}
 \__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fe^^^^200d^^^^2640^^^^fe0f} {woman-running-medium-dark-skin-tone} {} {Woman~running:~medium-dark~skin~tone} {4.0}
 \__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3ff^^^^200d^^^^2640^^^^fe0f} {woman-running-dark-skin-tone} {} {Woman~running:~dark~skin~tone} {4.0}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^200d^^^^27a1^^^^fe0f} {person-running-facing-right} {} {Person~running~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fb^^^^200d^^^^27a1^^^^fe0f} {person-running-facing-right-light-skin-tone} {} {Person~running~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fc^^^^200d^^^^27a1^^^^fe0f} {person-running-facing-right-medium-light-skin-tone} {} {Person~running~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fd^^^^200d^^^^27a1^^^^fe0f} {person-running-facing-right-medium-skin-tone} {} {Person~running~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fe^^^^200d^^^^27a1^^^^fe0f} {person-running-facing-right-medium-dark-skin-tone} {} {Person~running~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3ff^^^^200d^^^^27a1^^^^fe0f} {person-running-facing-right-dark-skin-tone} {} {Person~running~facing~right:~dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-running-facing-right} {} {Woman~running~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fb^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-running-facing-right-light-skin-tone} {} {Woman~running~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fc^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-running-facing-right-medium-light-skin-tone} {} {Woman~running~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fd^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-running-facing-right-medium-skin-tone} {} {Woman~running~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fe^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-running-facing-right-medium-dark-skin-tone} {} {Woman~running~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3ff^^^^200d^^^^2640^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {woman-running-facing-right-dark-skin-tone} {} {Woman~running~facing~right:~dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-running-facing-right} {} {Man~running~facing~right} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fb^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-running-facing-right-light-skin-tone} {} {Man~running~facing~right:~light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fc^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-running-facing-right-medium-light-skin-tone} {} {Man~running~facing~right:~medium-light~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fd^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-running-facing-right-medium-skin-tone} {} {Man~running~facing~right:~medium~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3fe^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-running-facing-right-medium-dark-skin-tone} {} {Man~running~facing~right:~medium-dark~skin~tone} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f3c3^^^^^^01f3ff^^^^200d^^^^2642^^^^fe0f^^^^200d^^^^27a1^^^^fe0f} {man-running-facing-right-dark-skin-tone} {} {Man~running~facing~right:~dark~skin~tone} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f483} {woman-dancing} {dancer} {Woman~dancing} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f483^^^^^^01f3fb} {woman-dancing-light-skin-tone} {} {Woman~dancing:~light~skin~tone} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f483^^^^^^01f3fc} {woman-dancing-medium-light-skin-tone} {} {Woman~dancing:~medium-light~skin~tone} {1.0}
@@ -2333,7 +2443,6 @@
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3ff^^^^200d^^^^2764^^^^fe0f^^^^200d^^^^^^01f469^^^^^^01f3fd} {couple-with-heart-woman-woman-dark-skin-tone-medium-skin-tone} {} {Couple~with~heart:~woman,~woman,~dark~skin~tone,~medium~skin~tone} {13.1}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3ff^^^^200d^^^^2764^^^^fe0f^^^^200d^^^^^^01f469^^^^^^01f3fe} {couple-with-heart-woman-woman-dark-skin-tone-medium-dark-skin-tone} {} {Couple~with~heart:~woman,~woman,~dark~skin~tone,~medium-dark~skin~tone} {13.1}
 \__emoji_def:nnnnn {^^^^^^01f469^^^^^^01f3ff^^^^200d^^^^2764^^^^fe0f^^^^200d^^^^^^01f469^^^^^^01f3ff} {couple-with-heart-woman-woman-dark-skin-tone} {} {Couple~with~heart:~woman,~woman,~dark~skin~tone} {13.1}
-\__emoji_def:nnnnn {^^^^^^01f46a} {family} {} {Family} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^200d^^^^^^01f469^^^^200d^^^^^^01f466} {family-man-woman-boy} {} {Family:~man,~woman,~boy} {2.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^200d^^^^^^01f469^^^^200d^^^^^^01f467} {family-man-woman-girl} {} {Family:~man,~woman,~girl} {2.0}
 \__emoji_def:nnnnn {^^^^^^01f468^^^^200d^^^^^^01f469^^^^200d^^^^^^01f467^^^^200d^^^^^^01f466} {family-man-woman-girl-boy} {} {Family:~man,~woman,~girl,~boy} {2.0}
@@ -2364,6 +2473,11 @@
 \__emoji_def:nnnnn {^^^^^^01f464} {bust-in-silhouette} {} {Bust~in~silhouette} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f465} {busts-in-silhouette} {} {Busts~in~silhouette} {1.0}
 \__emoji_def:nnnnn {^^^^^^01fac2} {people-hugging} {} {People~hugging} {13.0}
+\__emoji_def:nnnnn {^^^^^^01f46a} {family} {} {Family} {0.6}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^200d^^^^^^01f9d1^^^^200d^^^^^^01f9d2} {family-adult-adult-child} {} {Family:~adult,~adult,~child} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^200d^^^^^^01f9d1^^^^200d^^^^^^01f9d2^^^^200d^^^^^^01f9d2} {family-adult-adult-child-child} {} {Family:~adult,~adult,~child,~child} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^200d^^^^^^01f9d2} {family-adult-child} {} {Family:~adult,~child} {15.1}
+\__emoji_def:nnnnn {^^^^^^01f9d1^^^^200d^^^^^^01f9d2^^^^200d^^^^^^01f9d2} {family-adult-child-child} {} {Family:~adult,~child,~child} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f463} {footprints} {} {Footprints} {0.6}
 \__emoji_group:n {Component}
 \__emoji_subgroup:n {Skin-tone}
@@ -2467,6 +2581,7 @@
 \__emoji_def:nnnnn {^^^^^^01fabd} {wing} {} {Wing} {15.0}
 \__emoji_def:nnnnn {^^^^^^01f426^^^^200d^^^^2b1b} {black-bird} {} {Black~bird} {15.0}
 \__emoji_def:nnnnn {^^^^^^01fabf} {goose} {} {Goose} {15.0}
+\__emoji_def:nnnnn {^^^^^^01f426^^^^200d^^^^^^01f525} {phoenix} {} {Phoenix} {15.1}
 \__emoji_subgroup:n {Animal-amphibian}
 \__emoji_def:nnnnn {^^^^^^01f438} {frog} {} {Frog} {0.6}
 \__emoji_subgroup:n {Animal-reptile}
@@ -2545,6 +2660,7 @@
 \__emoji_def:nnnnn {^^^^^^01f349} {watermelon} {} {Watermelon} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f34a} {tangerine} {mandarin, orange} {Tangerine} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f34b} {lemon} {} {Lemon} {1.0}
+\__emoji_def:nnnnn {^^^^^^01f34b^^^^200d^^^^^^01f7e9} {lime} {} {Lime} {15.1}
 \__emoji_def:nnnnn {^^^^^^01f34c} {banana} {} {Banana} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f34d} {pineapple} {} {Pineapple} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f96d} {mango} {} {Mango} {11.0}
@@ -2577,6 +2693,7 @@
 \__emoji_def:nnnnn {^^^^^^01f330} {chestnut} {} {Chestnut} {0.6}
 \__emoji_def:nnnnn {^^^^^^01fada} {ginger-root} {} {Ginger~root} {15.0}
 \__emoji_def:nnnnn {^^^^^^01fadb} {pea-pod} {} {Pea~pod} {15.0}
+\__emoji_def:nnnnn {^^^^^^01f344^^^^200d^^^^^^01f7eb} {brown-mushroom} {} {Brown~mushroom} {15.1}
 \__emoji_subgroup:n {Food-prepared}
 \__emoji_def:nnnnn {^^^^^^01f35e} {bread} {} {Bread} {0.6}
 \__emoji_def:nnnnn {^^^^^^01f950} {croissant} {} {Croissant} {3.0}
@@ -3224,6 +3341,7 @@
 \__emoji_def:nnnnn {^^^^2696^^^^fe0f} {balance-scale} {} {Balance~scale} {1.0}
 \__emoji_def:nnnnn {^^^^^^01f9af} {white-cane} {probing-cane} {White~cane} {12.0}
 \__emoji_def:nnnnn {^^^^^^01f517} {link} {} {Link} {0.6}
+\__emoji_def:nnnnn {^^^^26d3^^^^fe0f^^^^200d^^^^^^01f4a5} {broken-chain} {} {Broken~chain} {15.1}
 \__emoji_def:nnnnn {^^^^26d3^^^^fe0f} {chains} {} {Chains} {0.7}
 \__emoji_def:nnnnn {^^^^^^01fa9d} {hook} {} {Hook} {13.0}
 \__emoji_def:nnnnn {^^^^^^01f9f0} {toolbox} {} {Toolbox} {11.0}
@@ -3761,7 +3879,7 @@
 \__emoji_def:nnnnn {^^^^^^01f1f9^^^^^^01f1f2} {flag-turkmenistan} {turkmenistan} {Flag:~Turkmenistan} {2.0}
 \__emoji_def:nnnnn {^^^^^^01f1f9^^^^^^01f1f3} {flag-tunisia} {tunisia} {Flag:~Tunisia} {2.0}
 \__emoji_def:nnnnn {^^^^^^01f1f9^^^^^^01f1f4} {flag-tonga} {tonga} {Flag:~Tonga} {2.0}
-\__emoji_def:nnnnn {^^^^^^01f1f9^^^^^^01f1f7} {flag-turkey} {tr} {Flag:~Turkey} {2.0}
+\__emoji_def:nnnnn {^^^^^^01f1f9^^^^^^01f1f7} {flag-turkiye} {tr} {Flag:~Türkiye} {2.0}
 \__emoji_def:nnnnn {^^^^^^01f1f9^^^^^^01f1f9} {flag-trinidad-tobago} {trinidad-tobago} {Flag:~Trinidad~\&~Tobago} {2.0}
 \__emoji_def:nnnnn {^^^^^^01f1f9^^^^^^01f1fb} {flag-tuvalu} {tuvalu} {Flag:~Tuvalu} {2.0}
 \__emoji_def:nnnnn {^^^^^^01f1f9^^^^^^01f1fc} {flag-taiwan} {taiwan} {Flag:~Taiwan} {2.0}
