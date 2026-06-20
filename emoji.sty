@@ -90,13 +90,13 @@
     You~should~use~"\setemojifont"~to~set~a~font.
   }
 
-% The main command for use emoji.
+% The main command for using emoji.
 % #1: name
 \NewDocumentCommand \emoji { m }
   {
     % TODO: options
     \emoji_if_name_exist:nTF {#1}
-      { \emoji_print:n {#1} }
+      { \text{\emoji_print:n {#1}} } % Wrap in \text to prevent spacing issues
       { \msg_error:nnn { emoji } { emoji-not-exist } {#1} }
   }
 \msg_new:nnn { emoji } { emoji-not-exist }
